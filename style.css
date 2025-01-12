@@ -118,7 +118,7 @@ section h2 {
     --git-color2: #560bad;
     --git-color-click: #d0137e;
 
-    height: 5vh;
+    height: 2.6em;
     min-height: 40px;
     display: flex;
     background-color: var(--git-color);
@@ -157,8 +157,9 @@ section h2 {
     font-family: "Ubuntu Condensed", sans-serif;
     display: inline-block;
     width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
+    height: 5vh;
+    min-height: 40px;
+    line-height: 2.5vh;
     position: relative;
     cursor: pointer;
     overflow: hidden;
