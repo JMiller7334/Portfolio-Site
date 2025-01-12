@@ -118,7 +118,7 @@ section h2 {
     --git-color2: #560bad;
     --git-color-click: #d0137e;
 
-    height: 2.6em;
+    height: 5vh;
     min-height: 40px;
     display: flex;
     background-color: var(--git-color);
