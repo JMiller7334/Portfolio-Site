@@ -1,0 +1,8 @@
+/* Define color variables */
+:root {
+    --primary-color: #333; /* Main color for text, buttons, and separators */
+    --secondary-color: #444; /* Background for navigation */
+    --text-color: #fff; /* Main text color on dark backgrounds */
+    --body-text-color: #333; /* Main text color for body */
+    --hover-color: #555; /* Hover color for buttons */
+}

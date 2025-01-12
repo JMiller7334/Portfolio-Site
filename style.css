@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--body-text-color);
+}
+
+header {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    margin-bottom: -1.2rem;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.separator {
+    height: 4px;
+    background: var(--primary-color);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.margin-element {
+    margin-bottom: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.container {
+    margin-bottom: 5rem;
+    max-width: 1100px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container-hero {
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 1rem;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+}
+
+.button:hover {
+    background: var(--hover-color);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--primary-color);
+    color: var(--text-color);
+}

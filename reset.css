@@ -1,0 +1,48 @@
+/* Comprehensive CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Default font size for scaling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
