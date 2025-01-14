@@ -1,19 +1,17 @@
 /* Define color variables */
 :root {
+    /* GENERAL */
     --primary-color: #333; /* Main color for text, buttons, and separators */
     --secondary-color: #444; /* Background for navigation */
     --text-color: #fff; /* Main text color on dark backgrounds */
     --body-text-color: #333; /* Main text color for body */
-    --hover-color: #555; /* Hover color for buttons */
+    --accent-color: #db5e0b;
 
+    /* HERO */
     --hero-color: rgb(36, 35, 35);
 
     /* NAV */
     --nav-color: rgb(42, 42, 42);
-
-
-    --nav-background-backup: #F1F1F1;
-    --nav-text-old-backup: #333333a7;
 
     /* DEMO BUTTON */
     --demo-color: #db5e0b;
