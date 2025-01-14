@@ -5,4 +5,22 @@
     --text-color: #fff; /* Main text color on dark backgrounds */
     --body-text-color: #333; /* Main text color for body */
     --hover-color: #555; /* Hover color for buttons */
+
+    --hero-color: rgb(36, 35, 35);
+
+    /* NAV */
+    --nav-color: rgb(42, 42, 42);
+
+
+    --nav-background-backup: #F1F1F1;
+    --nav-text-old-backup: #333333a7;
+
+    /* DEMO BUTTON */
+    --demo-color: #db5e0b;
+    --demo-color2: rgb(185, 52, 11);
+
+    /* GITHUB BUTTON */
+    --git-color: rgb(59, 59, 59);
+    --git-color2: #560bad;
+    --git-color-click: #d0137e;
 }

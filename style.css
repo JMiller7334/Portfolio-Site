@@ -1,29 +1,15 @@
+/* -- VARIABLES -- */
+:root {
+    --hero-height: 15vh;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: var(--body-text-color);
-}
-
-
-/* -- HEADER -- */
-header {
-    background: var(--primary-color);
-    color: var(--text-color);
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    margin-bottom: -1.2rem;
-    font-size: 2.5rem;
-}
-
-header p {
-    margin: 0;
-    font-size: 1.2rem;
 }
 
 
@@ -44,11 +30,10 @@ header p {
 nav {
     position: sticky;
     top: 0;
-    background: var(--secondary-color);
-    color: var(--text-color);
+    background: var(--nav-color);
     padding: 0.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -67,6 +52,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+
 /* -- CONTAINERS -- */
 .container {
     margin-bottom: 5rem;
@@ -75,16 +61,82 @@ nav ul li a {
     padding-right: 1rem;
 }
 
+
+/* -- HERO / HEADER -- */
 .container-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--hero-height);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
     margin: 0 auto;
-    max-width: 1100px;
     padding: 1rem;
+}
+
+header {
+    width: 100%;
+    height: var(--hero-height);
+    background: var(--hero-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.hero-img {
+    position: absolute;
+    right: 0;
+
+
+    width: 100%;
+    height: var(--hero-height);
+}
+
+header h1 {
+    margin: 0;
+    margin-bottom: -1.2rem;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 section h2 {
     margin: 0;
     font-size: 1.6rem;
 }
+
+.profile-picture {
+    position: absolute;
+    left: 1rem;
+    width: 11vh;
+    height: 11vh;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    object-position: 50% 40%;
+}
+
+
 
 /* -- PROJECT CONTAINER -- */
 .project {
@@ -114,10 +166,6 @@ section h2 {
 
 /* github button */
 .github-button {
-    --git-color: rgb(59, 59, 59);
-    --git-color2: #560bad;
-    --git-color-click: #d0137e;
-
     height: 5vh;
     min-height: 40px;
     display: flex;
@@ -151,8 +199,6 @@ section h2 {
 
   /* demo button */
 .demo-button {
-    --demo-color: #db5e0b;
-    --demo-color2: rgb(185, 52, 11);
     font-weight: 500;
     font-family: "Ubuntu Condensed", sans-serif;
     display: inline-block;
