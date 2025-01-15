@@ -10,21 +10,33 @@ document.addEventListener("scroll", () => {
     }
 
     const scrollY = window.scrollY;
+    const fadeValue = 80
+    
     const profilePicture = document.querySelector(".profile-picture");
     const h1 = document.querySelector("header h1");
     const p = document.querySelector("header p");
+    
+    const terminals = document.querySelectorAll('.terminal-text');
+
+    if (terminals) {
+      terminals.forEach(terminal => {
+      const newOpacity = 1 - window.scrollY / fadeValue;
+
+        // Clamp opacity between 0 and 1
+      terminal.style.opacity = Math.max(0, Math.min(newOpacity, 1));
+      });
+    }
 
     if (profilePicture) {
         // Fade effect for profilePicture based on scrollY
-        profilePicture.style.opacity = 1 - (scrollY / 50); // Fades out as the user scrolls
-        // Ensure the opacity stays within range [0, 1]
+        profilePicture.style.opacity = 1 - (scrollY / fadeValue); // Fades out as the user scrolls
         if (profilePicture.style.opacity < 0) profilePicture.style.opacity = 0;
         if (profilePicture.style.opacity > 1) profilePicture.style.opacity = 1;
     }
     
     if (h1 && p) {
         // Fade effect for h1 and p based on scrollY
-        const fadeAmount = 1 - (scrollY / 50); // Fades out as the user scrolls
+        const fadeAmount = 1 - (scrollY / fadeValue); // Fades out as the user scrolls
         h1.style.opacity = fadeAmount;
         p.style.opacity = fadeAmount;
         // Ensure the opacity stays within range [0, 1]
