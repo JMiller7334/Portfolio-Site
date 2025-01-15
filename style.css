@@ -161,7 +161,6 @@ header {
 /* -- HERO TERMINAL -- */
 /* Terminal text styling */
 .terminal-text {
-    line-height: 1.5;
     overflow: hidden; /* Hide overflowed text */
     width: 100%;
 
@@ -170,15 +169,17 @@ header {
     padding-right: 7vw;
 }
 #greeting {
-    font-size: 4vh;
+    font-size: 3.2vh;
+    height: 7vh;
+    padding-bottom: 0.5vh;
 
-    /* border: 2px solid red; */
+    /* border: 2px solid red;*/
 }
 
 #skills {
-    /* white-space: pre; */
-    font-size: 1.8vh;
-    height: 65vh;
+    line-height:1.9vh;
+    line-height: 2.6vh;
+    height: 61vh;
     /* border: 2px solid red; */
 }
 #skills::after {
@@ -208,6 +209,8 @@ header h1 {
     margin: 0;
     margin-bottom: -2vw;
     font-size: 7vw;
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
     transition: transform 0.5s ease;
 }
@@ -215,6 +218,8 @@ header h1 {
 header p {
     margin: 0;
     font-size: 3vw;
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
     transition: transform 0.5s ease;
 }
@@ -273,8 +278,8 @@ section h2 {
 /* -- ICONS -- */
 .scroll-icon-container {
     width: auto;
-    height: 7vh;
-    margin: 1vh;
+    height: 9vh;
+    padding: 1vh;
 
     display: flex;
     align-items: center;
@@ -286,7 +291,10 @@ section h2 {
     transform: translateX(-50%);
     font-size: 20px; /* Adjust the size of the chevron */
     color: white; /* White chevron */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
     animation: bounce 1.5s infinite;
+    
   }
   
   @keyframes bounce {
