@@ -8,7 +8,11 @@
     --accent-color: #db5e0b;
 
     /* HERO */
-    --hero-color: rgb(36, 35, 35);
+    --hero-foreground-color: rgba(255, 255, 255, 0.848);
+    --hero-background-color: rgb(27, 26, 26);
+
+    /* PROFILE */
+    --profile-border-color: rgba(40, 181, 45, 0.761);
 
     /* NAV */
     --nav-color: rgb(42, 42, 42);

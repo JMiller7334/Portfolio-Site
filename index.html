@@ -15,24 +15,44 @@
     <body>
         <header>
     
-            <img src="img/hero-foreground.svg" class="hero-img" alt="TODO"/>
-            <div class="container-hero">
-    
-                <div class="profile-picture">
-                    <img src="img/profile.jpg" alt="Profile Picture" />
+            <div class="hero-header">
+
+                <!-- HERO NAV -->
+                <div class="container-hero">
+                    <div class="profile-picture">
+                        <img src="img/profile.jpg" alt="Profile Picture" />
+                    </div>
+        
+                    <h1>Jacob Miller</h1>
+                    <p>Web & App Developer</p>
                 </div>
-    
-                <h1>Jacob Miller</h1>
-                <p>Web & App Developer</p>
             </div>
+
+            <!-- TERMINAL -->
+            <div class="hero-separator" id="hero-sep-upper"></div>
+            <div class="terminal-text" id="greeting"></div>
+
+            <div class="terminal-text" id="skills"></div>
+
+            <div class="scroll-icon-container">
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+
+            <div class="hero-separator" id="hero-sep-upper"></div>
+
         </header>
     
+        <!-- NAV -->
         <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
         </nav>
     
         <div class="margin-element"></div>
@@ -130,6 +150,7 @@
         
     
         <!-- JAVASCRIPT -->
+         <script src="js/header.js"></script>
         <script src="js/scrollEffects.js"></script>
     </body>
     </html>
