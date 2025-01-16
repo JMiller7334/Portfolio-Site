@@ -9,6 +9,13 @@
   box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    height: 100vh;
+}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -16,10 +23,6 @@ body {
     margin: 0;
     padding: 0;
     color: var(--body-text-color);
-    overflow-x: hidden;
-    -ms-overflow-style: scroll;
-    
-    scroll-snap-type: y mandatory;
 }
 
 
@@ -32,7 +35,8 @@ body {
 }
 
 .margin-element {
-    margin-bottom: 2.5rem;
+    height: 5.5vh;
+    scroll-snap-align: start;
 }
 
 
@@ -124,6 +128,8 @@ nav ul li a.active::after {
 
 /* -- HERO / HEADER -- */
 header {
+    scroll-snap-align: start;
+
     justify-content: center;
 
     width: 100%;
@@ -136,8 +142,6 @@ header {
     text-align: center;
     justify-content: center;
     overflow: hidden;
-    
-    scroll-snap-align: start;
 }
 
 .hero-header {

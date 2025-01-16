@@ -1,157 +1,149 @@
-<DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Portfolio</title>
-    
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="colors.css">
-        <link rel="stylesheet" href="style.css">
-        
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-        
-    </head>
-    <body>
-        <header>
-    
-            <div class="hero-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
 
-                <!-- HERO NAV -->
-                <div class="container-hero">
-                    <div class="profile-picture">
-                        <img src="img/profile.jpg" alt="Profile Picture" />
-                    </div>
-        
-                    <h1>Jacob Miller</h1>
-                    <p>Web & App Developer</p>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="hero-header">
+            <!-- HERO NAV -->
+            <div class="container-hero">
+                <div class="profile-picture">
+                    <img src="img/profile.jpg" alt="Profile Picture of Jacob Miller">
                 </div>
+                <h1>Jacob Miller</h1>
+                <p>Web & App Developer</p>
             </div>
+        </div>
 
-            <!-- TERMINAL -->
-            <div class="hero-separator" id="hero-sep-upper"></div>
-            <div class="terminal-text" id="greeting"></div>
+        <!-- TERMINAL -->
+        <div class="hero-separator" id="hero-sep-upper"></div>
+        <div class="terminal-text" id="greeting"></div>
+        <div class="terminal-text" id="skills"></div>
 
-            <div class="terminal-text" id="skills"></div>
-
-            <div class="scroll-icon-container">
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+        <div class="scroll-icon-container">
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
             </div>
+        </div>
 
+        <div class="hero-separator"></div>
+    </header>
 
-            <div class="hero-separator" id="hero-sep-upper"></div>
+    <!-- NAV -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        </header>
-    
-        <!-- NAV -->
-        <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <div class="margin-element"></div>
 
-        </nav>
-    
-        <div class="margin-element"></div>
-        <section id="about" class="container">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="container">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <div class="separator"></div>
+        <p>Introduce yourself here. Share your skills, passions, and what you're aiming to achieve in web and app development.</p>
+    </section>
 
-            <h2><i class="fas fa-user"></i> About Me</h2>
-            <div class="separator"></div>
-            
-            <p>Introduce yourself here. Share your skills, passions, and what you're aiming to achieve in web and app development.</p>
-          
-        </section>
-    
-        <section id="projects" class="container">
-            <h2><i class="fas fa-briefcase"></i> Projects</h2>
-            <div class="separator"></div>
-            
-            <!-- PROJECT LIST -->
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>
-                    Description of a project I have worked on  
-                    would go here.
-                    Make sure to add bullet points and project features.
-                </p>
-    
-                <div class="project-buttons">
-                    <button type="button" class="github-button" onclick="location.href='https://'">
-                        <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                        View Code
-                    </button>
-                    <button type="button" class="demo-button">Live Demo</button>
-                </div>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="container">
+        <h2><i class="fas fa-briefcase"></i> Projects</h2>
+        <div class="separator"></div>
+
+        <!-- PROJECT 1 -->
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of a project I have worked on. Add bullet points and project features.</p>
+            <div class="project-buttons">
+                <button type="button" class="github-button" onclick="location.href='https://github.com/your-repo'">
+                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                    View Code
+                </button>
+                <button type="button" class="demo-button">Live Demo</button>
             </div>
-    
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>
-                    Description of a project I have worked on  
-                    would go here.
-                    Make sure to add bullet points and project features.
-                </p>
-    
-                <div class="project-buttons">
-                    <button type="button" class="github-button" onclick="location.href='https://'">
-                        <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                        View Code
-                    </button>
-                    <button type="button" class="demo-button">Live Demo</button>
-                </div>
-                  
-            </div>
-    
-    
-    
-        </section>
-    
-        <!-- CONTACT -->
-        <section id="contact" class="container">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <div class="separator"></div>
-            
-            <div class="social-links">
-    
-                <!-- Phone  -->
-                 <a id="phone" class="social-btn flex-center">
-                    <i class="fas fa-phone"></i>
-                    <span>(815) 219 8394</span>
-                 </a>
-    
-                <!-- email  -->
-                 <a id="email" class="social-btn flex-center">
-                    <i class="fas fa-envelope"></i>
-                    <span>Jacob-Miller@Hotmail.com</span>
-                 </a>
-            </div>
+        </div>
 
-            <div class="social-links">
-                <!-- GitHub Button -->
-                <a id="github" class="social-btn flex-center" href="https://github.com/JMiller7334" target="_blank">
-                    <img src="img/github-logo.svg" alt="GitHub Logo">
-                    <span>JMiller7334</span>
-                </a>
+        <!-- PROJECT 2 -->
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of another project. Include bullet points and features here.</p>
+            <div class="project-buttons">
+                <button type="button" class="github-button" onclick="location.href='https://github.com/your-repo'">
+                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                    View Code
+                </button>
+                <button type="button" class="demo-button">Live Demo</button>
+            </div>
+        </div>
+
+        <!-- PROJECT 1 -->
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of a project I have worked on. Add bullet points and project features.</p>
+            <div class="project-buttons">
+                <button type="button" class="github-button" onclick="location.href='https://github.com/your-repo'">
+                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                    View Code
+                </button>
+                <button type="button" class="demo-button">Live Demo</button>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container">
+        <h2><i class="fas fa-envelope"></i> Contact</h2>
+        <div class="separator"></div>
         
-                <!-- LinkedIn Button -->
-                <a id="linkedin" class="social-btn flex-center" href="https://www.linkedin.com/in/jmiller7334" target="_blank">
-                    <img src="img/linkedin-logo.svg" alt="LinkedIn Logo">
-                    <span>in/JMiller7334</span>
-                </a>
-            </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2025 Jacob Miller. All rights reserved.</p>
-        </footer>
-        
+        <div class="social-links">
+            <!-- Phone -->
+            <a id="phone" class="social-btn flex-center">
+                <i class="fas fa-phone"></i>
+                <span>(815) 219 8394</span>
+            </a>
+            <!-- Email -->
+            <a id="email" class="social-btn flex-center">
+                <i class="fas fa-envelope"></i>
+                <span>Jacob-Miller@Hotmail.com</span>
+            </a>
+        </div>
+
+        <div class="social-links">
+            <!-- GitHub -->
+            <a id="github" class="social-btn flex-center" href="https://github.com/JMiller7334" target="_blank">
+                <img src="img/github-logo.svg" alt="GitHub Logo">
+                <span>JMiller7334</span>
+            </a>
+            <!-- LinkedIn -->
+            <a id="linkedin" class="social-btn flex-center" href="https://www.linkedin.com/in/jmiller7334" target="_blank">
+                <img src="img/linkedin-logo.svg" alt="LinkedIn Logo">
+                <span>in/JMiller7334</span>
+            </a>
+        </div>
+    </section>
     
-        <!-- JAVASCRIPT -->
-         <script src="js/header.js"></script>
-        <script src="js/scrollEffects.js"></script>
-    </body>
-    </html>
-    
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Jacob Miller. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/scrollEffects.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>
