@@ -1,0 +1,132 @@
+/* -- HERO / HEADER -- */
+header {
+    scroll-snap-align: start;
+
+    justify-content: center;
+
+    width: 100%;
+    height: var(--hero-height);
+
+    /* font-family: 'Courier New', Courier, monospace; */
+    background: var(--hero-background-color);
+    color: var(--text-color);
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-header {
+    position: relative;
+    padding: 3vh;
+}
+
+.container-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    transition: transform 0.5 ease;
+}
+
+.hero-separator {
+    height: 0.5vh;
+    background: var(--hero-foreground-color);
+    background: linear-gradient(to left, transparent, var(--primary-color) 50%, transparent);
+    width: 100vw;
+}
+
+/* -- HERO TERMINAL -- */
+/* Terminal text styling */
+.terminal-text {
+    overflow: hidden; /* Hide overflowed text */
+    width: 100%;
+
+    text-align: justify;
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+#greeting {
+    font-size: 3.2vh;
+    height: 7vh;
+    padding-bottom: 0.5vh;
+
+    /* border: 2px solid red;*/
+}
+
+#skills {
+    line-height:1.9vh;
+    line-height: 2.6vh;
+    height: 61vh;
+    /* border: 2px solid red; */
+}
+#skills::after {
+    content: '|';
+    animation: blink 0.7s step-end infinite;
+}
+  
+/* Blinking effect */
+@keyframes blink {
+    50% {
+      opacity: 0;
+    }
+}
+
+header h1 {
+    margin: 0;
+    margin-bottom: -2vw;
+    font-size: 7vw;
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.5s ease;
+}
+
+header p {
+    margin: 0;
+    font-size: 3vw;
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.5s ease;
+}
+
+/* -- PROFILE PIC -- */
+.profile-picture {
+    position: absolute;
+    left: 5vw;
+    width: 9vh;
+    height: 9vh;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid var(--profile-border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.5s ease;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    object-position: 50% 40%;
+}
+
+/* used to trigger the snap scroll function in the scroll.js script/module. */
+.hero-trigger {
+    position: absolute;
+    left: 0;
+    top: 60vh;
+
+    width: 10vh;
+    height: 10vh;
+
+    /* border: 2px solid blue; */
+
+
+}

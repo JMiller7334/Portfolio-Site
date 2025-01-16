@@ -1,0 +1,70 @@
+/* -- NAV -- */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    position: sticky;
+    top: -1px;
+
+    height: 5vh;
+    width: 100vw;
+
+    padding: 5px;
+
+    background: var(--hero-background-color);
+    text-align: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+
+    /* border: solid purple; */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+/* Hover effects */
+nav ul li a:hover {
+    color: var(--accent-color); /* Change text color on hover */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Underline expands on hover */
+}
+
+/* Active link effect */
+nav ul li a.active {
+    color: var(--accent-color); /* Highlight the active link */
+}
+
+nav ul li a.active::after {
+    width: 100%; /* Keep underline visible for active link */
+}

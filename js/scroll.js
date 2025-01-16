@@ -5,7 +5,7 @@ const p = document.querySelector("header p");
 
 const terminals = document.querySelectorAll('.terminal-text');
 
-const terminalSkills= document.getElementById('skills');
+const heroTrigger = document.querySelector('.hero-trigger');
 
 
 var animateHero = true;
@@ -38,7 +38,7 @@ const observerHeroSnapScroll = new IntersectionObserver(function (entries, _) {
 });
 
 // Start observing the element
-observerHeroSnapScroll.observe(terminalSkills);
+observerHeroSnapScroll.observe(heroTrigger);
 
 
 

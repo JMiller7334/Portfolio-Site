@@ -1,3 +1,5 @@
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
 // Typing effect function
 function typeWriter(elementId, text, speed) {
     let index = 0;
@@ -42,11 +44,17 @@ API Builder:
 
 Explore my projects and skills below!`;
   
-  // Type out the greeting first, then skills
-  window.onload = function() {
-    typeWriter('greeting', greetingText, 50); // Speed is 100ms per letter
+//type out the greeting first, then skills
+window.onload = function() {
+    typeWriter('greeting', greetingText, 50); //speed is 100ms per letter
+
     setTimeout(function() {
-      typeWriter('skills', skillsText, 15); // Type skills after greeting is done
-    }, greetingText.length * 60); // Wait for greeting to finish before typing skills
-  };
+        typeWriter('skills', skillsText, 15);
+    }, greetingText.length * 60);
+
+    setTimeout(function() {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.animation = 'bounce 1.5s ease-in-out infinite';
+    }, skillsText.length * 10);
+};
   

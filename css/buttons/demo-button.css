@@ -1,0 +1,51 @@
+  /* demo button */
+  .demo-button {
+    font-weight: 500;
+    font-family: "Ubuntu Condensed", sans-serif;
+    display: inline-block;
+    width: 8em;
+    height: 5vh;
+    min-height: 40px;
+    line-height: 2.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--demo-color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    color: var(--demo-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  }
+  
+  .demo-button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--demo-color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  
+  .demo-button:hover {
+    color: #fff;
+  }
+  
+  .demo-button:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+  }
+  
+  .demo-button:hover:before {
+    top: -30px;
+    left: -30px;
+  }
+  
+  .demo-button:active:before {
+    background: var(--demo-color2);
+    transition: background 0.1s;
+  }
