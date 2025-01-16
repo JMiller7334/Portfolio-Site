@@ -1,0 +1,43 @@
+.download-button {
+    height: 6vh;
+    min-height: 40px;
+
+    display: inline-block;
+
+    border-radius: 7px;
+    border: none;
+    background: #e4310d;
+    color: var(--text-color);
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: 15px;
+    width: 90vw;
+    padding: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .download-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+  .download-button span:after {
+    content: "- 20kb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+  .download-button:hover span {
+    padding-right: 3.55em;
+  }
+  .download-button:hover span:after {
+    opacity: 1;
+    right: 0.5vw;
+  }
