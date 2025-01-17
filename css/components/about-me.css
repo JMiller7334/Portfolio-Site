@@ -1,0 +1,117 @@
+:root {
+    --expandedAboutPadding: 15px;
+    --expandedAboutHeight: 30vh;
+}
+
+.hobby-container {
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    justify-content: last baseline;
+    gap: 5vw;
+
+    height: 10vh;
+    width: 100%;
+
+    margin-top: 1.0rem;
+
+    /* border: 2px solid orange; */
+}
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 2px solid red; */
+}
+
+.hobby-item p {
+    margin-top: 0.5vh;
+    text-align: center;
+    font-weight: 600;
+    line-height: 2.1vh;
+}
+
+
+#hobby-lift, #hobby-run {
+    height: 17vw;
+    width: 17vw;
+    /* border: 2px solid purple; */
+
+    margin-bottom: -2vh;
+}
+
+#hobby-martial {
+    height: 10vw;
+    width: 10vw;
+}
+
+/* Collapsible button styling */
+.collapsible-button {
+    height: 6vh;
+    width: 90vw;
+    min-height: 40px;
+
+    background-color: transparent;
+    color: var(--body-text-color);
+    padding: 10px 20px;
+    border: 2px solid var(--body-text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Collapsible content styling */
+.collapsible-content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Expanded state */
+.collapsible-content.expanded {
+    padding: var(--expandedAboutPadding);
+    animation: expandAbout 0.5s ease forwards;
+}
+
+/* Collapsing state */
+.collapsible-content.collapsing {
+    animation: collapseAbout 0.5s ease forwards;
+}
+
+.collapsible-content.expanded h3 {
+    margin-left: calc(0px - var(--expandedAboutPadding));
+    font-size: 1.25rem;
+    font-weight: 600;
+
+}
+
+/* Expand animation */
+@keyframes expandAbout {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: var(--expandedAboutHeight); /* Adjust to desired height */
+        opacity: 1;
+    }
+}
+
+/* Collapse animation */
+@keyframes collapseAbout {
+    0% {
+        padding: var(--expandedAboutPadding);
+        height: var(--expandedAboutHeight); /* Match the expanded height */
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}

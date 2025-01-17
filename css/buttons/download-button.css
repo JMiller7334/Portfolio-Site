@@ -1,5 +1,6 @@
 .download-button {
     height: 6vh;
+    width: 90vw;
     min-height: 40px;
 
     display: flex;
@@ -16,7 +17,7 @@
     font-weight: 500;
     text-align: center;
     font-size: 15px;
-    width: 90vw;
+
     padding: 1em;
     transition: all 0.4s;
     cursor: pointer;

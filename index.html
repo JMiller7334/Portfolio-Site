@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
 
-    <!-- CSS Links -->
+<!----------------------  CSS Links ---------------------->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/style.css">
 
     <!-- COMPONENTS / STRUCTURES -->
+    <link rel="stylesheet" href="./css/components/about-me.css">
     <link rel="stylesheet" href="./css/components/projects.css">
     <link rel="stylesheet" href="./css/components/hero.css">
     <link rel="stylesheet" href="./css/components/scroll-indicator.css">
@@ -27,7 +28,7 @@
 </head>
 
 
-<!-- SITE STRUCTURE -->
+<!-------------------- SITE STRUCTURE ---------------------->
 <body>
     <header>
         <div class="hero-trigger"></div>
@@ -73,32 +74,43 @@
         <div class="separator"></div>
 
         <p>
-            I began coding at the age of 14, starting with Luau to create small games. 
-            I quickly discovered a passion for coding, enjoying the challenges it brought. 
-            As my skills improved, it became increasingly rewarding with each milestone I achieved.
+            I began coding at the age of 14, starting with Lua to create small games. 
+            I quickly discovered a passion for coding, enjoying the challenges 
+            it brought.
             <br><br>  
-            Early on, I knew I wanted a career in software development. 
-            For the longest time, I doubted whether I had what it took. 
-            That changed when I began attending classes at my local community college, 
-            where I found my calling in mobile app and web development.
+            I knew I wanted a career in software development. 
+            So eventually I began attending classes at my local community college, 
+            where I fell in love with designing websites and apps.
+            <br><br>
+            I graduated with two Associates Degrees in Applied Computer Science in 2023 & 2024.
         </p>
-        
-        <h3>My Hobbies</h3>
 
-        <div class="hobby-container">
-            <div class="hobby-item">
-                <img src="./img/martial-arts.svg" alt="" id="hobby-martial">
-                <p>Martial Artist</p>
-            </div>
+        <!-- Collapsible Section -->
+        <button id="toggle-more-about" class="collapsible-button">More About Me</button>
+        <div id="more-about" class="collapsible-content">
 
-            <div class="hobby-item">
-                <img src="./img/barbell-icon-black.svg" alt="" id="hobby-lift">
-                <p>Fitness Enthusiast</p>
-            </div>
+            <h3>+ Outside of Coding</h3>
+            <p>
+                When I'm not busy building websites or designing apps I enjoy spending my free 
+                time training in the martial arts, hitting the gym, or prepping for my next marathon 
+                or race.
+            </p>
 
-            <div class="hobby-item">
-                <img src="./img/running-shoe-icon.svg" alt="" id="hobby-run">
-                <p>Distance Runner</p>
+            <div class="hobby-container">
+                <div class="hobby-item">
+                    <img src="./img/martial-arts.svg" alt="" id="hobby-martial">
+                    <p>Martial Artist</p>
+                </div>
+    
+                <div class="hobby-item">
+                    <img src="./img/barbell-icon-black.svg" alt="" id="hobby-lift">
+                    <p>Fitness Enthusiast</p>
+                </div>
+    
+                <div class="hobby-item">
+                    <img src="./img/running-shoe-icon.svg" alt="" id="hobby-run">
+                    <p>Distance Runner</p>
+                </div>
             </div>
         </div>
 
@@ -106,6 +118,7 @@
             <span>Download My CV</span>
             <a href="/pages/licenseflatride.html"></a>
         </button>
+        
     </section>
 
     <!-- PROJECTS SECTION -->
@@ -193,7 +206,9 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/scroll.js"></script>
-    <script src="js/header.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/about.js"></script>
+
 </body>
 </html>
