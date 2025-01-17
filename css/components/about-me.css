@@ -50,6 +50,10 @@
 
 /* Collapsible button styling */
 .collapsible-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
     height: 6vh;
     width: 90vw;
     min-height: 40px;
@@ -61,7 +65,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 20px;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
