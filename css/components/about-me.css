@@ -1,6 +1,6 @@
 :root {
     --expandedAboutPadding: 15px;
-    --expandedAboutHeight: 30vh;
+    --expandedAboutHeight: 50vh;
 }
 
 .hobby-container {
@@ -79,6 +79,7 @@
 
 /* Expanded state */
 .collapsible-content.expanded {
+    max-height: 550px;
     padding: var(--expandedAboutPadding);
     animation: expandAbout 0.5s ease forwards;
 }
