@@ -25,6 +25,10 @@ body {
     color: var(--body-text-color);
 }
 
+/* TEXT */
+.p-justified {
+    text-align: justify;
+}
 
 /* -- OTHER -- */
 .separator {
