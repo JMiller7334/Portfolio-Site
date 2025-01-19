@@ -29,18 +29,18 @@ function typeWriter(elementId, text, speed) {
   // Define the text for each element
   const greetingText = "Nice to meet you,";
   const skillsText =   
-`Welcome to my developer portfolio:
+`Welcome to my portfolio! Here's a brief look into my developer skills:
 
 iOS Specialist: 
 -- Swift, SwiftUI, UIKit, SwiftCharts, CoreData \n 
 Android Basics: 
 -- Kotlin, Java, ConstraintLayout, Gradle \n
-Web Development: 
--- HTML, CSS, JavaScript, React.js, jQuery \n
+Web Developer: 
+-- HTML, CSS, JavaScript, PHP, React.js, jQuery \n
 Databases: 
--- SQLite, MySQL, PHP \n
-API Builder: 
--- Node.js  \n
+-- SQL, SQLite, MySQL\n
+API: 
+-- Node.js, Express.js
 
 Explore my projects and skills below!`;
   

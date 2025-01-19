@@ -43,7 +43,7 @@ header {
     overflow: hidden; /* Hide overflowed text */
     width: 100%;
 
-    text-align: justify;
+    text-align: left;
     padding-left: 7vw;
     padding-right: 7vw;
 }
@@ -56,8 +56,7 @@ header {
 }
 
 #skills {
-    line-height:1.9vh;
-    line-height: 2.6vh;
+    line-height:2.5vh;
     height: 61vh;
     /* border: 2px solid red; */
 }
