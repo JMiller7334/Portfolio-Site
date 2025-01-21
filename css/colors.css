@@ -7,9 +7,13 @@
     --body-text-color: #333; /* Main text color for body */
     --accent-color: #db5e0b;
 
-    /* HERO */
+    /* HERO TERMINAL */
     --hero-foreground-color: rgba(255, 255, 255, 0.848);
     --hero-background-color: rgb(27, 26, 26);
+
+    --terminal-secondary-color: #444;
+    --terminal-accent-color: #870bad;
+    --terminal-textbox-color: #000;
 
     /* PROFILE */
     --profile-border-color: rgba(40, 181, 45, 0.761);

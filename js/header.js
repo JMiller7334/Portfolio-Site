@@ -1,5 +1,20 @@
 const scrollIndicator = document.querySelector('.scroll-indicator');
 
+const terminalInputElements = document.querySelectorAll('.terminal-textbox, .terminal-send-button, .api-braces');
+
+function toggleTerminalInput() {
+  terminalInputElements.forEach(element => {
+      if (element.style.display === 'none' || element.style.display === '') {
+          element.style.display = 'block';
+      } else {
+          element.style.display = 'none';
+      }
+  });
+}
+
+// document.querySelector('#toggleButton').addEventListener('click', toggleTerminalInput);
+
+
 // Typing effect function
 function typeWriter(elementId, text, speed) {
     let index = 0;
@@ -25,8 +40,9 @@ function typeWriter(elementId, text, speed) {
     type();
   }
 
-  
-  // Define the text for each element
+
+
+// ---------- LOAD UP ----------
   const greetingText = "Nice to meet you,";
   const skillsText =   
 `Welcome to my portfolio! Here's a brief look into my developer skills:
@@ -43,7 +59,7 @@ API:
 -- Node.js, Express.js
 
 Explore my projects and skills below!`;
-  
+
 //type out the greeting first, then skills
 window.onload = function() {
     typeWriter('greeting', greetingText, 50); //speed is 100ms per letter
