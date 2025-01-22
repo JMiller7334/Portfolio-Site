@@ -55,7 +55,7 @@
 
             <!-- terminal textbox -->
             <p class="api-braces">&#123;</p>
-            <textarea class="terminal-textbox" placeholder="Type your API call here..."></textarea>
+            <textarea class="terminal-textbox" placeholder="Enter command here..."></textarea>
             <button class="terminal-send-button"><i class="fa-solid fa-paper-plane"></i></button>
             <p class="api-braces">&#125;</p>
 
@@ -97,7 +97,7 @@
         <h3>+ Education</h3>
         <div class="separator"></div>
         <p class="p-justified"> 
-          I graduated McHenry County College earning two degrees in 2023 & 2024.
+          I graduated McHenry County College in 2024 earning two degrees.
         </p>
 
         <ul class="grad-bullet">
@@ -105,15 +105,12 @@
             <li>Associates in Mobile App Development</li>
         </ul>
             
-
-
-
         <h3>+ Other Interests</h3>
         <div class="separator"></div>
             <p class="p-justified">
-                I enjoy spending my free 
-                time training in martial arts, hitting the gym, or prepping for my next marathon or 
-                spending time working on a small indie game.
+                I spend my free time training in martial arts, hitting the gym, or 
+                running. I also enjoy working on small indie game projects that 
+                I'm passionate about.
             </p>
             <div class="about-container">
                 <div class="about-item">
@@ -133,6 +130,7 @@
             </div>
         </div>
 
+
         <button class="download-button" style="margin-top: 2vh;" onclick="location.href='/pages/licenseflatride.html'">
             <span>Download My CV</span>
             <a href="/pages/licenseflatride.html"></a>
@@ -140,6 +138,8 @@
         
     </section>
 
+
+    
     <!-- PROJECTS SECTION -->
     <section id="projects" class="container">
         <h2><i class="fas fa-briefcase"></i> Projects</h2>
@@ -147,14 +147,53 @@
 
         <!-- PROJECT 1 -->
         <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of a project I have worked on. Add bullet points and project features.</p>
+
+            <div class="project-name">
+                <h3>mySQL API</h3>
+                <h4 class="project-type" id="proj-web">Web</h4>
+            </div>
+
+            <div class="project-logo">
+                <img src="./img/mySQL-api-logo.svg" alt="">
+            </div>
+
+            <p class="project-desc">
+                A RESTful API I developed with full CRUD functionality. 
+                <br><br>
+                Deployed on my VPS 
+                using PM2 as the process manager. It leverages Sequelize for seamless 
+                interaction with a MySQL database.
+            </p>
+
+            <h4 class="project-stack-title">Tech Stack:</h4>
+            <div class="project-stack">
+                <div class="project-stack-item">
+                    <i class="fa-brands fa-js"></i>
+                    <span id="stack-javascript"></span>
+                </div>
+                <div class="project-stack-item" id="project-stack-short">
+                    <i class="fab fa-node-js"></i> <!-- Font Awesome icon for Node.js -->
+                    <span id="stack-node"></span>
+                </div>
+                <div class="project-stack-item">
+                    <img src="./img/express-js-logo.svg" alt="express.js logo">
+                    <span id="stack-express"></span>
+                </div>
+
+            </div>
+            
             <div class="project-buttons">
-                <button type="button" class="github-button" onclick="location.href='https://github.com/your-repo'">
+                <button type="button" class="github-button" onclick="location.href='https://github.com/JMiller7334/mySQL-API'">
                     <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                    View Code
+                    View Repository
                 </button>
-                <button type="button" class="demo-button">Live Demo</button>
+
+                <button class="api-call-button">
+                    <img src="./img/tower-broadcast.svg" alt="API Call" class="api-button-logo" />
+                    <span>Call API</span>
+                </button>
+                
+               
             </div>
         </div>
 

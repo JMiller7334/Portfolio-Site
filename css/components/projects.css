@@ -2,21 +2,233 @@
 /* demo-button.css and github-button.css and directly used wit this element
 */
 
+:root {
+    --proj-header-font-size: 1.5rem; 
+}
+
+
+
+
+/* ------- STRUCTURE ------- */
 .project {
-    margin-bottom: 4rem;
+    display: grid;
+    grid-template-areas:
+        "proj-name proj-name proj-logo"
+        "proj-desc proj-desc proj-logo"
+        "proj-stack-title proj-stack-title proj-stack-title"
+        "proj-stack proj-stack proj-stack"
+        "proj-buttons proj-buttons proj-buttons";
+    
+    grid-template-columns: 2fr 0.5fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    margin-bottom: 7rem;
 }
 
-.project h3 {
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    margin-bottom: 0;
+
+
+/* ------- TITLE ------- */
+.project-name {
+    grid-area: proj-name;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+
+    margin-bottom: -0.25rem;
+
 }
 
+.project-name h3{
+    font-size: var(--proj-header-font-size);
+}
+
+/* ------ TYPE ------- */
+.project-type {
+    font-size: calc(var(--proj-header-font-size) - 10px);
+    font-weight: 700;
+
+    border-radius: 10px;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+#project-iOS {
+    --iOS-color: #007AFF; /* iOS blue */
+    color: var(--iOS-color);
+    border: 2.5px solid var(--iOS-color);
+}
+#proj-android {
+    --android-color: #3DDC84; /* Android green */
+    color: var(--android-color); 
+    border: 2.5px solid var(--android-color);
+}
+#proj-web {
+    --web-color: #FF5733; /* Web orange */
+    color: var(--web-color);
+    border: 2.5px solid var(--web-color);
+}
+#proj-game {
+    --game-color: #9B59B6; /* Game purple */
+    color: var(--game-color);
+    border: 2.5px solid var(--game-color);
+}
+
+
+
+/* ------- LOGO ------- */
+.project-logo {
+    grid-area: proj-logo;
+    width: 10rem;
+    height: 10rem;
+    background-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-logo img {
+    max-width: 100%; /* Adjust to scale the logo inside the badge */
+    max-height: 100%;
+}
+
+
+
+/* ----- DESC ------ */
+.project-desc {
+    grid-area: proj-desc;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+
+
+/* ----- TECH STACK ----- */
+.project-stack-title {
+    grid-area: proj-stack-title;
+    margin-bottom: -0.5rem;
+}
+
+.project-stack {
+    grid-area: proj-stack;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1rem;
+
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0.25rem;
+
+    /* border: 2px solid blue; */
+}
+
+.project-stack-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-stack-item i {
+    font-size: 2rem;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+.project-stack-item img {
+    height: 2rem;
+    width: 2rem;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+.project-stack-item span {
+    display: block;
+    position: relative;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    transition: 0.4s;
+}
+
+.project-stack-item span::after {
+    position: absolute;
+    opacity: 0;
+
+    right: -20px;
+    top: -10px;
+    transition: 0.7s;
+}
+.project-stack-item:hover span {
+    padding-right: 4.2em;
+}
+#project-stack-short:hover span {
+    padding-right: 3.3em;
+}
+.project-stack-item:hover span:after {
+    opacity: 1;
+    right: 0.5vw;
+}
+
+
+/* ------- BUTTONS ------- */
 .project-buttons {
-    margin-top: 1.5rem;
+    grid-area: proj-buttons;
 
     display: flex;
     flex-direction: row;
     justify-content: left;
     gap: 1rem;
-} 
+}
+
+.api-call-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background-color: #007BFF; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded look */
+    padding: 0.5rem 1.5rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.api-call-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.api-call-button:active {
+    background-color: #003d80; /* Even darker blue on click */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+.api-button-logo {
+    height: 1.25rem; /* Adjust size to fit your button */
+    width: auto; /* Maintain aspect ratio */
+}
+
+
+/* STACK DIRECTORY */
+#stack-javascript::after {
+    content: "JavaScript";
+}
+#stack-express::after {
+    content: "Express.js";
+}
+#stack-node::after {
+    content: "Node.js";
+}
