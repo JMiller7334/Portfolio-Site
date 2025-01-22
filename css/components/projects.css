@@ -13,7 +13,7 @@
 .project {
     display: grid;
     grid-template-areas:
-        "proj-name proj-name proj-logo"
+        "proj-name proj-name proj-name"
         "proj-desc proj-desc proj-logo"
         "proj-stack-title proj-stack-title proj-stack-title"
         "proj-stack proj-stack proj-stack"
@@ -88,6 +88,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-top: -0.9rem;
 }
 .project-logo img {
     max-width: 100%; /* Adjust to scale the logo inside the badge */
