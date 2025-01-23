@@ -318,13 +318,13 @@ window.onload = function() {
   typeWriter('terminal-header', skillTextHeader, headerTypingSpeed); //speed is 100ms per letter
 
     setTimeout(function() {
-        typeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
+        safeTypeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
     }, skillTextHeader.length * 35);
 
     setTimeout(function() {
         scrollIndicator.style.opacity = '1';
         scrollIndicator.style.animation = 'bounce 1.5s ease-in-out infinite';
         callApiButton.style.opacity = '1';
-    }, skillsTextBody.length * 5);
+    }, skillsTextBody.length * 17);
 };
   

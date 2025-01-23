@@ -9,6 +9,8 @@ Welcome! Below are the available commands:
 - write customer
 - read customer
 
+Tip: Type 'help' to return to this menu at any time.
+\n\n
 Please enter a command to proceed:
 `;
 

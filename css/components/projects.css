@@ -172,6 +172,12 @@
 #project-stack-short:hover span {
     padding-right: 3.3em;
 }
+#project-stack-smaller:hover span {
+    padding-right: 2.2em;
+}
+#project-stack-smallest:hover span {
+    padding-right: 1.9em;
+}
 .project-stack-item:hover span:after {
     opacity: 1;
     right: 0.5vw;
@@ -242,4 +248,16 @@
 }
 #stack-node::after {
     content: "Node.js";
+}
+#stack-html::after {
+    content: "HTML";
+}
+#stack-css::after {
+    content: "CSS";
+}
+#stack-mySQL::after {
+    content: "MySQL";
+}
+#stack-php::after {
+    content: "PHP";
 }
