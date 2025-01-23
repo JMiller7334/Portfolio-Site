@@ -27,14 +27,14 @@ Status: In progress...`;
     this.customerReadBody = 'Please enter a customer ID (e.g., 1) to retrieve a specific record, or leave the field blank to fetch all customers.\n\n';
 
     // GREETING MESSAGES (SKILLS):
-    this.skillTextHeader = "Welcome to My Portfolio!";
+    this.skillTextHeader = "Nice to meet you,";
     this.skillTextBody = `
-Hello! I'm a developer with experience in various technologies. Here's an overview of my skills:
+Hello! Welcome to my portfolio. Here's a brief look at my skills as a developer:
 
 iOS Development:
 -- Swift, SwiftUI, UIKit, SwiftCharts, CoreData
 
-Android Development (Basics):
+Android Development:
 -- Kotlin, Java, ConstraintLayout, Gradle
 
 Web Development:
