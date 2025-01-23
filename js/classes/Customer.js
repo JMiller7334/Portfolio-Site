@@ -30,11 +30,11 @@ export default class Customer {
   
     // Method to reset all properties to empty strings
     resetProperties() {
-      this.name = 'jon';
-      this.address = 'somewhere';
-      this.phone = '8158180035';
-      this.email = 'none';
-      this.type = 'normal';
+      this.name = '';
+      this.address = '';
+      this.phone = '';
+      this.email = '';
+      this.type = '';
     }
 
     toWritableObject() {

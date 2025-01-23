@@ -185,7 +185,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   //api customer write call
   if (apiCallType === enumApiCallType.customerWrite && apiStage >= 5) {
     apiDebounce = true;
-    typeWriter('terminal-header', terminalAttemptMsg, 50);
+    typeWriter('terminal-body', terminalAttemptMsg, 50);
   
     setTimeout(function() {
       apiCustomerWrite();
@@ -197,7 +197,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   } else if (apiCallType === enumApiCallType.customerRead && apiStage >= 1) {
     apiDebounce = true;
 
-    typeWriter('terminal-header', terminalAttemptMsg, 50);
+    typeWriter('terminal-body', terminalAttemptMsg, 50);
   
     setTimeout(function() {
       if (isInputNumber(terminalTextbox.value) === true ) {

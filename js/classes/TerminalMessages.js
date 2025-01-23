@@ -1,134 +1,127 @@
 export default class TerminalMessages {
-    constructor() {
-      // API CALL MESSAGES:
-      this.apiCallHeader = "API Access Terminal:";
-      this.apiGreetingBody = `
-  api commands:
-  
-  -- customer table: --
-  - write customer
-  - read customer
-  
-  please enter a command:
-  `;
-      // COMMAND MESSAGES
-      this.attemptCallBody = 
-      `calling api...
+  constructor() {
+    // API CALL MESSAGES:
+    this.apiCallHeader = "API Access Terminal:";
+    this.apiGreetingBody = `
+Welcome! Below are the available commands:
 
-      url - http://jacobjmiller.com:8080/
-      status: attempting`
+-- Customer Table Commands --
+- write customer
+- read customer
 
+Please enter a command to proceed:
+`;
 
-      this.customerReadBody = 'please enter an id or leave blank and press send to read all \n\n';
-  
-      // GREETING MESSAGES (SKILLS):
-      this.skillTextHeader = "Nice to meet you,";
-      this.skillTextBody = `
-  Welcome to my portfolio! Here's a brief look into my developer skills:
-  
-  iOS Specialist: 
-  -- Swift, SwiftUI, UIKit, SwiftCharts, CoreData
-  
-  Android Basics: 
-  -- Kotlin, Java, ConstraintLayout, Gradle
-  
-  Web Developer: 
-  -- HTML, CSS, JavaScript, PHP, React.js, jQuery
-  
-  Databases: 
-  -- SQL, SQLite, MySQL
-  
-  API: 
-  -- Node.js, Express.js
-  
-  Explore my projects and skills below!`;
+    // COMMAND MESSAGES
+    this.attemptCallBody = `
+Attempting API call...
+
+Endpoint: http://jacobjmiller.com:8080/
+Status: In progress...`;
+
+    this.customerReadBody = 'Enter an ID to read a specific customer or leave blank to fetch all customers.\n\n';
+
+    // GREETING MESSAGES (SKILLS):
+    this.skillTextHeader = "Welcome to My Portfolio!";
+    this.skillTextBody = `
+Hello! I'm a developer with experience in various technologies. Here’s a glimpse of my skills:
+
+iOS Development:
+-- Swift, SwiftUI, UIKit, SwiftCharts, CoreData
+
+Android Development (Basics):
+-- Kotlin, Java, ConstraintLayout, Gradle
+
+Web Development:
+-- HTML, CSS, JavaScript, PHP, React.js, jQuery
+
+Databases:
+-- SQL, SQLite, MySQL
+
+API Development:
+-- Node.js, Express.js
+
+Feel free to explore my projects and skills below!`;
+  }
+
+  // API CUSTOMER MESSAGES:
+
+  // ------ CUSTOMER WRITE MESSAGES ------
+  getMessageForCustomerWrite(stage, customerObject) {
+    let baseString = "New Customer Object:\n" + JSON.stringify(customerObject, null, 2);
+
+    switch (stage) {
+      case 1:
+        return `${baseString}\n\nPlease enter the customer name:`;
+      case 2:
+        return `${baseString}\n\nPlease enter the customer address:`;
+      case 3:
+        return `${baseString}\n\nPlease enter the customer phone number:`;
+      case 4:
+        return `${baseString}\n\nPlease enter the customer email:`;
+      case 5:
+        return `${baseString}\n\nPlease enter the customer type:`;
+      default:
+        return `${baseString}\n\nError: Unexpected API stage.`;
     }
-  
-    // API CUSTOMER MESSAGES:
+  }
 
-    // ------ CUSTOMER WRITE MESSAGES ------
-    getMessageForCustomerWrite(stage, customerObject) {
-      let baseString = "new customer = " + JSON.stringify(customerObject);
-  
-      if (stage === 1) {
-        return `${baseString}\n\nPlease enter customer name.`;
+  successCustomerWrite(data) {
+    return `
+Method: POST
+Endpoint: http://jacobjmiller.com:8080/customers
+New Customer Data: ${this.formatDataForDisplay(data)}
+Status: 200 OK - Customer successfully created!
 
-      } else if (stage === 2) {
-        return `${baseString}\n\nPlease enter customer address.`;
+Tip: Type 'help' to return to the main menu.`;
+  }
 
-      } else if (stage === 3) {
-        return `${baseString}\n\nPlease enter customer phone number.`;
+  errorCustomerWrite(error) {
+    return `
+Method: POST
+Endpoint: http://jacobjmiller.com:8080/customers
+Status: Error
 
-      } else if (stage === 4) {
-        return `${baseString}\n\nPlease enter customer email`;
+Error Message: ${error.message || error}
 
-      } else if (stage === 5) {
-        return `${baseString}\n\nPlease enter customer type`;
+Tip: Type 'help' to return to the main menu.`;
+  }
 
-      } else {
-        return `${baseString}\n\n unknown api stage recieved..`;
-      }
-    }
-
-    successCustomerWrite(data) {
-        return `
-        method - POST
-        url - http://jacobjmiller.com:8080/customers
-        newCustomer = ${data}
-        result - status code: 200 OK
-
-        type help to return
-        `;
-    }
-
-    errorCustomerWrite(error) {
-      return `
-        method - POST
-        url - http://jacobjmiller.com:8080/customers
-        newCustomer = ${data}
-        result - error: ${error}
-
-        type help to return
-      
-      `
-    }
-    // READ API MESSAGES
+  // READ API MESSAGES
   successCustomerRead(data, idParameter) {
     return `
-    method - GET
-    url - http://jacobjmiller.com:8080/customers
-    idParameter = ${idParameter}
-    result - status code 200: OK
+Method: GET
+Endpoint: http://jacobjmiller.com:8080/customers
+ID Parameter: ${idParameter}
+Status: 200 OK - Customer data retrieved successfully.
 
-    response: ${this.formatDataForDisplay(data)}
+Response Data: ${this.formatDataForDisplay(data)}
 
-    type help to return
-    `
+Tip: Type 'help' to return to the main menu.`;
   }
 
   errorCustomerRead(error, idParameter) {
     return `
-    method - GET
-    url - http://jacobjmiller.com:8080/customers
-    idParameter = ${idParameter}
-    result - error: ${error.message || error}
+Method: GET
+Endpoint: http://jacobjmiller.com:8080/customers
+ID Parameter: ${idParameter}
+Status: Error
 
-    response: -
+Error Message: ${error.message || error}
 
-    type help to return
-    `
+Tip: Type 'help' to return to the main menu.`;
   }
 
   // Helper function to format data
   formatDataForDisplay(data) {
     if (typeof data === 'object') {
       try {
+        // Format the object with indentation for better readability
         return JSON.stringify(data, null, 2);
       } catch (err) {
-        return 'Error formatting data';
+        return 'Error formatting data. The object might be too complex.';
       }
     }
-    return data;
+    return data; // Return the data as-is if it is not an object
   }
 }
-  
