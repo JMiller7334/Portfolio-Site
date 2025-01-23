@@ -62,12 +62,12 @@ function apiCustomerReadAll() {
     try {
       const customers = await apiService.fetchCustomers();
       const terminalMsg = terminalMessages.successCustomerRead(customers, idParameter);
-      typeWriter('terminal-body', terminalMsg, 20);
+      typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
       console.log('header.js <api-call> fetched customers:', customers);
 
     } catch (error) {
       const terminalMsg = terminalMessages.errorCustomerRead(error, idParameter);
-      typeWriter('terminal-body', terminalMsg, 20);
+      typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
       console.error('header.js <api-call>  error fetching customers:', error.message);
 
     } finally {
@@ -93,12 +93,12 @@ function apiCustomerRead() {
     try {
       const customer = await apiService.fetchCustomerById(validId);
       const terminalMsg = terminalMessages.successCustomerRead(customer, validId);
-      typeWriter('terminal-body', terminalMsg, 20);
+      typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
       console.log('header.js <api-call> fetched customers:', customer);
 
     } catch (error) {
       const terminalMsg = terminalMessages.errorCustomerRead(error, validId);
-      typeWriter('terminal-body', terminalMsg, 20);
+      typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
       console.error('header.js <api-call>  error fetching customers:', error.message);
 
     } finally {
@@ -121,13 +121,13 @@ function apiCustomerWrite() {
     try {
       const response = await apiService.writeTables(writable, 'POST', 'customers');
       const terminalMsg = terminalMessages.successCustomerWrite(response);
-      typeWriter('terminal-body', terminalMsg, 20);
+      typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
       console.log('success response received:', response);
 
       //CASE: error
     } catch (error) {
       let terminalMsg = terminalMessages.errorCustomerWrite(error);
-      typeWriter('terminal-body', terminalMsg, 20);
+      typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
       console.log('header.js<api-call>: error occured while writting', error);
 
     } finally {
@@ -143,14 +143,14 @@ function apiCustomerWrite() {
 // ------------ TERMINAL MESSAGE HELPER FUNCTIONS ------------
 function writeApiTerminalGreeting(){
   isTyping = true;
-  typeWriter('terminal-header', apiGreetingHeader, 50);
+  typeWriter('terminal-header', apiGreetingHeader, headerTypingSpeed);
 
   setTimeout(function() {
-      safeTypeWriter('terminal-body', apiGreetingBody, 15);
-  }, apiGreetingHeader.length * 60);
+      safeTypeWriter('terminal-body', apiGreetingBody, bodyTypingSpeed);
+  }, apiGreetingHeader.length * 40);
 
   setTimeout(function() {
-  }, apiGreetingBody.length * 10);
+  }, apiGreetingBody.length * 20);
 }
 
 function resetApiTerminal(){
@@ -161,12 +161,12 @@ function resetApiTerminal(){
 
 function terminalCustomerWriteMsg() {
   let terminalMsg = terminalMessages.getMessageForCustomerWrite(apiStage, customerObj)
-  typeWriter('terminal-body', terminalMsg, 20);
+  typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
 }
 
 function terminalCustomerReadMsg() {
   let terminalMsg = terminalMessages.customerReadBody
-  typeWriter('terminal-body', terminalMsg, 20);
+  typeWriter('terminal-body', terminalMsg, bodyTypingSpeed);
 }
 
 
@@ -185,7 +185,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   //api customer write call
   if (apiCallType === enumApiCallType.customerWrite && apiStage >= 5) {
     apiDebounce = true;
-    typeWriter('terminal-body', terminalAttemptMsg, 50);
+    typeWriter('terminal-body', terminalAttemptMsg, bodyTypingSpeed);
   
     setTimeout(function() {
       apiCustomerWrite();
@@ -197,7 +197,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   } else if (apiCallType === enumApiCallType.customerRead && apiStage >= 1) {
     apiDebounce = true;
 
-    typeWriter('terminal-body', terminalAttemptMsg, 50);
+    typeWriter('terminal-body', terminalAttemptMsg, bodyTypingSpeed);
   
     setTimeout(function() {
       if (isInputNumber(terminalTextbox.value) === true ) {
@@ -255,7 +255,10 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
 
 
 
-// ----------------------  TYPING EFFECT FUNCTIONS ---------------------- 
+// ----------------------  TYPING EFFECT FUNCTIONS ----------------------
+const headerTypingSpeed = 20;
+const bodyTypingSpeed = 14;
+
 let isTyping = false;
 
 function safeTypeWriter(elementId, text, speed) {
@@ -298,22 +301,23 @@ function typeWriter(elementId, text, speed) {
 }
 
 
+
 // --------------------  LOAD UP -------------------- 
-  const skillTextHeader = terminalMessages.skillTextHeader;
-  const skillsTextBody =   terminalMessages.skillTextBody
+const skillTextHeader = terminalMessages.skillTextHeader;
+const skillsTextBody =   terminalMessages.skillTextBody
 
 //type out the greeting first, then skills
 window.onload = function() {
   isTyping = true;
-  typeWriter('terminal-header', skillTextHeader, 50); //speed is 100ms per letter
+  typeWriter('terminal-header', skillTextHeader, headerTypingSpeed); //speed is 100ms per letter
 
     setTimeout(function() {
-        safeTypeWriter('terminal-body', skillsTextBody, 15);
-    }, skillTextHeader.length * 60);
+        safeTypeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
+    }, skillTextHeader.length * 35);
 
     setTimeout(function() {
         scrollIndicator.style.opacity = '1';
         scrollIndicator.style.animation = 'bounce 1.5s ease-in-out infinite';
-    }, skillsTextBody.length * 10);
+    }, skillsTextBody.length * 20);
 };
   
