@@ -1,5 +1,6 @@
 const scrollIndicator = document.querySelector('.scroll-indicator');
 const terminalTextbox = document.querySelector('.terminal-textbox');
+const callApiButton = document.querySelector('.api-call-button');
 
 const terminalInputElements = document.querySelectorAll('.terminal-textbox, .terminal-send-button, .api-braces');
 
@@ -250,6 +251,8 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
 
   // Do nothing:
   else {
+    let terminalMsgInvalid = terminalMessages.unknownCommandBody;
+    typeWriter('terminal-body', terminalMsgInvalid, bodyTypingSpeed);
     isTyping = false;
   }
 
@@ -321,6 +324,7 @@ window.onload = function() {
     setTimeout(function() {
         scrollIndicator.style.opacity = '1';
         scrollIndicator.style.animation = 'bounce 1.5s ease-in-out infinite';
+        callApiButton.style.opacity = '1';
     }, skillsTextBody.length * 5);
 };
   

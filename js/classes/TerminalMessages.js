@@ -13,18 +13,23 @@ Please enter a command to proceed:
 `;
 
     // COMMAND MESSAGES
+    this.unknownCommandBody = `
+Unkown command ented. Please enter another command.
+
+Tip: Type 'help' to return to the main menu.`
+
     this.attemptCallBody = `
 Attempting API call...
 
 Endpoint: http://jacobjmiller.com:8080/
 Status: In progress...`;
 
-    this.customerReadBody = 'Enter an ID to read a specific customer or leave blank to fetch all customers.\n\n';
+    this.customerReadBody = 'Please enter a customer ID (e.g., 1) to retrieve a specific record, or leave the field blank to fetch all customers.\n\n';
 
     // GREETING MESSAGES (SKILLS):
     this.skillTextHeader = "Welcome to My Portfolio!";
     this.skillTextBody = `
-Hello! I'm a developer with experience in various technologies. Here’s a glimpse of my skills:
+Hello! I'm a developer with experience in various technologies. Here's an overview of my skills:
 
 iOS Development:
 -- Swift, SwiftUI, UIKit, SwiftCharts, CoreData
@@ -109,7 +114,7 @@ Status: Error
 
 Error Message: ${error.message || error}
 
-Tip: Type 'help' to return to the main menu.`;
+Tip: Type 'help' to return to the main menu.\n\n`;
   }
 
   // Helper function to format data
