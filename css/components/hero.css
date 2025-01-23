@@ -54,7 +54,7 @@ header {
     padding-left: 7vw;
     padding-right: 7vw;
 }
-#greeting {
+#terminal-header {
     font-size: 3.2vh;
     height: 7vh;
     padding-bottom: 0.5vh;
@@ -62,12 +62,13 @@ header {
     /* border: 2px solid red;*/
 }
 
-#skills {
+#terminal-body {
+    overflow-y: auto;
     line-height:2.5vh;
     height: 61vh;
     /* border: 2px solid red; */
 }
-#skills::after {
+#terminal-body::after {
     content: '|';
     animation: blink 0.7s step-end infinite;
 }
