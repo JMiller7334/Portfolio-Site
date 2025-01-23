@@ -146,7 +146,7 @@ function writeApiTerminalGreeting(){
   typeWriter('terminal-header', apiGreetingHeader, headerTypingSpeed);
 
   setTimeout(function() {
-      safeTypeWriter('terminal-body', apiGreetingBody, bodyTypingSpeed);
+      typeWriter('terminal-body', apiGreetingBody, bodyTypingSpeed);
   }, apiGreetingHeader.length * 40);
 
   setTimeout(function() {
@@ -189,6 +189,8 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   
     setTimeout(function() {
       apiCustomerWrite();
+
+      terminalTextbox.value = '';
     }, terminalAttemptMsg.length * 60);
 
     return;
@@ -208,6 +210,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
         idParameter = '';
         apiCustomerReadAll();
       }
+      terminalTextbox.value = '';
     }, terminalAttemptMsg.length * 60);
 
     return;
@@ -312,12 +315,12 @@ window.onload = function() {
   typeWriter('terminal-header', skillTextHeader, headerTypingSpeed); //speed is 100ms per letter
 
     setTimeout(function() {
-        safeTypeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
+        typeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
     }, skillTextHeader.length * 35);
 
     setTimeout(function() {
         scrollIndicator.style.opacity = '1';
         scrollIndicator.style.animation = 'bounce 1.5s ease-in-out infinite';
-    }, skillsTextBody.length * 20);
+    }, skillsTextBody.length * 5);
 };
   

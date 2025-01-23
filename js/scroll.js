@@ -1,7 +1,8 @@
 const heroContainer = document.querySelector('.container-hero');
-const profilePicture = document.querySelector(".profile-picture");
-const h1 = document.querySelector("header h1");
-const p = document.querySelector("header p");
+const profilePicture = document.querySelector('.profile-picture');
+const terminalFooter = document.querySelector('.terminal-footer');
+const h1 = document.querySelector('header h1');
+const p = document.querySelector('header p');
 
 const terminals = document.querySelectorAll('.terminal-text');
 
@@ -81,6 +82,7 @@ function handleElementsFade(){
     fadeElement(profilePicture);
     fadeElement(p);
     fadeElement(h1);
+    fadeElement(terminalFooter);
 }
 
 
