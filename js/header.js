@@ -171,13 +171,17 @@ function terminalCustomerReadMsg() {
 }
 
 
-// -------------------- TERMINAL SEND BUTTON -------------------- 
+// -------------------- TERMINAL SEND BUTTON -------------------- //
 import { isInputNumber } from './modules/validationUtils.js';
+const terminalSendButton = document.querySelector('.terminal-send-button');
 const terminalAttemptMsg = terminalMessages.attemptCallBody;
 let apiDebounce = false;
+let sendButtonDebounce = false;
+
+const SEND_BUTTON_TIMEOUT = 2500; //3500
 
 document.querySelector('.terminal-send-button').addEventListener('click', () => {
-  if (isTyping === true || apiDebounce === true) {
+  if (isTyping === true || apiDebounce === true || sendButtonDebounce) {
     return;
   }
   isTyping = true;
@@ -218,6 +222,9 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   }
 
   //command handling:
+  sendButtonDebounce = true;
+  terminalSendButton.style.opacity = '0.2';
+
   if (terminalTextbox.value === 'write customer') {
     customerObj.resetProperties();
     apiStage = 1;
@@ -253,10 +260,14 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   else {
     let terminalMsgInvalid = terminalMessages.unknownCommandBody;
     typeWriter('terminal-body', terminalMsgInvalid, bodyTypingSpeed);
-    isTyping = false;
   }
-
   terminalTextbox.value = ''; // Clear input
+  setTimeout(function() {
+    sendButtonDebounce = false;
+      terminalSendButton.style.opacity = '1';
+}, SEND_BUTTON_TIMEOUT);
+
+
 });
 
 
@@ -300,7 +311,13 @@ function typeWriter(elementId, text, speed) {
       setTimeout(type, speed);
 
     } else {
-      isTyping = false;
+        /**api calls should make 2 header and body updates:
+         * apiDebounce check prevents premature disableing of
+         * typing debounce.
+         */
+        if (elementId === 'terminal-body' && apiDebounce === false){
+          isTyping = false;
+        }
     }
   }
   type();
@@ -318,7 +335,7 @@ window.onload = function() {
   typeWriter('terminal-header', skillTextHeader, headerTypingSpeed); //speed is 100ms per letter
 
     setTimeout(function() {
-        safeTypeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
+        typeWriter('terminal-body', skillsTextBody, bodyTypingSpeed);
     }, skillTextHeader.length * 35);
 
     setTimeout(function() {
