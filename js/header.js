@@ -181,7 +181,7 @@ let sendButtonDebounce = false;
 const SEND_BUTTON_TIMEOUT = 2500; //3500
 
 document.querySelector('.terminal-send-button').addEventListener('click', () => {
-  if (isTyping === true || apiDebounce === true || sendButtonDebounce) {
+  if (isTyping === true || apiDebounce === true || sendButtonDebounce === true) {
     return;
   }
   isTyping = true;
@@ -225,14 +225,15 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   sendButtonDebounce = true;
   terminalSendButton.style.opacity = '0.2';
 
-  if (terminalTextbox.value === 'write customer') {
+  const lowercaseInput = terminalTextbox.value = terminalTextbox.value.toLowerCase(); 
+  if (lowercaseInput === 'write customer') {
     customerObj.resetProperties();
     apiStage = 1;
     apiCallType = enumApiCallType.customerWrite;
     terminalCustomerWriteMsg();
   }
 
-  else if (terminalTextbox.value === 'read customer') {
+  else if (lowercaseInput === 'read customer') {
     idParameter = '';
     apiStage = 1;
     apiCallType = enumApiCallType.customerRead;
@@ -248,7 +249,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   }
 
   // help handling
-  else if (terminalTextbox.value === 'help') {
+  else if (lowercaseInput === 'help') {
     apiCallType = enumApiCallType.undefined;
     apiStage = 0;
     customerObj.resetProperties();

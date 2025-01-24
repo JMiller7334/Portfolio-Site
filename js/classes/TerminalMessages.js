@@ -3,16 +3,20 @@ export default class TerminalMessages {
     // API CALL MESSAGES:
     this.apiCallHeader = "API Access Terminal:";
     this.apiGreetingBody = `
-Welcome! Below are the available commands:
+    Welcome to the API Access Terminal!
+    
+    Available Commands:
+    - write customer
+    - read customer
+    
+    Note: This terminal supports only write and read operations for the Customer Table.
 
--- Customer Table Commands --
-- write customer
-- read customer
+    Tip: Type 'help' at any time to return to this menu.
+    
 
-Tip: Type 'help' to return to this menu at any time.
-\n\n
-Please enter a command to proceed:
-`;
+    Please enter a command to proceed:
+    `;
+    
 
     // COMMAND MESSAGES
     this.unknownCommandBody = `
@@ -96,10 +100,15 @@ Tip: Type 'help' to return to the main menu.`;
 
   // READ API MESSAGES
   successCustomerRead(data, idParameter) {
+    let parsedParameter = idParameter
+    if (idParameter == '') {
+      parsedParameter = 'ALL'
+    } 
+
     return `
 Method: GET
 Endpoint: http://jacobjmiller.com:8080/customers
-ID Parameter: ${idParameter}
+ID Parameter: ${parsedParameter}
 Status: 200 OK - Customer data retrieved successfully.
 
 Response Data: ${this.formatDataForDisplay(data)}
@@ -108,10 +117,14 @@ Tip: Type 'help' to return to the main menu.`;
   }
 
   errorCustomerRead(error, idParameter) {
+    let parsedParameter = idParameter
+    if (idParameter == '') {
+      parsedParameter = 'ALL'
+    } 
     return `
 Method: GET
 Endpoint: http://jacobjmiller.com:8080/customers
-ID Parameter: ${idParameter}
+ID Parameter: ${parsedParameter}
 Status: Error
 
 Error Message: ${error.message || error}
