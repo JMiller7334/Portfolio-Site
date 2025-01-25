@@ -35,7 +35,7 @@ Status: In progress...`;
     // GREETING MESSAGES (SKILLS):
     this.skillTextHeader = "Nice to meet you,";
     this.skillTextBody = `
-Hello! Welcome to my portfolio. Here's a brief look at my skills as a developer:
+Welcome to my portfolio. Here's a brief look at my skills as a developer:
 
 iOS Development:
 -- Swift, SwiftUI, UIKit, SwiftCharts, CoreData

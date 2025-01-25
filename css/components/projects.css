@@ -3,7 +3,7 @@
 */
 
 :root {
-    --proj-header-font-size: 1.5rem; 
+    --proj-header-font-size: 1.25rem; 
 }
 
 
@@ -14,7 +14,7 @@
     display: grid;
     grid-template-areas:
         "proj-name proj-name proj-name"
-        "proj-desc proj-desc proj-logo"
+        "proj-desc proj-desc proj-desc"
         "proj-stack-title proj-stack-title proj-stack-title"
         "proj-stack proj-stack proj-stack"
         "proj-buttons proj-buttons proj-buttons";
@@ -80,29 +80,23 @@
 
 /* ------- LOGO ------- */
 .project-logo {
-    grid-area: proj-logo;
-    width: 10rem;
-    height: 10rem;
-    background-color: transparent;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: -0.9rem;
+    height: 8rem;
+    width: 8rem;
+    
+    float: right;
 }
-.project-logo img {
-    max-width: 100%; /* Adjust to scale the logo inside the badge */
-    max-height: 100%;
-}
-
-
 
 /* ----- DESC ------ */
 .project-desc {
+    margin-top: -1rem;
+    overflow: auto;
     grid-area: proj-desc;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+.project-desc p { 
+    margin-top: 1rem;
     text-align: left;
-    padding-left: 1rem;
 }
 
 
@@ -166,8 +160,10 @@
     top: -10px;
     transition: 0.7s;
 }
+
+/*javascript*/
 .project-stack-item:hover span {
-    padding-right: 4.2em;
+    padding-right: 4.5em;
 }
 #project-stack-short:hover span {
     padding-right: 3.3em;
@@ -177,6 +173,12 @@
 }
 #project-stack-smallest:hover span {
     padding-right: 1.9em;
+}
+#project-stack-html:hover span {
+    padding-right: 2.4em;
+}
+#project-stack-css:hover span {
+    padding-right: 1.4e
 }
 .project-stack-item:hover span:after {
     opacity: 1;
