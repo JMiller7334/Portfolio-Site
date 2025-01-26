@@ -143,6 +143,10 @@
     transition: color 0.3s ease;
 }
 
+#mysql-img {
+    margin-left: -0.25rem;
+}
+
 .project-stack-item span {
     display: block;
     position: relative;
@@ -165,6 +169,7 @@
 .project-stack-item:hover span {
     padding-right: 4.5em;
 }
+
 #project-stack-short:hover span {
     padding-right: 3.3em;
 }
@@ -174,12 +179,17 @@
 #project-stack-smallest:hover span {
     padding-right: 1.9em;
 }
+
 #project-stack-html:hover span {
     padding-right: 2.4em;
 }
 #project-stack-css:hover span {
     padding-right: 1.4em;
 }
+#project-stack-mysql:hover span {
+    padding-right: 3em;
+}
+
 .project-stack-item:hover span:after {
     opacity: 1;
     right: 0.5vw;
@@ -262,4 +272,10 @@
 }
 #stack-php::after {
     content: "PHP";
+}
+#stack-mysql::after {
+    content: "MySQL";
+}
+#stack-react::after {
+    content: "React";
 }
