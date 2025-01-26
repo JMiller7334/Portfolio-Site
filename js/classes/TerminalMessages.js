@@ -20,7 +20,7 @@ export default class TerminalMessages {
 
     // COMMAND MESSAGES
     this.unknownCommandBody = `
-Unkown command ented. Please enter another command.
+Unkown command entered. Please enter another command.
 
 Tip: Type 'help' to return to the main menu.`
 
@@ -34,27 +34,24 @@ Status: In progress...`;
 
     // GREETING MESSAGES (SKILLS):
     this.skillTextHeader = "Nice to meet you,";
-    this.skillTextBody = `
-Welcome to my portfolio. Here's a brief look at my skills as a developer:
+   this.skillTextBody = `
+Welcome to my portfolio! Here's an overview of my skills as a developer:
 
-iOS Development:
--- Swift, SwiftUI, UIKit, SwiftCharts, CoreData
-
-Android Development:
--- Kotlin, Java, ConstraintLayout, Gradle
+Mobile App Development:
+-- Swift (iOS)
+-- Kotlin, Java (Android)
 
 Web Development:
--- HTML, CSS, JavaScript, PHP, React.js, jQuery
+-- HTML, CSS, JavaScript
+-- PHP, Python
 
-Databases:
--- SQL, SQLite, MySQL
+Other Languages:
+-- SQL
+-- Lua
 
-API Development:
--- Node.js, Express.js
-
-Feel free to explore my projects and skills below!`;
-  }
-
+Feel free to explore my projects and see how I put these skills to work below!
+`;
+}
   // API CUSTOMER MESSAGES:
 
   // ------ CUSTOMER WRITE MESSAGES ------
