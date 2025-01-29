@@ -212,6 +212,8 @@
     justify-content: center;
     gap: 0.5rem;
 
+    width: 8.55rem;
+
     /* Initial opacity */
     opacity: 0.2;
 
@@ -278,4 +280,8 @@
 }
 #stack-react::after {
     content: "React";
+}
+
+#stack-swift::after {
+    content: "Swift";
 }
