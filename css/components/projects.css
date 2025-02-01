@@ -61,7 +61,7 @@
     border: 2.5px solid var(--iOS-color);
 }
 #proj-android {
-    --android-color: #3DDC84; /* Android green */
+    --android-color: #30a866; /* Android green */
     color: var(--android-color); 
     border: 2.5px solid var(--android-color);
 }
@@ -284,4 +284,7 @@
 
 #stack-swift::after {
     content: "Swift";
+}
+#stack-kotlin::after {
+    content: "Kotlin";
 }

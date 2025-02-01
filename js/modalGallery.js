@@ -6,6 +6,7 @@ const nextImage = document.getElementById("nextImage");
 
 //GALLERY OPEN BUTTONS;
 const buttonIosDashboard = document.getElementById('ios-dashboard-gallery');
+const buttonApiWeather = document.getElementById("api-weather-gallery");
 
 
 //individual galleries
@@ -15,6 +16,10 @@ const iosDashboardApp = [
     "ida-write-customer-portrait.png",
     "ida-customer-usage-write-portrait.png",
     "ida-read-usage-portrait.png"
+];
+
+const apiWeatherApp = [
+    "awa-home.png"
 ];
 
 //variable representing the current gallery, index being displayed
@@ -58,5 +63,11 @@ prevImage.addEventListener("click", () => {
 buttonIosDashboard.addEventListener("click", () => {
     currentIndex = 0;
     images = iosDashboardApp;
+    openGallery();
+});
+
+buttonApiWeather.addEventListener("click", () => {
+    currentIndex = 0;
+    images = apiWeatherApp;
     openGallery();
 });
