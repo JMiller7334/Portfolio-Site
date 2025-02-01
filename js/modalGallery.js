@@ -30,13 +30,17 @@ function updateImage() {
 
 function openGallery() {
     galleryModal.style.display = "flex";
+    galleryModal.classList.add("show");
     updateImage();
 };
 
 
 //GALLERY UI:
 closeGallery.addEventListener("click", () => {
-    galleryModal.style.display = "none";
+    if (galleryModal.classList.contains("show")){
+        galleryModal.classList.remove("show");
+        console.log("closing gallery")
+    }
 });
 
 nextImage.addEventListener("click", () => {
