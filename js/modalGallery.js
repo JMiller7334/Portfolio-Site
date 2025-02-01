@@ -9,11 +9,17 @@ const buttonIosDashboard = document.getElementById('ios-dashboard-gallery');
 
 
 //individual galleries
-const gallery1 = ["game-site-logo.svg", "profile.jpg"];
+const iosDashboardApp = [
+    "ida-stats-portrait.png",
+    "ida-customer-read-portrait.png",
+    "ida-write-customer-portrait.png",
+    "ida-customer-usage-write-portrait.png",
+    "ida-read-usage-portrait.png"
+];
 
 //variable representing the current gallery, index being displayed
-const galleryLocation = "../img/"
-let images = gallery1;
+const galleryLocation = "../img/gallery/"
+let images = iosDashboardApp;
 let currentIndex = 0;
 
 
@@ -47,6 +53,6 @@ prevImage.addEventListener("click", () => {
 //INDIVIDUAL GALLERY CALLS -- buttons:
 buttonIosDashboard.addEventListener("click", () => {
     currentIndex = 0;
-    images = gallery1;
+    images = iosDashboardApp;
     openGallery();
 });

@@ -57,8 +57,8 @@
     display: flex;
     flex-direction: row;
     align-items: last baseline;
-    justify-content: last baseline;
-    gap: 5vw;
+    justify-content: center;
+    gap: 7vw;
 
     height: 10vh;
     width: 100%;
