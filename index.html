@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="./css/buttons/github-button.css">
     <link rel="stylesheet" href="./css/buttons/social-buttons.css">
     <link rel="stylesheet" href="./css/buttons/download-button.css">
+    <link rel="stylesheet" href="./css/buttons/playstore-button.css">
+
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -281,7 +283,7 @@
                 <img class="project-logo" src="./img/game-site-logo.svg" alt="" 
                 style="padding: 1.25rem; margin-top: -1rem;">
                 <p>
-                    This site showcases promotional material for a game I developed.
+                    This site showcases promotional material for an old game I developed.
                     <br><br>
                     Originally created using standard HTML and CSS. Later, 
                     I rebuilt it using React.js, focusing on object-oriented programming 
@@ -307,7 +309,7 @@
                     <span id="stack-javascript"></span>
                 </div>
 
-                <div class="project-stack-item" id="project-stack-html">
+                <div class="project-stack-item" id="project-stack-react">
                     <i class="fa-brands fa-react"></i>
                     <span id="stack-react"></span>
                 </div>
@@ -322,6 +324,60 @@
 
                 <button type="button" class="demo-button" 
                 onclick="location.href='https://jacobjmiller.com/react-game-site/'">Visit Website</button>
+            </div>
+        </div>
+
+
+               <!-- Iron Jounral Prototype App -->
+        <div class="project">
+            <div class="project-name">
+                <h3>Iron Journal (Prototype)</h3>
+                <h4 class="project-type" id="proj-android">Android</h4>
+            </div>
+
+            <div class="project-desc">
+                <img class="project-logo" src="./img/iron-journal-logo.svg" alt="iron journal logo"
+                    style="margin-left: 0.5em; padding: 0.3em;">
+                <p>
+                    Iron Journal (Prototype) is a published strength-focused fitness app for Android. 
+                    <br><br>
+                    It features a step-by-step fitness tracking system and automated rest-time tracking.
+                    Written in Kotlin and designed using linear layout for its UI. Firebase is used to handle user management and database 
+                    functionality. 
+                    <br><br>
+                    A requirment for my graduation, it was developed under a strict deadline, 
+                    the project was managed using Agile SCRUM.
+                </p> 
+                
+            </div>
+            <h4 class="project-stack-title">Tech Stack:</h4>
+            <div class="project-stack">
+
+                <div class="project-stack-item" id="project-stack-smallest">
+                    <img src="./img/kotlin-logo.svg" alt="kotlin logo" 
+                    style="padding: 0.2rem;">
+                    <span id="stack-kotlin"></span>
+                </div>
+
+                <div class="project-stack-item" id="project-stack-firebase">
+                    <img src="./img/firebase-logo.svg" alt="firebase logo">
+                    <span id="stack-firebase"></span>
+                </div>
+
+            </div>
+            <div class="project-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.ironjournal.gymtracker" 
+                class="playstore-button">
+
+                <img src="./img/playstore-logo.svg" alt="google play store logo"
+                    height="24" width="24">
+                <span class="texts">
+                <span class="text-1">GET IT ON</span>
+                <span class="text-2">Google Play</span>
+                </span>
+            </a>
+  
+                <button type="button" class="demo-button" id="ij-gallery" >View Screens</button>
             </div>
         </div>
 
@@ -367,7 +423,6 @@
         </div>
 
 
-
         <!-- API Weather App -->
         <div class="project">
             <div class="project-name">
@@ -376,7 +431,8 @@
             </div>
 
             <div class="project-desc">
-                <img class="project-logo" src="./img/api-weather-logo.svg" alt="">
+                <img class="project-logo" src="./img/api-weather-logo.svg" alt=""
+                    style="margin-bottom: 0.5em;">
                 <p>
                     A simplistic app that utilizes API services to get the weather
                     in either Celsius or Fahrenheit.
@@ -394,8 +450,6 @@
                 <div class="project-stack-item" id="project-stack-smallest">
                     <img src="./img/kotlin-logo.svg" alt="kotlin logo" 
                     style="padding: 0.2rem;">
-               
-
                     <span id="stack-kotlin"></span>
                 </div>
 

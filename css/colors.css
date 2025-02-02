@@ -30,6 +30,9 @@
     --git-color2: #560bad;
     --git-color-click: #d0137e;
 
+    /* GOOGLE PLAY BUTTON */
+    --google-play-color: rgb(76, 176, 76);
+
     /* SOCIAL */
     --social-color: rgb(255, 255, 255);
     --social-github: #333;

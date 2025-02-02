@@ -179,6 +179,9 @@
 #project-stack-smallest:hover span {
     padding-right: 1.9em;
 }
+#project-stack-react:hover span {
+    padding-right: 3.2em;
+}
 
 #project-stack-html:hover span {
     padding-right: 2.4em;
@@ -188,6 +191,9 @@
 }
 #project-stack-mysql:hover span {
     padding-right: 3em;
+}
+#project-stack-firebase:hover span {
+    padding-right: 3.5em;
 }
 
 .project-stack-item:hover span:after {
@@ -279,7 +285,7 @@
     content: "MySQL";
 }
 #stack-react::after {
-    content: "React";
+    content: "React.js";
 }
 
 #stack-swift::after {
@@ -287,4 +293,7 @@
 }
 #stack-kotlin::after {
     content: "Kotlin";
+}
+#stack-firebase::after {
+    content: "Firebase";
 }
