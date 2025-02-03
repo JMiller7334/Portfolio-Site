@@ -23,7 +23,7 @@
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
 
-    margin-bottom:3rem;
+    margin-bottom:7rem;
 
     border-radius: var(--corners);
     padding: var(--inner-padding);
