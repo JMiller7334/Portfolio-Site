@@ -19,7 +19,7 @@
     opacity: 0.2;
 
     /* Button appearance */
-    background-color: #007BFF;
+    background-color: var(--demo-color);
     color: white;
     border: none;
     border-radius: 10px;
@@ -41,12 +41,12 @@
 
 /* Hover effect for interactivity */
 .api-call-button:hover {
-    background-color: #0056b3;
+    background-color: var(--demo-color2);
     transform: translateY(-2px); /* Slight "lift" */
 }
 
 .api-call-button:active {
-    background-color: #003d80;
+    background-color: var(--demo-color);
     transform: translateY(0); /* Reset lift effect */
 }
 

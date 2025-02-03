@@ -25,6 +25,13 @@
     margin-top: 40px;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    transition: color 0.3s ease-in, 
+                border 0.3s ease-in;
+}
+.collapsible-button:hover{
+    color: var(--demo-color);
+    border: 2px solid var(--demo-color);
 }
 
 /* Collapsible content styling */

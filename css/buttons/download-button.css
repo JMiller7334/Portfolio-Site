@@ -11,7 +11,7 @@
 
     border-radius: 7px;
     border: none;
-    background: #e4310d;
+    background: var(--accent-color);
     color: var(--text-color);
     font-family: "Ubuntu Condensed", sans-serif;
     font-weight: 500;
