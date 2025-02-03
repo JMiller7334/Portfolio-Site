@@ -22,7 +22,14 @@
     grid-template-columns: 2fr 0.5fr 1fr;
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
-    margin-bottom: 7rem;
+
+    margin-bottom:3rem;
+
+    border-radius: var(--corners);
+    padding: var(--inner-padding);
+    padding-bottom: calc(var(--inner-padding) * 2);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -96,7 +103,7 @@
 }
 .project-desc p { 
     margin-top: 1rem;
-    text-align: left;
+    text-align: start;
 }
 
 
@@ -199,63 +206,6 @@
 .project-stack-item:hover span:after {
     opacity: 1;
     right: 0.5vw;
-}
-
-
-/* ------- BUTTONS ------- */
-.project-buttons {
-    grid-area: proj-buttons;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    gap: 1rem;
-}
-
-.api-call-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-
-    width: 8.55rem;
-
-    /* Initial opacity */
-    opacity: 0.2;
-
-    /* Button appearance */
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 0.5rem 1.5rem;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-
-    /* Add transitions for smooth effects */
-    transition: 
-        background-color 0.3s ease, 
-        transform 0.2s ease, 
-        opacity 0.5s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Hover effect for interactivity */
-.api-call-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Slight "lift" */
-}
-
-.api-call-button:active {
-    background-color: #003d80;
-    transform: translateY(0); /* Reset lift effect */
-}
-
-.api-button-logo {
-    height: 1.25rem;
-    width: auto;
 }
 
 

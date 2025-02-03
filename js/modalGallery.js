@@ -30,10 +30,10 @@ const ironJournalApp = [
     "ij-login.png",
     "ij-prs.png",
     "ij-workout.png"
-]
+];
 
 //variable representing the current gallery, index being displayed
-const galleryLocation = "../img/gallery/"
+const galleryLocation = "../img/gallery/";
 let images = iosDashboardApp;
 let currentIndex = 0;
 

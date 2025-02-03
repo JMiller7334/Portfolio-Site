@@ -1,6 +1,11 @@
 /* -- VARIABLES -- */
 :root {
     --hero-height: 95vh;
+    --corners: 8px;
+    --inner-padding: 1.2rem;
+
+    --button-font-size: 0.8rem;
+    --button-font-weight: 500;
 }
 
 *,
@@ -37,6 +42,9 @@ body {
     width: 100%;
     margin-bottom: 0.35rem;
 }
+#project-separator {
+    margin-bottom: 1.5rem;
+}
 
 .margin-element {
     height: 7.5vh;
@@ -66,9 +74,68 @@ section h2 {
 
 /* -- FOOTER -- */
 footer {
-    text-align: center;
-    padding: 1rem 0;
+    display: grid;
+    grid-template-areas: "f-header f-header f-farewell"
+               "f-social f-social f-text"
+               "f-copyr f-copyr f-copyr";
+
+    grid-template-columns: 1fr 1fr 2.5fr;
+    grid-template-rows: auto;
+
+    padding: 1rem;
+    padding-right: 2rem;
+
     background: var(--primary-color);
     color: var(--text-color);
 }
+
+
+footer h3 {
+    color: var(--demo-color);
+    font-size: 1.1rem;
+    grid-area: f-header;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer h4 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    grid-area: f-farewell;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.footer-msg {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    grid-area: f-text;
+    margin-bottom: 0.2rem;
+    padding-left: 0.5rem;
+
+    max-width: 300px;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.social-links {
+    grid-area: f-social;
+}
+
+.copyright {
+    display: flex;
+    justify-content: start;
+
+    font-size: 0.8rem;
+
+    width: 100%;
+    margin-top: 1rem;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    grid-area: f-copyr;
+}
+
+
   

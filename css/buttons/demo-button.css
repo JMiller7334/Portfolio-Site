@@ -1,9 +1,9 @@
   /* demo button */
   .demo-button {
-    font-weight: 500;
+    font-weight: var(--button-font-weight);
     font-family: "Ubuntu Condensed", sans-serif;
     display: inline-block;
-    width: 8em;
+    width: 8.55rem;
     height: 5vh;
     min-height: 40px;
     line-height: 2.5vh;
@@ -13,7 +13,7 @@
     border: 2px solid var(--demo-color);
     transition: color 0.5s;
     z-index: 1;
-    font-size: 17px;
+    font-size: var(--button-font-size);
     border-radius: 6px;
     color: var(--demo-color);
     

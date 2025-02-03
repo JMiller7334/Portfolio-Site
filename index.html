@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./css/components/scroll-indicator.css">
     <link rel="stylesheet" href="./css/components/nav.css">
     <link rel="stylesheet" href="./css/components/modal-gallery.css">
+    <link rel="stylesheet" href="./css/components/contact-form.css">
 
     <!-- BUTTONS -->
     <link rel="stylesheet" href="./css/buttons/demo-button.css">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="./css/buttons/social-buttons.css">
     <link rel="stylesheet" href="./css/buttons/download-button.css">
     <link rel="stylesheet" href="./css/buttons/playstore-button.css">
+    <link rel="stylesheet" href="./css/buttons//api-button.css">
 
     
     <!-- Font Awesome -->
@@ -75,6 +77,8 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <p id="form-response"></p>
 
     <div class="margin-element"></div>
 
@@ -156,7 +160,7 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="container">
         <h2><i class="fas fa-briefcase"></i> Projects</h2>
-        <div class="separator"></div>
+        <div class="separator" id="project-separator"></div>
 
         <!--  mySQL-API   -->
         <div class="project">
@@ -203,7 +207,7 @@
                 </button>
 
                 <button class="api-call-button">
-                    <img src="./img/tower-broadcast.svg" alt="API Call" class="api-button-logo" />
+                    <img src="./img/tower-broadcast.svg" alt="API Call" class="api-button-logo" style="width: 3vh;" />
                     <span>Call API</span>
                 </button>
                 
@@ -342,11 +346,11 @@
                     Iron Journal (Prototype) is a published strength-focused fitness app for Android. 
                     <br><br>
                     It features a step-by-step fitness tracking system and automated rest-time tracking.
-                    Written in Kotlin and designed using linear layout for its UI. Firebase is used to handle user management and database 
+                    Written in Kotlin and designed using linear layout for it's UI. Firebase is used to handle user management and database 
                     functionality. 
                     <br><br>
-                    A requirment for my graduation, it was developed under a strict deadline, 
-                    the project was managed using Agile SCRUM.
+                    A requirment for my graduation. The project was managed using Agile SCRUM 
+                    to ensure it met strict deadlines.
                 </p> 
                 
             </div>
@@ -477,36 +481,54 @@
         <h2><i class="fas fa-envelope"></i> Contact</h2>
         <div class="separator"></div>
         
-        <div class="social-links">
-            <!-- Phone -->
+        <!-- <div class="social-links">
             <a id="phone" class="social-btn flex-center">
                 <i class="fas fa-phone"></i>
                 <span>(815) 219 8394</span>
             </a>
-            <!-- Email -->
             <a id="email" class="social-btn flex-center">
                 <i class="fas fa-envelope"></i>
                 <span>Jacob-Miller@Hotmail.com</span>
             </a>
-        </div>
+        </div> -->
 
-        <div class="social-links">
-            <!-- GitHub -->
-            <a id="github" class="social-btn flex-center" href="https://github.com/JMiller7334" target="_blank">
-                <img src="img/github-logo.svg" alt="GitHub Logo">
-                <span>JMiller7334</span>
-            </a>
-            <!-- LinkedIn -->
-            <a id="linkedin" class="social-btn flex-center" href="https://www.linkedin.com/in/jmiller7334" target="_blank">
-                <img src="img/linkedin-logo.svg" alt="LinkedIn Logo">
-                <span>in/JMiller7334</span>
-            </a>
-        </div>
+        <!-- CONTACT FORM -->
+        <form id="contact-form">
+            <h3>Message Me</h3>
+            <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+            <input type="email" id="form-email" name="email" placeholder="Your Email" required>
+            <textarea id="form-message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button id="form-button" type="submit">Send Message</button>
+
+            <!-- spam protection -->
+            <input type="text" name="honeypot" style="display:none;" autocomplete="off">
+        </form>
+    
     </section>
     
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Jacob Miller. All rights reserved.</p>
+            <h4>Thanks For Visiting!</h4>
+            <h3>Connect:</h3>
+
+            <p class="footer-msg">
+                I appreciate you taking the time to explore my work. If you'd 
+                like to connect or collaborate, feel free to reach out.
+            </p>
+ 
+        <div class="social-links">
+            <!-- GitHub -->
+            <a id="github" class="social-btn flex-center" href="https://github.com/JMiller7334" target="_blank">
+                <img src="img/github-logo.svg" alt="GitHub Logo">
+            </a>
+            <!-- LinkedIn -->
+            <a id="linkedin" class="social-btn flex-center" href="https://www.linkedin.com/in/jmiller7334" target="_blank">
+                <img src="img/linkedin-logo.svg" alt="LinkedIn Logo">
+            </a>
+        </div>
+
+
+        <p class="copyright">&copy; 2025 Jacob Miller. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->
@@ -514,6 +536,7 @@
     <script type="module" src="./js/header.js"></script>
     <script src="./js/about.js"></script>
     <script src="./js/modalGallery.js"></script>
+    <script src="./php/loader.js"></script>
 
 </body>
 </html>
