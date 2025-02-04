@@ -1,6 +1,6 @@
 .download-button {
     height: 6vh;
-    width: 90vw;
+    width: 100%;
     min-height: 40px;
 
     display: flex;

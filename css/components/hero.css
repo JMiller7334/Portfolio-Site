@@ -36,7 +36,9 @@ header {
 }
 
 .hero-separator {
-    height: 0.5vh;
+    height: 0.22vh;
+    margin-bottom: 1vh;
+
     background: var(--hero-foreground-color);
     background: linear-gradient(to left, transparent, var(--primary-color) 50%, transparent);
     width: 100vw;
@@ -65,7 +67,7 @@ header {
 #terminal-body {
     overflow-y: auto;
     line-height:2.5vh;
-    height: 60vh;
+    height: calc(62vh - 3vw);
     margin-bottom: 1vh;
     /* border: 2px solid red; */
 }
@@ -154,6 +156,8 @@ header {
     height: var(--terminal-textbox-height);
     width: 15%;
 
+    max-width: 80px;
+
     background-color: var(--terminal-secondary-color);
     border: none;
     border-top-right-radius: 10px;
@@ -180,6 +184,7 @@ header {
 .api-braces {
     height: calc(var(--terminal-textbox-height) * 2.1);
     width: 7%;
+    max-width: 50px;
     font-size: calc(var(--terminal-textbox-height) + 1vh);
     margin-bottom: var(--terminal-textbox-bottom-gap);
 }
@@ -194,8 +199,8 @@ header {
 /* TERMINAL HEADER */
 header h1 {
     margin: 0;
-    margin-bottom: -2vw;
-    font-size: 7vw;
+    margin-bottom: calc(-0.5rem + -1vw);
+    font-size: clamp(23px, 7vw, 65px);
     
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
@@ -204,7 +209,7 @@ header h1 {
 
 header p {
     margin: 0;
-    font-size: 3vw;
+    font-size: clamp(17px, 3vw, 20px);
     
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
@@ -216,9 +221,10 @@ header p {
 /* -- PROFILE PIC -- */
 .profile-picture {
     position: absolute;
-    left: 5vw;
-    width: 9vh;
-    height: 9vh;
+    left: 7vw;
+    margin-top: 1rem;
+    width: calc(4rem + 3vw);
+    height: calc(4rem + 3vw);
     overflow: hidden;
     border-radius: 50%;
     border: 3px solid var(--profile-border-color);

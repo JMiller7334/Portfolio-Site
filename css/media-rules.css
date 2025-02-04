@@ -1,0 +1,67 @@
+/* Default styles for mobile-first design (small screens) */
+.site-structure {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    /* border: 2px solid blue; */
+
+    margin-top: calc(0px - var(--form-response-height));
+}
+
+.site-article {
+    grid-area: main;
+    box-sizing: content-box;
+
+    /* border: 2px solid purple; */
+}
+
+/* Optional: Define background sections */
+.site-bg-left,
+.site-bg-right {
+    display: none; /* Hide on mobile */
+}
+
+/* Small Laptops and Larger Tablets */
+@media (min-width: 768px) {
+    .site-structure {
+        grid-template-areas: "bg-left main bg-right";
+        grid-template-columns: 1fr 2fr 1fr;        
+    }
+    .site-article {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .site-bg-left, 
+    .site-bg-right {
+        display: block; /* Show background elements */
+        background-color: #f0f0f0; /* Example styling */
+    }
+
+    .site-bg-left {
+        grid-area: bg-left;
+    }
+
+    .site-bg-right {
+        grid-area: bg-right;
+    }
+}
+
+/* Desktops and Larger Screens */
+@media (min-width: 1024px) {
+    .site-structure {
+        grid-template-areas: "bg-left main bg-right";
+        grid-template-columns: 1fr 2fr 1fr;        
+    }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1440px) {
+    .site-structure {
+        grid-template-areas: "bg-left main bg-right";
+        grid-template-columns: 1fr 2fr 1fr;        
+    }
+}

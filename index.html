@@ -7,6 +7,8 @@
 
 <!----------------------  CSS Links ---------------------->
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/media-rules.css">
+
     <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/style.css">
 
@@ -80,431 +82,433 @@
 
     <p id="form-response"></p>
 
-    <div class="margin-element"></div>
+    <!-- SITE ARTICLE STRUCTURE -->
+    <div class="site-structure">
+        <div class="site-article">
+
+            <div class="margin-element"></div>
+            <!-- MODAL GALLERY -->
+            <div id="galleryModal" class="gallery-modal">
+                <span id="closeGallery">&times;</span>
+                <button id="prevImage">&#10094;</button>
+                <img id="galleryImage" src="" alt="Gallery Image">
+                <button id="nextImage">&#10095;</button>
+            </div>
 
 
-    <!-- MODAL GALLERY -->
-    <div id="galleryModal" class="gallery-modal">
-        <span id="closeGallery">&times;</span>
-        <button id="prevImage">&#10094;</button>
-        <img id="galleryImage" src="" alt="Gallery Image">
-        <button id="nextImage">&#10095;</button>
+            <!-- ABOUT SECTION -->
+            <section id="about" class="container">
+                <h2><i class="fas fa-user"></i> About Me</h2>
+                <div class="separator"></div>
+
+                <p>
+                    I began coding at the age of 14, starting with Lua to create small games. 
+                    I quickly discovered a passion for coding, I enjoyed the challenges it brought 
+                    and the creativity involved.
+                    <br><br>  
+                Eventually I began attending classes at my local community college, 
+                    where I fell in love with designing websites and apps.
+                </p>
+
+                <!-- Collapsible Section -->
+                <button id="toggle-more-about" class="collapsible-button">More About Me</button>
+                <div id="more-about" class="collapsible-content">
+
+
+                <h3>+ Education</h3>
+                <div class="separator"></div>
+                <p class="p-justified"> 
+                I graduated McHenry County College in 2024 earning two degrees.
+                </p>
+
+                <ul class="grad-bullet">
+                    <li>Associates in Web Design</li>
+                    <li>Associates in Mobile App Development</li>
+                </ul>
+                    
+                <h3>+ Other Interests</h3>
+                <div class="separator"></div>
+                    <p class="p-justified">
+                        I spend my free time training in martial arts, hitting the gym, or 
+                        running. I also enjoy working on small indie game projects that 
+                        I'm passionate about.
+                    </p>
+                    <div class="about-container">
+                        <div class="about-item">
+                            <img src="./img/martial-arts.svg" alt="" id="hobby-martial">
+                            <p>Martial Artist</p>
+                        </div>
+            
+                        <div class="about-item">
+                            <img src="./img/barbell-icon-black.svg" alt="" id="hobby-lift">
+                            <p>Fitness Enthusiast</p>
+                        </div>
+            
+                        <div class="about-item">
+                            <img src="./img/code-logo.svg" alt="" id="hobby-game-development">
+                            <p>Game Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button class="download-button" style="margin-top: 2vh;" onclick="location.href='/pages/licenseflatride.html'">
+                    <span>Download My CV</span>
+                    <a href="/pages/licenseflatride.html"></a>
+                </button>
+                
+            </section>
+
+
+            
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="container">
+                <h2><i class="fas fa-briefcase"></i> Projects</h2>
+                <div class="separator" id="project-separator"></div>
+
+                <!--  mySQL-API   -->
+                <div class="project">
+
+                    <div class="project-name">
+                        <h3>MySQL API</h3>
+                        <h4 class="project-type" id="proj-web">Web</h4>
+                    </div>
+
+                    <div class="project-desc">
+                    <img class="project-logo" src="./img/mySQL-api-logo.svg" alt="">
+                    
+                    <p>
+                        A RESTful API I developed with full CRUD functionality. 
+                        <br><br>
+                        Deployed on my VPS 
+                        using PM2 as the process manager. It leverages Sequelize for seamless 
+                        interaction with a MySQL database.
+                    </p>
+                    </div>
+            
+
+                    <h4 class="project-stack-title">Tech Stack:</h4>
+                    <div class="project-stack">
+                        <div class="project-stack-item">
+                            <i class="fa-brands fa-js"></i>
+                            <span id="stack-javascript"></span>
+                        </div>
+                        <div class="project-stack-item" id="project-stack-short">
+                            <i class="fab fa-node-js"></i> <!-- Font Awesome icon for Node.js -->
+                            <span id="stack-node"></span>
+                        </div>
+                        <div class="project-stack-item">
+                            <img src="./img/express-js-logo.svg" alt="express.js logo">
+                            <span id="stack-express"></span>
+                        </div>
+
+                    </div>
+                    
+                    <div class="project-buttons">
+                        <button type="button" class="github-button" onclick="location.href='https://github.com/JMiller7334/mySQL-API'">
+                            <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                            View Repository
+                        </button>
+
+                        <button class="api-call-button">
+                            <img src="./img/tower-broadcast.svg" alt="API Call" class="api-button-logo" style="width: 3vh;" />
+                            <span>Call API</span>
+                        </button>
+                        
+                    
+                    </div>
+                </div>
+
+                <!-- Dashboard Database Project -->
+                <div class="project">
+
+                    <div class="project-name">
+                        <h3>Dashboard Database Project</h3>
+                        <h4 class="project-type" id="proj-web">Web</h4>
+                    </div>
+
+                    <div class="project-desc">
+                        <img class="project-logo" src="./img/dashboard-project-logo.svg" alt="">
+                        <p>
+                        A web dashboard for a fictional electric company to manage and 
+                        display metrics. 
+                        <br><br>
+                        It employs PHP for database operations and jQuery 
+                        AJAX for dynamic loading. 
+                        Its mySQL database is accessible via my MySQL-API project.
+                    </p> 
+                        
+                    </div>
+                    <h4 class="project-stack-title">Tech Stack:</h4>
+                    <div class="project-stack">
+
+                        <div class="project-stack-item" id="project-stack-html">
+                            <i class="fa-brands fa-html5"></i>
+                            <span id="stack-html"></span>
+                        </div>
+
+                        <div class="project-stack-item" id="project-stack-css">
+                            <i class="fa-brands fa-css3"></i>
+                            <span id="stack-css"></span>
+                        </div>
+
+                        <div class="project-stack-item">
+                            <i class="fa-brands fa-js"></i>
+                            <span id="stack-javascript"></span>
+                        </div>
+
+                        <div class="project-stack-item" id="project-stack-smallest">
+                            <i class="fa-brands fa-php"></i>
+                            <span id="stack-php"></span>
+                        </div>
+
+                        <div class="project-stack-item" id="project-stack-mysql">
+                            <img src="./img/mysql-logo.svg" alt="mySQL logo" id="mysql-img">
+                            <span id="stack-mysql"></span>
+                        </div>
+
+                    </div>
+                    <div class="project-buttons">
+                        <button type="button" class="github-button" 
+                        onclick="location.href='https://github.com/JMiller7334/Dashboard-Database-project'">
+                            <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                            View Repository
+                        </button>
+
+                        <button type="button" class="demo-button" 
+                        onclick="location.href='https://jacobjmiller.com/dashboard-project/'">Live Demo</button>
+                    </div>
+                </div>
+
+                <!-- React Game site -->
+                <div class="project">
+                    <div class="project-name">
+                        <h3>Game Website</h3>
+                        <h4 class="project-type" id="proj-web">Web</h4>
+                    </div>
+
+                    <div class="project-desc">
+                        <img class="project-logo" src="./img/game-site-logo.svg" alt="" 
+                        style="padding: 1.25rem; margin-top: -1rem;">
+                        <p>
+                            This site showcases promotional material for an old game I developed.
+                            <br><br>
+                            Originally created using standard HTML and CSS. Later, 
+                            I rebuilt it using React.js, focusing on object-oriented programming 
+                            principles to create a more maintainable codebase resulting in this project.
+                    </p> 
+                        
+                    </div>
+                    <h4 class="project-stack-title">Tech Stack:</h4>
+                    <div class="project-stack">
+
+                        <div class="project-stack-item" id="project-stack-html">
+                            <i class="fa-brands fa-html5"></i>
+                            <span id="stack-html"></span>
+                        </div>
+
+                        <div class="project-stack-item" id="project-stack-css">
+                            <i class="fa-brands fa-css3"></i>
+                            <span id="stack-css"></span>
+                        </div>
+
+                        <div class="project-stack-item">
+                            <i class="fa-brands fa-js"></i>
+                            <span id="stack-javascript"></span>
+                        </div>
+
+                        <div class="project-stack-item" id="project-stack-react">
+                            <i class="fa-brands fa-react"></i>
+                            <span id="stack-react"></span>
+                        </div>
+
+                    </div>
+                    <div class="project-buttons">
+                        <button type="button" class="github-button" 
+                        onclick="location.href='https://github.com/JMiller7334/ReactJS-Game-Website'">
+                            <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                            View Repository
+                        </button>
+
+                        <button type="button" class="demo-button" 
+                        onclick="location.href='https://jacobjmiller.com/react-game-site/'">Visit Website</button>
+                    </div>
+                </div>
+
+
+                    <!-- Iron Jounral Prototype App -->
+                <div class="project">
+                    <div class="project-name">
+                        <h3>Iron Journal (Prototype)</h3>
+                        <h4 class="project-type" id="proj-android">Android</h4>
+                    </div>
+
+                    <div class="project-desc">
+                        <img class="project-logo" src="./img/iron-journal-logo.svg" alt="iron journal logo"
+                            style="margin-left: 0.5em; padding: 0.3em;">
+                        <p>
+                            Iron Journal (Prototype) is a published strength-focused fitness app for Android. 
+                            <br><br>
+                            It features a step-by-step fitness tracking system and automated rest-time tracking.
+                            Written in Kotlin and designed using linear layout for it's UI. Firebase is used to handle user management and database 
+                            functionality. 
+                            <br><br>
+                            A requirment for my graduation. The project was managed using Agile SCRUM 
+                            to ensure it met strict deadlines.
+                        </p> 
+                        
+                    </div>
+                    <h4 class="project-stack-title">Tech Stack:</h4>
+                    <div class="project-stack">
+
+                        <div class="project-stack-item" id="project-stack-smallest">
+                            <img src="./img/kotlin-logo.svg" alt="kotlin logo" 
+                            style="padding: 0.2rem;">
+                            <span id="stack-kotlin"></span>
+                        </div>
+
+                        <div class="project-stack-item" id="project-stack-firebase">
+                            <img src="./img/firebase-logo.svg" alt="firebase logo">
+                            <span id="stack-firebase"></span>
+                        </div>
+
+                    </div>
+                    <div class="project-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.ironjournal.gymtracker" 
+                        class="playstore-button">
+
+                        <img src="./img/playstore-logo.svg" alt="google play store logo"
+                            height="24" width="24">
+                        <span class="texts">
+                        <span class="text-1">GET IT ON</span>
+                        <span class="text-2">Google Play</span>
+                        </span>
+                    </a>
+        
+                        <button type="button" class="demo-button" id="ij-gallery" >View Screens</button>
+                    </div>
+                </div>
+
+
+                <!-- iOS Dashboard App -->
+                <div class="project">
+                    <div class="project-name">
+                        <h3>iOS Dashboard App</h3>
+                        <h4 class="project-type" id="project-iOS">iPhone</h4>
+                    </div>
+
+                    <div class="project-desc">
+                        <img class="project-logo" src="./img/dashboard-iOS-logo.svg" alt="">
+                        <p>
+                            A demo iOS app that complements my Web Dashboard Database Project, 
+                            utilizing my MySQL API for database operations.
+                            <br><br>
+                            Designed for a fictional electric company, the app is built in Swift 
+                            using SwiftUI and supports full CRUD functionality. It also features 
+                            data visualization with Swift Charts, providing clear insights into 
+                            key metrics.
+                    </p> 
+                        
+                    </div>
+                    <h4 class="project-stack-title">Tech Stack:</h4>
+                    <div class="project-stack">
+
+                        <div class="project-stack-item" id="project-stack-smallest">
+                            <i class="fa-brands fa-swift"></i>
+                            <span id="stack-swift"></span>
+                        </div>
+
+                    </div>
+                    <div class="project-buttons">
+                        <button type="button" class="github-button" 
+                        onclick="location.href='https://github.com/JMiller7334/iOS-Dashboard-App'">
+                            <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                            View Repository
+                        </button>
+
+                        <button type="button" class="demo-button" id="ios-dashboard-gallery" >View Screens</button>
+                    </div>
+                </div>
+
+
+                <!-- API Weather App -->
+                <div class="project">
+                    <div class="project-name">
+                        <h3>API Weather App</h3>
+                        <h4 class="project-type" id="proj-android">Android</h4>
+                    </div>
+
+                    <div class="project-desc">
+                        <img class="project-logo" src="./img/api-weather-logo.svg" alt=""
+                            style="margin-bottom: 0.5em;">
+                        <p>
+                            A simplistic app that utilizes API services to get the weather
+                            in either Celsius or Fahrenheit.
+                            <br><br>
+                            Written in Kotlin using an MVVM (Model-View-ViewModel) design pattern
+                            this app fetches the weather by retrieving the city name of the zip code entered
+                            by the user via API; afterwards it leverages a second API to fetch the 
+                            weather for corresponding town or city.
+                        </p> 
+                        
+                    </div>
+                    <h4 class="project-stack-title">Tech Stack:</h4>
+                    <div class="project-stack">
+
+                        <div class="project-stack-item" id="project-stack-smallest">
+                            <img src="./img/kotlin-logo.svg" alt="kotlin logo" 
+                            style="padding: 0.2rem;">
+                            <span id="stack-kotlin"></span>
+                        </div>
+
+                    </div>
+                    <div class="project-buttons">
+                        <button type="button" class="github-button" 
+                        onclick="location.href='https://github.com/JMiller7334/API-Powered-Weather-App'">
+                            <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
+                            View Repository
+                        </button>
+
+                        <button type="button" class="demo-button" id="api-weather-gallery" >View Screens</button>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="container">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <div class="separator"></div>
+                
+                <!-- <div class="social-links">
+                    <a id="phone" class="social-btn flex-center">
+                        <i class="fas fa-phone"></i>
+                        <span>(815) 219 8394</span>
+                    </a>
+                    <a id="email" class="social-btn flex-center">
+                        <i class="fas fa-envelope"></i>
+                        <span>Jacob-Miller@Hotmail.com</span>
+                    </a>
+                </div> -->
+
+                <!-- CONTACT FORM -->
+                <form id="contact-form">
+                    <h3>Message Me</h3>
+                    <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="form-email" name="email" placeholder="Your Email" required>
+                    <textarea id="form-message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button id="form-button" type="submit">Send Message</button>
+
+                    <!-- spam protection -->
+                    <input type="text" name="honeypot" style="display:none;" autocomplete="off">
+                </form>
+            
+            </section>
+
+    <!-- end of site structure article  -->
+        </div>
     </div>
-
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="container">
-        <h2><i class="fas fa-user"></i> About Me</h2>
-        <div class="separator"></div>
-
-        <p>
-            I began coding at the age of 14, starting with Lua to create small games. 
-            I quickly discovered a passion for coding, I enjoyed the challenges it brought 
-            and the creativity involved.
-            <br><br>  
-        Eventually I began attending classes at my local community college, 
-            where I fell in love with designing websites and apps.
-        </p>
-
-        <!-- Collapsible Section -->
-        <button id="toggle-more-about" class="collapsible-button">More About Me</button>
-        <div id="more-about" class="collapsible-content">
-
-
-        <h3>+ Education</h3>
-        <div class="separator"></div>
-        <p class="p-justified"> 
-          I graduated McHenry County College in 2024 earning two degrees.
-        </p>
-
-        <ul class="grad-bullet">
-            <li>Associates in Web Design</li>
-            <li>Associates in Mobile App Development</li>
-        </ul>
-            
-        <h3>+ Other Interests</h3>
-        <div class="separator"></div>
-            <p class="p-justified">
-                I spend my free time training in martial arts, hitting the gym, or 
-                running. I also enjoy working on small indie game projects that 
-                I'm passionate about.
-            </p>
-            <div class="about-container">
-                <div class="about-item">
-                    <img src="./img/martial-arts.svg" alt="" id="hobby-martial">
-                    <p>Martial Artist</p>
-                </div>
-    
-                <div class="about-item">
-                    <img src="./img/barbell-icon-black.svg" alt="" id="hobby-lift">
-                    <p>Fitness Enthusiast</p>
-                </div>
-    
-                <div class="about-item">
-                    <img src="./img/code-logo.svg" alt="" id="hobby-game-development">
-                    <p>Game Developer</p>
-                </div>
-            </div>
-        </div>
-
-
-        <button class="download-button" style="margin-top: 2vh;" onclick="location.href='/pages/licenseflatride.html'">
-            <span>Download My CV</span>
-            <a href="/pages/licenseflatride.html"></a>
-        </button>
-        
-    </section>
-
-
-    
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="container">
-        <h2><i class="fas fa-briefcase"></i> Projects</h2>
-        <div class="separator" id="project-separator"></div>
-
-        <!--  mySQL-API   -->
-        <div class="project">
-
-            <div class="project-name">
-                <h3>MySQL API</h3>
-                <h4 class="project-type" id="proj-web">Web</h4>
-            </div>
-
-            <div class="project-desc">
-              <img class="project-logo" src="./img/mySQL-api-logo.svg" alt="">
-              
-              <p>
-                A RESTful API I developed with full CRUD functionality. 
-                <br><br>
-                Deployed on my VPS 
-                using PM2 as the process manager. It leverages Sequelize for seamless 
-                interaction with a MySQL database.
-            </p>
-            </div>
-    
-
-            <h4 class="project-stack-title">Tech Stack:</h4>
-            <div class="project-stack">
-                <div class="project-stack-item">
-                    <i class="fa-brands fa-js"></i>
-                    <span id="stack-javascript"></span>
-                </div>
-                <div class="project-stack-item" id="project-stack-short">
-                    <i class="fab fa-node-js"></i> <!-- Font Awesome icon for Node.js -->
-                    <span id="stack-node"></span>
-                </div>
-                <div class="project-stack-item">
-                    <img src="./img/express-js-logo.svg" alt="express.js logo">
-                    <span id="stack-express"></span>
-                </div>
-
-            </div>
-            
-            <div class="project-buttons">
-                <button type="button" class="github-button" onclick="location.href='https://github.com/JMiller7334/mySQL-API'">
-                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                    View Repository
-                </button>
-
-                <button class="api-call-button">
-                    <img src="./img/tower-broadcast.svg" alt="API Call" class="api-button-logo" style="width: 3vh;" />
-                    <span>Call API</span>
-                </button>
-                
-               
-            </div>
-        </div>
-
-        <!-- Dashboard Database Project -->
-        <div class="project">
-
-            <div class="project-name">
-                <h3>Dashboard Database Project</h3>
-                <h4 class="project-type" id="proj-web">Web</h4>
-            </div>
-
-            <div class="project-desc">
-                <img class="project-logo" src="./img/dashboard-project-logo.svg" alt="">
-                <p>
-                A web dashboard for a fictional electric company to manage and 
-                display metrics. 
-                <br><br>
-                It employs PHP for database operations and jQuery 
-                AJAX for dynamic loading. 
-                Its mySQL database is accessible via my MySQL-API project.
-            </p> 
-                
-            </div>
-            <h4 class="project-stack-title">Tech Stack:</h4>
-            <div class="project-stack">
-
-                <div class="project-stack-item" id="project-stack-html">
-                    <i class="fa-brands fa-html5"></i>
-                    <span id="stack-html"></span>
-                </div>
-
-                <div class="project-stack-item" id="project-stack-css">
-                    <i class="fa-brands fa-css3"></i>
-                    <span id="stack-css"></span>
-                </div>
-
-                <div class="project-stack-item">
-                    <i class="fa-brands fa-js"></i>
-                    <span id="stack-javascript"></span>
-                </div>
-
-                <div class="project-stack-item" id="project-stack-smallest">
-                    <i class="fa-brands fa-php"></i>
-                    <span id="stack-php"></span>
-                </div>
-
-                <div class="project-stack-item" id="project-stack-mysql">
-                    <img src="./img/mysql-logo.svg" alt="mySQL logo" id="mysql-img">
-                    <span id="stack-mysql"></span>
-                </div>
-
-            </div>
-            <div class="project-buttons">
-                <button type="button" class="github-button" 
-                onclick="location.href='https://github.com/JMiller7334/Dashboard-Database-project'">
-                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                    View Repository
-                </button>
-
-                <button type="button" class="demo-button" 
-                onclick="location.href='https://jacobjmiller.com/dashboard-project/'">Live Demo</button>
-            </div>
-        </div>
-
-        <!-- React Game site -->
-        <div class="project">
-            <div class="project-name">
-                <h3>Game Website</h3>
-                <h4 class="project-type" id="proj-web">Web</h4>
-            </div>
-
-            <div class="project-desc">
-                <img class="project-logo" src="./img/game-site-logo.svg" alt="" 
-                style="padding: 1.25rem; margin-top: -1rem;">
-                <p>
-                    This site showcases promotional material for an old game I developed.
-                    <br><br>
-                    Originally created using standard HTML and CSS. Later, 
-                    I rebuilt it using React.js, focusing on object-oriented programming 
-                    principles to create a more maintainable codebase resulting in this project.
-            </p> 
-                
-            </div>
-            <h4 class="project-stack-title">Tech Stack:</h4>
-            <div class="project-stack">
-
-                <div class="project-stack-item" id="project-stack-html">
-                    <i class="fa-brands fa-html5"></i>
-                    <span id="stack-html"></span>
-                </div>
-
-                <div class="project-stack-item" id="project-stack-css">
-                    <i class="fa-brands fa-css3"></i>
-                    <span id="stack-css"></span>
-                </div>
-
-                <div class="project-stack-item">
-                    <i class="fa-brands fa-js"></i>
-                    <span id="stack-javascript"></span>
-                </div>
-
-                <div class="project-stack-item" id="project-stack-react">
-                    <i class="fa-brands fa-react"></i>
-                    <span id="stack-react"></span>
-                </div>
-
-            </div>
-            <div class="project-buttons">
-                <button type="button" class="github-button" 
-                onclick="location.href='https://github.com/JMiller7334/ReactJS-Game-Website'">
-                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                    View Repository
-                </button>
-
-                <button type="button" class="demo-button" 
-                onclick="location.href='https://jacobjmiller.com/react-game-site/'">Visit Website</button>
-            </div>
-        </div>
-
-
-               <!-- Iron Jounral Prototype App -->
-        <div class="project">
-            <div class="project-name">
-                <h3>Iron Journal (Prototype)</h3>
-                <h4 class="project-type" id="proj-android">Android</h4>
-            </div>
-
-            <div class="project-desc">
-                <img class="project-logo" src="./img/iron-journal-logo.svg" alt="iron journal logo"
-                    style="margin-left: 0.5em; padding: 0.3em;">
-                <p>
-                    Iron Journal (Prototype) is a published strength-focused fitness app for Android. 
-                    <br><br>
-                    It features a step-by-step fitness tracking system and automated rest-time tracking.
-                    Written in Kotlin and designed using linear layout for it's UI. Firebase is used to handle user management and database 
-                    functionality. 
-                    <br><br>
-                    A requirment for my graduation. The project was managed using Agile SCRUM 
-                    to ensure it met strict deadlines.
-                </p> 
-                
-            </div>
-            <h4 class="project-stack-title">Tech Stack:</h4>
-            <div class="project-stack">
-
-                <div class="project-stack-item" id="project-stack-smallest">
-                    <img src="./img/kotlin-logo.svg" alt="kotlin logo" 
-                    style="padding: 0.2rem;">
-                    <span id="stack-kotlin"></span>
-                </div>
-
-                <div class="project-stack-item" id="project-stack-firebase">
-                    <img src="./img/firebase-logo.svg" alt="firebase logo">
-                    <span id="stack-firebase"></span>
-                </div>
-
-            </div>
-            <div class="project-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.ironjournal.gymtracker" 
-                class="playstore-button">
-
-                <img src="./img/playstore-logo.svg" alt="google play store logo"
-                    height="24" width="24">
-                <span class="texts">
-                <span class="text-1">GET IT ON</span>
-                <span class="text-2">Google Play</span>
-                </span>
-            </a>
-  
-                <button type="button" class="demo-button" id="ij-gallery" >View Screens</button>
-            </div>
-        </div>
-
-
-        <!-- iOS Dashboard App -->
-        <div class="project">
-            <div class="project-name">
-                <h3>iOS Dashboard App</h3>
-                <h4 class="project-type" id="project-iOS">iPhone</h4>
-            </div>
-
-            <div class="project-desc">
-                <img class="project-logo" src="./img/dashboard-iOS-logo.svg" alt="">
-                <p>
-                    A demo iOS app that complements my Web Dashboard Database Project, 
-                    utilizing my MySQL API for database operations.
-                    <br><br>
-                    Designed for a fictional electric company, the app is built in Swift 
-                    using SwiftUI and supports full CRUD functionality. It also features 
-                    data visualization with Swift Charts, providing clear insights into 
-                    key metrics.
-            </p> 
-                
-            </div>
-            <h4 class="project-stack-title">Tech Stack:</h4>
-            <div class="project-stack">
-
-                <div class="project-stack-item" id="project-stack-smallest">
-                    <i class="fa-brands fa-swift"></i>
-                    <span id="stack-swift"></span>
-                </div>
-
-            </div>
-            <div class="project-buttons">
-                <button type="button" class="github-button" 
-                onclick="location.href='https://github.com/JMiller7334/iOS-Dashboard-App'">
-                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                    View Repository
-                </button>
-
-                <button type="button" class="demo-button" id="ios-dashboard-gallery" >View Screens</button>
-            </div>
-        </div>
-
-
-        <!-- API Weather App -->
-        <div class="project">
-            <div class="project-name">
-                <h3>API Weather App</h3>
-                <h4 class="project-type" id="proj-android">Android</h4>
-            </div>
-
-            <div class="project-desc">
-                <img class="project-logo" src="./img/api-weather-logo.svg" alt=""
-                    style="margin-bottom: 0.5em;">
-                <p>
-                    A simplistic app that utilizes API services to get the weather
-                    in either Celsius or Fahrenheit.
-                    <br><br>
-                    Written in Kotlin using an MVVM (Model-View-ViewModel) design pattern
-                    this app fetches the weather by retrieving the city name of the zip code entered
-                    by the user via API; afterwards it leverages a second API to fetch the 
-                    weather for corresponding town or city.
-                </p> 
-                
-            </div>
-            <h4 class="project-stack-title">Tech Stack:</h4>
-            <div class="project-stack">
-
-                <div class="project-stack-item" id="project-stack-smallest">
-                    <img src="./img/kotlin-logo.svg" alt="kotlin logo" 
-                    style="padding: 0.2rem;">
-                    <span id="stack-kotlin"></span>
-                </div>
-
-            </div>
-            <div class="project-buttons">
-                <button type="button" class="github-button" 
-                onclick="location.href='https://github.com/JMiller7334/API-Powered-Weather-App'">
-                    <img src="img/github-button-logo.svg" alt="GitHub Icon" height="24" width="24">
-                    View Repository
-                </button>
-
-                <button type="button" class="demo-button" id="api-weather-gallery" >View Screens</button>
-            </div>
-        </div>
-
-
-
-
-
-
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="container">
-        <h2><i class="fas fa-envelope"></i> Contact</h2>
-        <div class="separator"></div>
-        
-        <!-- <div class="social-links">
-            <a id="phone" class="social-btn flex-center">
-                <i class="fas fa-phone"></i>
-                <span>(815) 219 8394</span>
-            </a>
-            <a id="email" class="social-btn flex-center">
-                <i class="fas fa-envelope"></i>
-                <span>Jacob-Miller@Hotmail.com</span>
-            </a>
-        </div> -->
-
-        <!-- CONTACT FORM -->
-        <form id="contact-form">
-            <h3>Message Me</h3>
-            <input type="text" id="form-name" name="name" placeholder="Your Name" required>
-            <input type="email" id="form-email" name="email" placeholder="Your Email" required>
-            <textarea id="form-message" name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button id="form-button" type="submit">Send Message</button>
-
-            <!-- spam protection -->
-            <input type="text" name="honeypot" style="display:none;" autocomplete="off">
-        </form>
-    
-    </section>
     
     <!-- FOOTER -->
     <footer>

@@ -61,7 +61,7 @@ form button:active{
     position: sticky;
     top: calc(5vh - 1px);
     width: 100vw;
-    height: 3vh;
+    height: var(--form-response-height);
 
     font-size: 1rem;
 
