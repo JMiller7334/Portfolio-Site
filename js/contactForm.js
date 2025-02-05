@@ -22,16 +22,27 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
     const formData = new FormData(this);
     const requestData = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
+        name: formData.get("name").trim(),
+        email: formData.get("email").trim(),
+        message: formData.get("message").trim(),
         honeypot: formData.get("honeypot")
     };
 
-    //check if honeypot field is filled out (spam check)
+    //check for empty fields
+    if (!requestData.name || !requestData.email || !requestData.message) {
+        formResponse.textContent = "All fields are required.";
+        setTimeout(() => resetFormResponse(), 3000);
+        formDebounce = false;
+        return;
+    }
+
+    // Honeypot spam detection
     if (requestData.honeypot) {
         formResponse.textContent = "Spam detected. Form not submitted.";
-        resetFormResponse();
+        console.log("Spam detect. Form not submitted.")
+
+        setTimeout(() => resetFormResponse(), 3000);
+        formDebounce = false;
         return;
     }
 
@@ -43,28 +54,44 @@ document.getElementById("contact-form").addEventListener("submit", async functio
             },
             body: JSON.stringify(requestData)
         });
-
-        const textResponse = await response.text(); // Get raw response text
-        console.log("Raw API Response:", textResponse); // Debugging
-
-        // Extract the first JSON object from the response
-        const firstJsonMatch = textResponse.match(/\{.*?\}/); // Match only the first JSON object
-
-        if (firstJsonMatch) {
-            const firstValidJson = JSON.parse(firstJsonMatch[0]); // Parse the first JSON object
-
-            if (firstValidJson.success) {
-                formResponse.textContent = firstValidJson.success;
-                document.getElementById("contact-form").reset();
-            } else {
-                formResponse.textContent = firstValidJson.error;
-            }
-        } else {
-            formResponse.textContent = "Invalid response from server.";
+    
+        if (!response.ok) {
+            formResponse.textContent = `An error occurred: ${response.status}`;
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
+        //attempt to parse JSON safely
+        let firstValidJson;
+        try {
+            firstValidJson = await response.json();
+        } catch (jsonError) {
+            console.error("Invalid JSON response:", jsonError);
+            formResponse.textContent = "Unexpected server response.";
+            
+            setTimeout(() => resetFormResponse(), 3000);
+            formDebounce = false;
+            return;
+        }
+
+        //handle API response:
+        if (firstValidJson.success) {
+            formResponse.textContent = firstValidJson.success;
+            document.getElementById("contact-form").reset();
+            console.log(firstValidJson.success);
+
+
+        } else if (firstValidJson.error) {
+            formResponse.textContent = firstValidJson.error;
+            console.log(firstValidJson.error);
+
+        } else {
+            formResponse.textContent = "Invalid format.";
+            console.log("Invalid format");
+        }
+
     } catch (error) {
         formResponse.textContent = "An error occurred while processing the response.";
-        console.error("Parsing error:", error);
+        console.error("Error:", error);
     }
 
     setTimeout(() => {
