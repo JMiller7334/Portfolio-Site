@@ -57,7 +57,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
                 formResponse.textContent = firstValidJson.success;
                 document.getElementById("contact-form").reset();
             } else {
-                formResponse.textContent = "Unexpected response format.";
+                formResponse.textContent = firstValidJson.error;
             }
         } else {
             formResponse.textContent = "Invalid response from server.";
