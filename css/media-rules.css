@@ -1,29 +1,33 @@
-/* Default styles for mobile-first design (small screens) */
+/*default styles for mobile-first design (small screens) */
 .site-structure {
     display: grid;
     grid-template-areas: "main";
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 
-    /* border: 2px solid blue; */
+    /*border: 2px solid blue; */
 
     margin-top: calc(0px - var(--form-response-height));
 }
 
 .site-article {
+    background-color: white;
     grid-area: main;
     box-sizing: content-box;
 
-    /* border: 2px solid purple; */
+    /*border: 2px solid purple; */
 }
 
-/* Optional: Define background sections */
-.site-bg-left,
-.site-bg-right {
-    display: none; /* Hide on mobile */
+.background-image {
+    display: none;
 }
 
-/* Small Laptops and Larger Tablets */
+/*optional: Define background sections */
+.gutter {
+    display: none; /*hide on mobile */
+}
+
+/*small Laptops and Larger Tablets */
 @media (min-width: 768px) {
     .site-structure {
         grid-template-areas: "bg-left main bg-right";
@@ -35,17 +39,15 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .site-bg-left, 
-    .site-bg-right {
-        display: block; /* Show background elements */
-        background-color: #f0f0f0; /* Example styling */
+    .gutter {
+        display: flex;
     }
 
-    .site-bg-left {
+    .gutter.right {
         grid-area: bg-left;
     }
 
-    .site-bg-right {
+    .gutter.left {
         grid-area: bg-right;
     }
 }

@@ -5,6 +5,8 @@
     align-items:top;
 
     margin-left: 0.2rem;
+    max-width: 300px;
+    /* border: 2px solid green; */
   }
   
   .social-btn {

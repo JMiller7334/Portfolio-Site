@@ -74,27 +74,53 @@ section h2 {
 }
   
 
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 500;
+    width: 100vw;
+    background-color: var(--primary-color);
+
+
+}
+
 /* -- FOOTER -- */
 footer {
     display: grid;
-    grid-template-areas: "f-header f-header f-farewell"
-               "f-social f-social f-text"
-               "f-copyr f-copyr f-copyr";
+    grid-template-areas: "f-header f-header f-farewell f-farwell"
+               "f-social f-social f-text f-text"
+               "f-copyr f-copyr f-copyr f-logo";
 
-    grid-template-columns: 1fr 1fr 2.5fr;
-    grid-template-rows: auto;
-
-    padding: 1rem;
-    padding-right: 2rem;
-
-    background: var(--primary-color);
     color: var(--text-color);
+
+    width: clamp(300px, 95vw, 900px);
+
+    padding: 0.4rem;
+    padding-top: 0.7rem;
 }
 
+.footer-logo {
+    grid-area: f-logo;
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+
+    padding-bottom: 0.2rem;
+
+    width: 100%;
+    /* border: 2px solid blue; */
+}
+
+.footer-logo img {
+    height: clamp(2rem, 3vw, 40px);
+    /* border: 2px solid purple; */
+}
 
 footer h3 {
     color: var(--demo-color);
-    font-size: 1.1rem;
+    font-size: clamp(14px, 1.7vw, 4rem);
     grid-area: f-header;
 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -102,8 +128,10 @@ footer h3 {
 
 footer h4 {
     color: var(--accent-color);
-    font-size: 1.1rem;
+    font-size: clamp(14px, 1.7vw, 4rem);
     grid-area: f-farewell;
+
+ 
 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -116,7 +144,10 @@ footer h4 {
     margin-bottom: 0.2rem;
     padding-left: 0.5rem;
 
-    max-width: 300px;
+    max-width: 330px;
+
+
+    /* border: 2px solid green; */
 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -128,6 +159,7 @@ footer h4 {
 .copyright {
     display: flex;
     justify-content: start;
+    align-items: flex-end;
 
     font-size: 0.8rem;
 
@@ -138,6 +170,7 @@ footer h4 {
 
     grid-area: f-copyr;
 }
+
 
 
   

@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- BACKGROUND -->
+     <link rel="stylesheet" href="./css/components/background.css">
+
     <!-- COMPONENTS / STRUCTURES -->
     <link rel="stylesheet" href="./css/components/about-me.css">
     <link rel="stylesheet" href="./css/components/projects.css">
@@ -73,6 +76,7 @@
 
     <!-- NAV -->
     <nav>
+        <img id="nav-logo" src="./img/jjm-default-mono-white.svg" alt="">
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -84,6 +88,12 @@
 
     <!-- SITE ARTICLE STRUCTURE -->
     <div class="site-structure">
+
+        <div class="gutter left">
+        </div>
+        <div class="gutter right"></div>
+
+
         <div class="site-article">
 
             <div class="margin-element"></div>
@@ -511,29 +521,36 @@
     </div>
     
     <!-- FOOTER -->
-    <footer>
-            <h4>Thanks For Visiting!</h4>
-            <h3>Connect:</h3>
+     <div class="footer-container">
+        <footer>
+                <h4>Thanks For Visiting!</h4>
+                <h3>Connect:</h3>
 
-            <p class="footer-msg">
-                I appreciate you taking the time to explore my work. If you'd 
-                like to connect or collaborate, feel free to reach out.
-            </p>
- 
-        <div class="social-links">
-            <!-- GitHub -->
-            <a id="github" class="social-btn flex-center" href="https://github.com/JMiller7334" target="_blank">
-                <img src="img/github-logo.svg" alt="GitHub Logo">
-            </a>
-            <!-- LinkedIn -->
-            <a id="linkedin" class="social-btn flex-center" href="https://www.linkedin.com/in/jmiller7334" target="_blank">
-                <img src="img/linkedin-logo.svg" alt="LinkedIn Logo">
-            </a>
-        </div>
+                <p class="footer-msg">
+                    I appreciate you taking the time to explore my work. If you'd 
+                    like to connect or collaborate, feel free to reach out.
+                </p>
+    
+            <div class="social-links">
+                <!-- GitHub -->
+                <a id="github" class="social-btn flex-center" href="https://github.com/JMiller7334" target="_blank">
+                    <img src="img/github-logo.svg" alt="GitHub Logo">
+                </a>
+                <!-- LinkedIn -->
+                <a id="linkedin" class="social-btn flex-center" href="https://www.linkedin.com/in/jmiller7334" target="_blank">
+                    <img src="img/linkedin-logo.svg" alt="LinkedIn Logo">
+                </a>
+            </div>
+
+            <div class="footer-logo">
+                <img src="./img/jjm-default-mono-white.svg" alt="website logo">
+            </div>
+    
 
 
-        <p class="copyright">&copy; 2025 Jacob Miller. All rights reserved.</p>
-    </footer>
+            <p class="copyright">&copy; 2025 Jacob Miller. All rights reserved.</p>
+        </footer>
+    </div>
 
     <!-- JavaScript -->
     <script src="./js/scroll.js"></script>
@@ -541,6 +558,7 @@
     <script src="./js/about.js"></script>
     <script src="./js/modalGallery.js"></script>
     <script src="./js/contactForm.js"></script>
+    <!-- <script src="./js/background.js"></script> -->
 
 </body>
 </html>

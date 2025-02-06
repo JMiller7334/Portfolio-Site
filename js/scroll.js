@@ -1,8 +1,11 @@
 const heroContainer = document.querySelector('.container-hero');
 const profilePicture = document.querySelector('.profile-picture');
 const terminalFooter = document.querySelector('.terminal-footer');
+const navLogo = document.getElementById('nav-logo');
 const h1 = document.querySelector('header h1');
 const p = document.querySelector('header p');
+
+const nav = document.querySelector('nav');
 
 const terminals = document.querySelectorAll('.terminal-text');
 
@@ -11,6 +14,8 @@ const heroTrigger = document.querySelector('.hero-trigger');
 
 var animateHero = true;
 var isScrolledToTop = true;
+
+var initialLoadup = true;
 
 document.addEventListener("scroll", () => {
     /** events to occur when user scrolls happen here */
@@ -32,8 +37,18 @@ const observerHeroSnapScroll = new IntersectionObserver(function (entries, _) {
     entries.forEach(entry => {
         if (entry.isIntersecting && isScrolledToTop === false) {
             handleSnapScroll();
+            navLogo.classList.remove('visible');
+            nav.classList.remove('standard');
         } else {
             isScrolledToTop = false;
+
+            //prevent elements from being modified on site loadup.
+            if (initialLoadup) {
+                initialLoadup = false;
+                return;
+            }
+            navLogo.classList.add('visible');
+            nav.classList.add('standard');
         }
     });
 });
