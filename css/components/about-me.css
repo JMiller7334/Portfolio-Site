@@ -19,7 +19,7 @@
     color: var(--body-text-color);
     padding: 10px 20px;
     border: 2px solid var(--body-text-color);
-    border-radius: 5px;
+    border-radius: var(--corner-radius);
     cursor: pointer;
     font-size: 16px;
     margin-top: 40px;

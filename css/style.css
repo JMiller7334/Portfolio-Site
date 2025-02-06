@@ -1,13 +1,16 @@
 /* -- VARIABLES -- */
 :root {
     --hero-height: 95vh;
-    --corners: 8px;
+
     --inner-padding: 1.2rem;
 
     --button-font-size: 0.8rem;
     --button-font-weight: 500;
 
     --form-response-height: 3vh;
+
+    --corners: 0px; /*container corners*/
+    --corner-radius: 4px; /*button corners*/
 }
 
 *,

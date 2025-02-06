@@ -9,7 +9,7 @@
     justify-content: center;
     
 
-    border-radius: 7px;
+    border-radius: var(--corner-radius);
     border: none;
     background: var(--accent-color);
     color: var(--text-color);

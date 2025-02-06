@@ -18,7 +18,7 @@
     vertical-align: middle;
     align-items: center;
 
-    border-radius: 0.5rem;
+    border-radius: var(--corner-radius);
     gap: 0.75rem;
     border: none;
     cursor: pointer;

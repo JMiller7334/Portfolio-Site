@@ -1,9 +1,18 @@
 /** BACKGROUND - DESKTOP, TABLET ONLY
 */
+:root {
+    --length-width: 3vw;
+}
 
-/*ensure the gutters are positioned correctly */
+
 .gutter {
     z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end;
+
+
     position: relative;
     width: 100%;
     height: 100%;
@@ -13,38 +22,68 @@
     /* border: 2px solid red; */
 }
 
-
-/*styling for the floating "+" signs */
-.plus {
-    position: absolute;
-    color: var(--primary-color);
-    animation: floatUp 5s linear infinite, rotate 10s linear infinite;
-    opacity: 0;
+.gutter.left {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
 }
 
-/*keyframe animation */
-@keyframes floatUp {
-    0% {
-        transform: translateY(150vh) rotate(0deg);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-    }
+.gutter.right {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.bg-box1 {
+    z-index: 200;
+    background: var(--hero-background-color);
+    height: 0.6%;
+}
+.bg-box1.a1{
+    width: 2.25vw;
+
+}
+.bg-box1.a2{
+    width: 1.5vw;
+
+}
+.bg-box1.a3{
+    width: 1.5vw;
+
+}
+.bg-box1.a4{
+    width: 0.75vw;
+    height: 1.2%;
+
+}
+
+.bg-box-grad{
+    background: linear-gradient(to bottom, var(--hero-background-color), var(--primary-color));
+    width: 0.75vw;
+    height: 94.8%;
+
+}
+
+.bg-box2 {
+    z-index: 200;
+    background: var(--primary-color);
+    height: 0.6%;
+}
+
+.bg-box2.b1{
+    width: 2vw;
+}
+.bg-box2.b2{
+    width: 0.75vw;
+
+}
+.bg-box2.b3{
+    width: 0.75vw;
+
+}
+
+.bg-box2.b4{
+    width: 0.75vw;
+
 }
 
