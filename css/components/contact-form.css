@@ -59,7 +59,7 @@ form button:active{
     z-index: 50;
 
     position: sticky;
-    top: calc(5vh - 1px);
+    top: calc(6.5vh - 1px);
     width: 100vw;
     height: var(--form-response-height);
 
