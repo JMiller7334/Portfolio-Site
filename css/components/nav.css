@@ -48,7 +48,7 @@ nav ul {
     align-items: center;
     justify-content: center;
 
-    gap: clamp(10px, 12vw, 330px);
+    gap: clamp(12px, 3.25vw, 20px);
 
 
     width: 95vw;
@@ -57,6 +57,19 @@ nav ul {
     padding: 0;
     /* border: 2px solid blue; */
 }
+
+/* SCREEN COMPAT */
+@media (min-width: 500px) {
+    nav ul {
+        gap: clamp(10px, 6vw, 330px);
+    }
+}
+@media (min-width: 768px) {
+    nav ul {
+        gap: clamp(10px, 12vw, 330px);
+    }
+}
+
 
 nav ul li {
     margin: 0 1rem;
