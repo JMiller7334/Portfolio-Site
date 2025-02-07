@@ -14,7 +14,7 @@ nav {
     width: 100%;
 
     padding-left: 1rem;
-    padding-right: calc(5vh + 0.5rem);
+    padding-right: calc(5vh + 1.25rem);
 
 
     background: var(--hero-background-color);
@@ -48,7 +48,7 @@ nav ul {
     align-items: center;
     justify-content: center;
 
-    gap: 5vw;
+    gap: clamp(10px, 12vw, 330px);
 
 
     width: 95vw;
@@ -67,8 +67,8 @@ nav ul li a {
     text-align: left;
     text-decoration: none;
 
-    font-size: clamp(10px, 3vw, 17px);
-    font-weight: bold;
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight:normal;
     position: relative;
     transition: color 0.3s ease;
 }
