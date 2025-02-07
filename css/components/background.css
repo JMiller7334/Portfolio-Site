@@ -38,6 +38,7 @@
     z-index: 200;
     background: var(--hero-background-color);
     height: 0.6%;
+    box-shadow: 0 7px 7px rgba(17, 17, 17, 0.2);
 }
 .bg-box1.a1{
     width: 2.25vw;
@@ -61,6 +62,7 @@
     background: linear-gradient(to bottom, var(--hero-background-color), var(--primary-color));
     width: 0.75vw;
     height: 94.8%;
+    box-shadow: 0 7px 7px rgba(17, 17, 17, 0.2);
 
 }
 
@@ -68,6 +70,7 @@
     z-index: 200;
     background: var(--primary-color);
     height: 0.6%;
+    box-shadow: 0 7px 7px rgba(17, 17, 17, 0.2);
 }
 
 .bg-box2.b1{

@@ -29,7 +29,7 @@
     padding: var(--inner-padding);
     padding-bottom: calc(var(--inner-padding) * 2);
     background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 7px rgba(17, 17, 17, 0.15);
 }
 
 

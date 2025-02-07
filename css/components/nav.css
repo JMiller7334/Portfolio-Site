@@ -19,7 +19,7 @@ nav {
 
     background: var(--hero-background-color);
     text-align: center;
-    /* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
     transition: height 0.25s ease-in; 
 

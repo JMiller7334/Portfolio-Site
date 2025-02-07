@@ -35,9 +35,9 @@
     .site-article {
         padding-left: 2rem;
         padding-right: 2rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 7px rgba(17, 17, 17, 0.15);
         border-radius: var(--corners);
-        /* margin-bottom: 5rem; */
+        margin-bottom: 5rem;
     }
 
     .gutter {
