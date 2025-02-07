@@ -71,6 +71,7 @@ form button:active{
     background-color: var(--accent-color);
 
     opacity: 0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     transition: opacity 0.3s ease-in;
     /* border: 2px solid orange; */
 }
