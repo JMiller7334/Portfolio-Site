@@ -6,8 +6,8 @@ export default class TerminalMessages {
     Welcome to the API Access Terminal!
     
     Available Commands:
-    - write customer
-    - read customer
+    - 'write customer'
+    - 'read customer'
     
     Note: This terminal supports only write and read operations for the Customer Table.
 
