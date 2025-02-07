@@ -10,7 +10,7 @@
     --form-response-height: 3vh;
 
     --corners: 4px; /*container corners*/
-    --corner-radius: 4px; /*button corners*/
+    --corner-radius: 2px; /*button corners*/
 }
 
 *,
