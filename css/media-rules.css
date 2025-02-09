@@ -30,7 +30,7 @@
 }
 
 /*small Laptops and Larger Tablets */
-@media (min-width: 768px) {
+@media (min-width: 1024px) { /*768*/
     .site-structure {
         grid-template-areas: "bg-left main bg-right";
         grid-template-columns: 1fr 2fr 1fr;        
@@ -50,12 +50,12 @@
 }
 
 /* Desktops and Larger Screens */
-@media (min-width: 1024px) {
+/*@media (min-width: 1024px) {
     .site-structure {
         grid-template-areas: "bg-left main bg-right";
         grid-template-columns: 1fr 2fr 1fr;        
     }
-}
+}*/
 
 /* Extra Large Screens */
 @media (min-width: 1440px) {
