@@ -1,6 +1,9 @@
 const scrollIndicator = document.querySelector('.scroll-indicator');
 const terminalTextbox = document.querySelector('.terminal-textbox');
 const callApiButton = document.querySelector('.api-call-button');
+const terminalProfile = document.getElementById('terminal-profile');
+const terminalH1 = document.getElementById('terminal-h1');
+const terminalP = document.getElementById('terminal-p');
 
 const terminalInputElements = document.querySelectorAll('.terminal-textbox, .terminal-send-button, .api-braces');
 
@@ -25,7 +28,7 @@ let enumApiCallType = {
 };
 
 let apiStage = 0;
-let apiCallType = enumApiCallType.undefined
+let apiCallType = enumApiCallType.undefined;
 
 
 
@@ -52,6 +55,10 @@ document.querySelector('.api-call-button').addEventListener('click', () => {
   }
   toggleTerminalInput();
   window.scrollTo({top: 0, behavior: 'smooth'});
+  terminalProfile.src = '../img/code-logo.svg';
+  terminalProfile.classList.add('fit');
+  terminalH1.textContent = 'API Terminal';
+  terminalP.textContent = 'MySQL API';
   writeApiTerminalGreeting();
 });
 
@@ -173,6 +180,7 @@ function terminalCustomerReadMsg() {
 
 // -------------------- TERMINAL SEND BUTTON -------------------- //
 import { isInputNumber } from './modules/validationUtils.js';
+import { escapeMySQLString } from './modules/validationUtils.js';
 const terminalSendButton = document.querySelector('.terminal-send-button');
 const terminalAttemptMsg = terminalMessages.attemptCallBody;
 let apiDebounce = false;
@@ -243,7 +251,12 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
 
   // Write handling:
   else if (apiCallType === enumApiCallType.customerWrite && apiStage > 0) {
-    customerObj.writeToCustomer(apiStage, terminalTextbox.value);
+    let safeResult = escapeMySQLString(terminalTextbox.value);
+    let safeString = safeResult.sanitizedStr
+    if (safeResult.modified) {
+      alert('Your input was modified to be database safe.');
+    }
+    customerObj.writeToCustomer(apiStage, safeString);
     apiStage++;
     terminalCustomerWriteMsg();
   }

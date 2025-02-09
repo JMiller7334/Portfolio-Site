@@ -20,7 +20,7 @@
     /*border: 2px solid purple; */
 }
 
-.background-image {
+.site-background {
     display: none;
 }
 
@@ -43,6 +43,9 @@
 
         margin-top: 4rem;
         margin-bottom: 4rem;
+    }
+    .site-background {
+        display: block;
     }
 }
 
