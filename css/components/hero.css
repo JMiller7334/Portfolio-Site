@@ -198,6 +198,8 @@ header {
 
 /* TERMINAL HEADER */
 header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+
     margin: 0;
     margin-bottom: calc(-0.5rem + -1vw);
     font-size: clamp(23px, 7vw, 65px);
@@ -208,7 +210,9 @@ header h1 {
 }
 
 header p {
-    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin-top: 5px;
     font-size: clamp(17px, 3vw, 20px);
     
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

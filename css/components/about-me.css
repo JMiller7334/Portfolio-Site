@@ -5,6 +5,26 @@
     --aboutBoldWeight: 600;
 }
 
+.about-me-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+}
+.about-me-content p {
+    width: 70%;
+    margin-right: 5%;
+    margin-top: 0.7rem;
+}
+
+#lottie-coding {
+   max-width: 150px;
+    /* border: 2px solid black; */
+}
+
 /* Collapsible button styling */
 .collapsible-button {
     display: flex;
@@ -44,7 +64,7 @@
 
 /* Expanded state */
 .collapsible-content.expanded {
-    max-height: 570px;
+    max-height: 520px;
     padding: var(--expandedAboutPadding);
     animation: expandAbout 0.5s ease forwards;
 }
@@ -70,8 +90,8 @@
     height: 10vh;
     width: 100%;
 
-    margin-top: 4vh;
-    margin-bottom: 4rem;
+    margin-top: clamp(2px, 1vh, 5px);
+    margin-bottom: 1rem;
 
     /* border: 2px solid orange; */
 }

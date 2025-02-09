@@ -6,6 +6,11 @@
     <title>Jacob J. Miller | iOS, Android & Web Developer Portfolio</title>
     <meta name="description" content="Jacob Miller's Developer Portfolio for iOS, Android, Web Development.">
 
+    <!-- GOOGLE FONTS:  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <!-- CSS Links -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/media-rules.css">
@@ -34,6 +39,7 @@
 
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/1d4d27c0b7.js" crossorigin="anonymous"></script>
+
 
     <!-- Favicon for browsers (16x16 and 32x32 PNGs) -->
     <link rel="icon" href="./favicon-16x16.png" sizes="16x16" type="image/png">
@@ -102,37 +108,36 @@
     <!-- SITE ARTICLE STRUCTURE -->
     <div class="site-structure">
 
-        <div class="gutter left" id="background-left">
-            <!-- <div class="bg-box1 a1"></div>
-            <div class="bg-box1 a2"></div>
-            <div class="bg-box1 a3"></div>
-            <div class="bg-box1 a4"></div>
+        <!-- SITE BACKGROUND -->
+        <div class='site-background'>
 
-            <div class="bg-box-grad"></div>
 
-            <div class="bg-box2 b4"></div>
-            <div class="bg-box2 b3"></div>
-            <div class="bg-box2 b2"></div>
-            <div class="bg-box2 b1"></div> -->
+            <div class="bg-line vert1"></div>
+            <div class="bg-line vert2"></div>
+
+            <div class="bg-line hori0"></div>
+            <div class="bg-line hori1"></div>
+            <div class="bg-line hori2"></div>
+            <div class="bg-line hori3"></div>
+            <div class="bg-line hori4"></div>
+
+
+            <div class='circle xxlarge shade1'></div>
+            <div class='circle xlarge shade2'></div>
+            <div class='circle large shade3'></div>
+            <div class='circle small shade5'></div>
+
+            <div id="bg-gear">
+                <img src="./img/gear-stroke.svg" alt="Spinning gear icon">
+            </div>
+
+            <div class="blur-overlay"></div>
         </div>
-        <div class="gutter right" id="background-right">
-            <!-- <div class="bg-box1 a1"></div>
-            <div class="bg-box1 a2"></div>
-            <div class="bg-box1 a3"></div>
-            <div class="bg-box1 a4"></div>
 
-            <div class="bg-box-grad"></div>
 
-            <div class="bg-box2 b4"></div>
-            <div class="bg-box2 b3"></div>
-            <div class="bg-box2 b2"></div>
-            <div class="bg-box2 b1"></div> -->
-        </div>
-
+        <div class="margin-element"></div>
 
         <div class="site-article">
-
-            <div class="margin-element"></div>
             <!-- MODAL GALLERY -->
             <div id="galleryModal" class="gallery-modal">
                 <span id="closeGallery">&times;</span>
@@ -144,17 +149,23 @@
 
             <!-- ABOUT SECTION -->
             <section id="about" class="container">
-                <h2><i class="fas fa-user"></i> About Me</h2>
+                <h2><i class="fa-solid fa-laptop-code"></i> My Coding Journey</h2>
                 <div class="separator"></div>
+                
+                <div class="about-me-content">
+                    <p>
+                        I began coding at the age of 14, starting with Lua to create small games. 
+                        I quickly discovered a passion for coding, I enjoyed the challenges it brought 
+                        and the creativity involved.
+                        <br><br>  
+                    Eventually I began attending classes at my local community college, 
+                        where I fell in love with designing websites and apps, I later graduated in 2024.
+                    </p>
 
-                <p>
-                    I began coding at the age of 14, starting with Lua to create small games. 
-                    I quickly discovered a passion for coding, I enjoyed the challenges it brought 
-                    and the creativity involved.
-                    <br><br>  
-                Eventually I began attending classes at my local community college, 
-                    where I fell in love with designing websites and apps, I later graduated in 2024.
-                </p>
+                    <div id="lottie-coding">
+
+                    </div>
+                </div>
 
                 <!-- Collapsible Section -->
                 <button id="toggle-more-about" class="collapsible-button">More About Me</button>
@@ -527,17 +538,6 @@
                 <h2><i class="fas fa-envelope"></i> Contact</h2>
                 <div class="separator"></div>
                 
-                <!-- <div class="social-links">
-                    <a id="phone" class="social-btn flex-center">
-                        <i class="fas fa-phone"></i>
-                        <span>(815) 219 8394</span>
-                    </a>
-                    <a id="email" class="social-btn flex-center">
-                        <i class="fas fa-envelope"></i>
-                        <span>Jacob-Miller@Hotmail.com</span>
-                    </a>
-                </div> -->
-
                 <!-- CONTACT FORM -->
                 <form id="contact-form">
                     <h3>Message Me</h3>
@@ -594,6 +594,10 @@
     <script src="./js/about.js"></script>
     <script src="./js/modalGallery.js"></script>
     <script src="./js/contactForm.js"></script>
+
+    <!-- LOTTIE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script src="./lottie/loader.js"></script>
 
 </body>
 </html>

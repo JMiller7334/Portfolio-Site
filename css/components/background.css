@@ -1,92 +1,204 @@
 /** BACKGROUND - DESKTOP, TABLET ONLY
 */
 :root {
-    --length-width: 3vw;
+    --bg-color1: rgb(53, 53, 53);
 }
 
 
-.gutter {
-    z-index: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: flex-end;
+.site-background {
+    z-index: -1;
+    position: fixed;
 
+    top: 0;
+    left: 0;
 
-    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+    opacity: 1;
+}
+
+.blur-overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-
-    /* border: 2px solid red; */
+    background: rgba(255, 255, 255, 0.2); /* Slight transparency */
+    /* backdrop-filter: blur(1px); Apply blur effect */
+    /* -webkit-backdrop-filter: blur(1px); For Safari */
+    top: 0;
+    left: 0;
 }
 
-.gutter.left {
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
+
+
+/* BACKGROUND LINES: */
+.bg-line {
+    position: absolute;
+    border: none;
+    margin: 0;
 }
 
-.gutter.right {
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
+/* VERTICAL: */
+.bg-line.vert1 {
+    width: 1px;
+    height: 100%;
+    top: 55px;
+    right: 100px;
+    border-left: 5px solid var(--bg-color1);
+}
+.bg-line.vert2 {
+    width: 1px;
+    height: 100%;
+    top: 55px;
+    right: 180px;
+    border-left: 2px solid var(--bg-color1);
 }
 
-.bg-box1 {
-    z-index: 200;
-    background: var(--hero-background-color);
-    height: 0.6%;
-    box-shadow: 0 7px 7px rgba(17, 17, 17, 0.2);
-}
-.bg-box1.a1{
-    width: 2.25vw;
 
-}
-.bg-box1.a2{
-    width: 1.5vw;
-
-}
-.bg-box1.a3{
-    width: 1.5vw;
-
-}
-.bg-box1.a4{
-    width: 0.75vw;
-    height: 1.2%;
-
+/* HORIZONTAL: */
+.bg-line.hori0 {
+    width: 100%;
+    height: 2px;
+    top: 120px;
+    right: 0;
+    border-top: 2px solid var(--bg-color1);
 }
 
-.bg-box-grad{
-    background: linear-gradient(to bottom, var(--hero-background-color), var(--primary-color));
-    width: 0.75vw;
-    height: 94.8%;
-    box-shadow: 0 7px 7px rgba(17, 17, 17, 0.2);
-
+.bg-line.hori1 {
+    width: 100%;
+    height: 2px;
+    top: 190px;
+    right: 0;
+    border-top: 2px solid var(--bg-color1);
+}
+.bg-line.hori2 {
+    width: 1500px;
+    height: 2px;
+    top: 620px;
+    right: -6%;
+    border-top: 2px solid var(--bg-color1);
+    transform: rotate(-25deg);
+}
+.bg-line.hori3 {
+    width: 1000px;
+    height: 2px;
+    top: 880px;
+    right: -10%;
+    border-top: 2px solid var(--bg-color1);
+    transform: rotate(-50deg);
 }
 
-.bg-box2 {
-    z-index: 200;
-    background: var(--primary-color);
-    height: 0.6%;
-    box-shadow: 0 7px 7px rgba(17, 17, 17, 0.2);
-}
 
-.bg-box2.b1{
-    width: 2vw;
-}
-.bg-box2.b2{
-    width: 0.75vw;
 
-}
-.bg-box2.b3{
-    width: 0.75vw;
+
+/* CIRCLE: */
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--bg-color1);
 
 }
 
-.bg-box2.b4{
-    width: 0.75vw;
+.small{
+    animation: rotate-bg 10s linear infinite;
+    border: 3px dashed var(--bg-color1);
+    opacity: 1;
 
+  width: 150px;
+  height: 150px;
+  left: -75px;
+  bottom: -75px;
 }
+
+.large{
+    border: 2px solid var(--bg-color1);
+    opacity: 1;
+
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+    border: 4px solid var(--bg-color1);
+    opacity: 1;
+    animation: ripple-slow 15s infinite;
+
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+    opacity: 1;
+    animation: ripple-fast 15s infinite;
+    border: 2px solid var(--accent-color);
+
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+
+/* LOTTIE: */
+#bg-gear {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+
+    left: -200px;
+    bottom:  -200px;
+
+    animation: rotate-bg 10s reverse infinite;
+}
+
+
+
+/* ANIMATIONS: */
+@keyframes ripple-slow{
+    0% {
+        transform: scale(0.8);
+    }
+  
+    50% {
+        transform: scale(1.2);
+    }
+  
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes ripple-fast{
+    0% {
+        transform: scale(0.8);
+    }
+  
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+  
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes rotate-bg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 

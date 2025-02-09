@@ -14,6 +14,9 @@
     background-color: white;
     grid-area: main;
 
+    margin-top: 7,5vh;
+    padding-top: 2rem;
+
     /*border: 2px solid purple; */
 }
 
@@ -37,19 +40,9 @@
         padding-right: 2rem;
         box-shadow: 0 0 7px rgba(17, 17, 17, 0.15);
         border-radius: var(--corners);
-        margin-bottom: 5rem;
-    }
 
-    .gutter {
-        display: flex;
-    }
-
-    .gutter.right {
-        grid-area: bg-right;
-    }
-
-    .gutter.left {
-        grid-area: bg-left;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 }
 
