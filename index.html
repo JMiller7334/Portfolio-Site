@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="./css/components/nav.css">
     <link rel="stylesheet" href="./css/components/modal-gallery.css">
     <link rel="stylesheet" href="./css/components/contact-form.css">
+    <link rel="stylesheet" href="./css/components/tech-skills.css">
 
     <!-- BUTTONS -->
     <link rel="stylesheet" href="./css/buttons/demo-button.css">
@@ -142,7 +143,7 @@
             <div id="galleryModal" class="gallery-modal">
                 <span id="closeGallery">&times;</span>
                 <button id="prevImage">&#10094;</button>
-                <img id="galleryImage" src="" ="Gallery App Screen Image.">
+                <img id="galleryImage" src="" alt="Gallery App Screen Image.">
                 <button id="nextImage">&#10095;</button>
             </div>
 
@@ -153,18 +154,15 @@
                 <div class="separator"></div>
                 
                 <div class="about-me-content">
+                    <div id="lottie-coding"></div>
                     <p>
                         I began coding at the age of 14 (17 years ago), starting with Lua to create small games. 
                         I quickly discovered a passion for coding, I enjoyed the challenges it brought 
                         and the creativity involved.
                         <br><br>  
-                    Coding had always been a constant in my life and I wanted to make it my career, so I began attending classes at my local community college, 
+                        Coding had always been a constant in my life and I wanted to make it my career, so I began attending classes at my local community college, 
                         where I fell in love with designing websites and apps. I later graduated earning two degrees.
                     </p>
-
-                    <div id="lottie-coding">
-
-                    </div>
                 </div>
 
                 <!-- Collapsible Section -->
@@ -172,7 +170,36 @@
                 <div id="more-about" class="collapsible-content">
 
 
-                <h3>+ Education</h3>
+                <!-- TECK SKILLS -->
+                 <h3><i class="fa-brands fa-codepen"></i> Technical Skills</h3>
+                 <div class="tech-skills" id="tech-skills">
+                     <!-- Buttons for changing skill sets -->
+                     <div class="skill-set-buttons">
+ 
+                         <button onclick="changeSkillSet('Web')" id="skill-button-web" class="selected">Web</button>
+                         <button onclick="changeSkillSet('iOS')" id="skill-button-ios">iOS</button>
+                         <button onclick="changeSkillSet('Android')" id="skill-button-android">Android</button>
+                         
+                     </div>
+                 
+                     <!-- Skill categories section -->
+                     <div id="skills-container">
+                         <h4>Languages</h4>
+                         <ul id="languages-list"></ul>
+                 
+                         <h4>Frameworks</h4>
+                         <ul id="frameworks-list"></ul>
+                 
+                         <h4>Database</h4>
+                         <ul id="database-list"></ul>
+                 
+                         <h4>Other/Tools</h4>
+                         <ul id="other-tools-list"></ul>
+                     </div>
+                 </div>
+
+
+                <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
                 <div class="separator"></div>
                 <p class="p-justified"> 
                 I studied computer science at McHenry County College from 2019 to 2024. I graduated 
@@ -183,8 +210,10 @@
                     <li>Associates in Web Design</li>
                     <li>Associates in Mobile App Development</li>
                 </ul>
+
+
                     
-                <h3>+ Other Interests</h3>
+                <h3><i class="fa-solid fa-medal"></i> Other Interests</h3>
                 <div class="separator"></div>
                     <p class="p-justified">
                         I spend my free time training in martial arts, hitting the gym, or 
@@ -595,6 +624,7 @@
     <script src="./js/about.js"></script>
     <script src="./js/modalGallery.js"></script>
     <script src="./js/contactForm.js"></script>
+    <script src="./js/techSkills.js"></script>
 
     <!-- LOTTIE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
