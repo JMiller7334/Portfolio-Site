@@ -16,7 +16,7 @@
 }
 
 .about-me-content p {
-    text-align: left;
+    text-align: justify;
 }
 
 
@@ -61,7 +61,7 @@
 .collapsible-content.expanded {
     display: flex;
     flex-direction: column;
-    min-height: 1000px;
+    min-height: 1200px;
     padding: var(--expandedAboutPadding);
     animation: expandAbout 0.5s ease forwards;
 }
