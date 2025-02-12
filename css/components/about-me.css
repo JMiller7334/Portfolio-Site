@@ -59,9 +59,9 @@
 
 /* Expanded state */
 .collapsible-content.expanded {
-    display: flex;
-    flex-direction: column;
-    min-height: 1200px;
+    max-height: fit-content;
+    min-height: fit-content;
+    opacity: 0;
     padding: var(--expandedAboutPadding);
     animation: expandAbout 0.5s ease forwards;
 }
@@ -111,25 +111,25 @@
 
 
 #hobby-lift {
-    height: 8vh;
-    width: 8vh;
+    height: 60px;
+    width: 60px;
     /* border: 2px solid purple; */
 
-    margin-bottom: -2vh;
+    margin-bottom: -15px;
 }
 
 #hobby-game-development {
-    height: 5vh;
-    width: 5vh;
+    height: 40px;
+    width: 40px;
 
-    margin-bottom: -0.7vh;
+    margin-bottom: -8px;
 }
 
 #hobby-martial {
-    height: 5vh;
-    width: 5vh;
+    height: 40px;
+    width: 40px;
 
-    margin-bottom: -0.4vh;
+    margin-bottom: -8px;
 }
 
 .grad-bullet {
