@@ -27,15 +27,15 @@
 
 .skill-set-buttons button:hover {
     transform: translateY(-2px);
-    background-color: var(--accent-color); /* Adds background color change on hover */
-    border: 2px solid var(--accent-color);
+    background-color: var(--primary-color); /* Adds background color change on hover */
+    border: 2px solid var(--primary-color);
     color: white; /* Optional: Change text color on hover for better contrast */
 }
 
 
 .skill-set-buttons button.selected {
-    background-color: var(--nav-color);
-    border: 2px solid var(--nav-color);
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
     color: white;
     transform: translateY(-2px);
 }
@@ -60,14 +60,14 @@
 }
 
 #skills-container ul li {
-    color: var(--nav-color);
+    color: var(--accent-color);
     background-color: transparent;
 
     font-size: 15px;
 
     margin: 5px;  /* Add margin between items */
     padding: 5px 10px;
-    border: 2px solid var(--nav-color);
+    border: 2px solid var(--accent-color);
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
