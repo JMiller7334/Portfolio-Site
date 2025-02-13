@@ -53,4 +53,4 @@ function changeSkillSet(skillSet) {
 }
 
 // Default to iOS skill set
-changeSkillSet('iOS');
+changeSkillSet('Web');
