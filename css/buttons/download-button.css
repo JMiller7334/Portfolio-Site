@@ -32,7 +32,7 @@
     transition: 0.4s;
   }
   .download-button span:after {
-    content: "- 20kb";
+    content: "- 74kb";
     position: absolute;
     opacity: 0;
     top: 0;
