@@ -15,10 +15,6 @@
     margin: 15px;
 }
 
-.about-me-content p {
-    text-align: justify;
-}
-
 
 /* Collapsible button styling */
 .collapsible-button {
@@ -85,7 +81,7 @@
     height: 10vh;
     width: 100%;
 
-    margin-top: clamp(7px, 1.5vh, 15px);
+    margin-top: 15px;
     margin-bottom: 1rem;
 
     /* border: 2px solid orange; */
@@ -109,23 +105,23 @@
 
 
 #hobby-lift {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     /* border: 2px solid purple; */
 
     margin-bottom: -15px;
 }
 
 #hobby-game-development {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
 
     margin-bottom: -8px;
 }
 
 #hobby-martial {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
 
     margin-bottom: -8px;
 }
