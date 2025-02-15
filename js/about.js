@@ -11,19 +11,29 @@ document.getElementById("toggle-more-about").addEventListener("click", () => {
     const button = document.getElementById("toggle-more-about");
 
     if (moreAboutSection.classList.contains("expanded")) {
-        // Start collapsing
-        moreAboutSection.classList.remove("expanded");
-        moreAboutSection.classList.add("collapsing");
-        button.textContent = "More About Me";
+        // Collapse the section
+        moreAboutSection.style.maxHeight = moreAboutSection.scrollHeight + "px"; // Set height before transition
+        requestAnimationFrame(() => {
+            moreAboutSection.style.maxHeight = "0";
+            moreAboutSection.style.opacity = "0";
+        });
 
-        // Wait for the collapse animation to finish
-        setTimeout(() => {
-            moreAboutSection.classList.remove("collapsing");
-        }, 500); // Match animation duration
+        button.textContent = "More About Me";
+        moreAboutSection.classList.remove("expanded");
+
     } else {
-        // Start expanding
-        moreAboutSection.classList.add("expanded");
+        // Expand the section
+        moreAboutSection.style.maxHeight = moreAboutSection.scrollHeight + "px"; 
+        moreAboutSection.style.opacity = "1";
+
         button.textContent = "Less About Me";
+        moreAboutSection.classList.add("expanded");
+
+        // Reset maxHeight after animation
+        setTimeout(() => {
+            moreAboutSection.style.maxHeight = "none";
+        }, 500); // Match CSS transition duration
     }
 });
+
 
