@@ -22,17 +22,6 @@ document.addEventListener("scroll", () => {
    handleElementsFade();
 });
 
-//allows nav buttons avoid snap-scroll
-document.querySelectorAll("nav ul li a").forEach(link => {
-    link.addEventListener("click", function() {
-        console.log('disable snap-scroll');
-        document.documentElement.style.scrollSnapType = "none"; // Disable snapping
-        setTimeout(() => {
-            document.documentElement.style.scrollSnapType = "y proximity"; // Re-enable it after 1s
-        }, 1000);
-    });
-});
-
 
 
 // Create a new Intersection Observer
