@@ -4,15 +4,17 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-// Handle OPTIONS request (preflight) to return 200 status
+// Handle OPTIONS request (preflight)
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    exit(0);
+    http_response_code(200);
+    exit();
 }
 
-// Get the raw POST data
+
+//get the raw POST data
 $requestData = json_decode(file_get_contents('php://input'), true);
 
-// Prepare response array
+//prepare response array
 $response = [];
 
 // Check if the necessary data is provided

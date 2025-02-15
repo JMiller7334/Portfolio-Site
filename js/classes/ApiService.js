@@ -1,15 +1,19 @@
 export default class MySqlApi {
   constructor() {
-    this.baseUrl = "http://jacobjmiller.com:8080/";
+
+    //test url: http://localhost:3000/php/mysql-api-proxy.php
+    //production url: /php/mysql-api-proxy.php
+    this.baseUrl = "http://localhost:3000/php/mysql-api-proxy/";
   }
 
   // General API Call Handler
   async writeTables(dataClass, requestMethod, apiTable) {
-    let apiUrl = `${this.baseUrl}${apiTable}`;
+    let apiUrl = `${this.baseUrl}${apiTable}.php`;
 
     // For PUT and DELETE, include the ID in the query string
     if (["PUT", "DELETE"].includes(requestMethod) && dataClass && dataClass.id) {
-      apiUrl += `?id=${dataClass.id}`;
+      //TODO: - not yet implemented
+      
     } else if (["PUT", "DELETE"].includes(requestMethod) && !dataClass) {
       throw new Error("Missing dataClass for PUT/DELETE request");
     }
@@ -25,6 +29,7 @@ export default class MySqlApi {
 
   // Perform the Write Request (POST/PUT/DELETE)
   async performWriteRequest(dataClass, apiUrl, requestMethod) {
+
     const headers = { "Content-Type": "application/json" };
     const options = {
       method: requestMethod,
@@ -64,21 +69,21 @@ export default class MySqlApi {
 
   // Fetch a single customer by ID
   async fetchCustomerById(searchId) {
-    const apiUrl = `${this.baseUrl}customers?id=${searchId}`;
+    const apiUrl = `${this.baseUrl}customers.php`;
     return await this.performReadRequest(apiUrl, "GET");
   }
 
   // Fetch all customers
   async fetchCustomers() {
-    const apiUrl = `${this.baseUrl}customers`;
+    const apiUrl = `${this.baseUrl}customers.php`;
     return await this.performReadRequest(apiUrl, "GET");
   }
 
   // Fetch usage records by customer ID
   async fetchUsageRecords(searchId = "") {
-    const apiUrl = searchId
-      ? `${this.baseUrl}usage?customerId=${searchId}`
-      : `${this.baseUrl}usage`;
+    const apiUrl = `${this.baseUrl}usage.php`;
+    //TODO: - not yet implemented
+    
     return await this.performReadRequest(apiUrl, "GET");
   }
 }
