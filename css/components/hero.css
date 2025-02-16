@@ -5,8 +5,6 @@
 }
 
 header {
-    scroll-snap-align: start;
-
     justify-content: center;
 
     width: 100%;

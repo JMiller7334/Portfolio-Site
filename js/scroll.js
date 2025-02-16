@@ -37,7 +37,7 @@ observerHeroFade.observe(heroContainer);
 const observerHeroSnapScroll = new IntersectionObserver(function (entries, _) {
     entries.forEach(entry => {
         if (entry.isIntersecting && isScrolledToTop === false) {
-            handleSnapScroll();
+            //handleSnapScroll();
             navLogo.classList.remove('visible');
             nav.classList.remove('standard');
         } else {
@@ -76,7 +76,7 @@ function fadeElement(element) {
     const fadeValue = 80;
 
     if (element) {
-        const newOpacity = 1 - scrollY / fadeValue;
+        const newOpacity = 1 - (scrollY-3) / fadeValue;
         //clamp opacity between 0 and 1
         element.style.opacity = Math.max(0, Math.min(newOpacity, 1));
     }
