@@ -3,7 +3,7 @@ export default class MySqlApi {
 
     //test url: http://localhost:3000/php/mysql-api-proxy.php
     //production url: /php/mysql-api-proxy.php
-    this.baseUrl = "http://localhost:3000/php/mysql-api-proxy/";
+    this.baseUrl = "/php/mysql-api-proxy/";
   }
 
   // General API Call Handler

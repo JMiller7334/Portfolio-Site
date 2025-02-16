@@ -89,8 +89,9 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         }
     
         // Sending a POST request to the PHP script
-        //test url: http://localhost:3000/php/send-email.php
-        const response = await fetch('/php/send-email.php', { 
+        //test url: https://jacobjmiller.com/portfolio-api/public/email.php
+        //production url: /portfolio-api/public/email.php
+        const response = await fetch('/portfolio-api/public/email.php', { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
