@@ -55,35 +55,47 @@ export default class MySqlApi {
     return data;
   }
 
-  // Read Handler for GET requests
-  async performReadRequest(apiUrl, requestMethod) {
-    const response = await fetch(apiUrl, { method: requestMethod });
 
-    if (![200, 201].includes(response.status)) {
-      throw new Error(`status code: ${response.status}`);
+
+  // Read Handler for GET requests
+  async performReadRequest(apiUrl, requestMethod, searchId = "") {
+    console.log('using endpoint: ' + apiUrl);
+    if (searchId) {
+        apiUrl += `?id=${encodeURIComponent(searchId)}`;
     }
 
-    const data = await response.json();
-    return data;
+    const headers = { "Content-Type": "application/json" };
+    const options = { method: requestMethod, headers: headers };
+
+    const response = await fetch(apiUrl, options);
+
+    if (![200, 201].includes(response.status)) {
+        throw new Error(`status code: ${response.status}`);
+    }
+
+    return await response.json();
   }
 
-  // Fetch a single customer by ID
+
+
+
+// Fetch a single customer by ID
   async fetchCustomerById(searchId) {
     const apiUrl = `${this.baseUrl}customers.php`;
-    return await this.performReadRequest(apiUrl, "GET");
+    return await this.performReadRequest(apiUrl, "GET", searchId);
   }
 
-  // Fetch all customers
+// Fetch all customers
   async fetchCustomers() {
     const apiUrl = `${this.baseUrl}customers.php`;
     return await this.performReadRequest(apiUrl, "GET");
   }
 
-  // Fetch usage records by customer ID
+// Fetch usage records by customer ID
   async fetchUsageRecords(searchId = "") {
     const apiUrl = `${this.baseUrl}usage.php`;
-    //TODO: - not yet implemented
-    
-    return await this.performReadRequest(apiUrl, "GET");
+    return await this.performReadRequest(apiUrl, "GET", searchId);
   }
+
+
 }
