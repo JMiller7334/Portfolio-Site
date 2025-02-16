@@ -198,6 +198,15 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   //api customer write call
   if (apiCallType === enumApiCallType.customerWrite && apiStage >= 5) {
     apiDebounce = true;
+
+    //final data append
+    let safeResult = escapeMySQLString(terminalTextbox.value);
+    let safeString = safeResult.sanitizedStr
+    if (safeResult.modified) {
+      alert('Your input was modified to be database safe.');
+    }
+    
+    customerObj.writeToCustomer(apiStage, safeString);
     typeWriter('terminal-body', terminalAttemptMsg, bodyTypingSpeed);
   
     setTimeout(function() {

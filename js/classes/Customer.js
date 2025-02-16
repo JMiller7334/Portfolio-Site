@@ -21,10 +21,10 @@ export default class Customer {
             this.email = input;
         }
         if (apiStage == 5) {
-            this.type = input
+            this.type = input;
 
         } else {
-            console.log('customer.js<writeToCustomer>: unknown api stage')
+            console.log('customer.js<writeToCustomer>: unknown api stage');
         }
     }
   
