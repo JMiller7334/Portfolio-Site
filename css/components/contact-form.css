@@ -10,7 +10,7 @@ form {
 }
 
 form h3 {
-    font-size: 1.4rem;
+    font-size: clamp(15px, 4.5vw, 1.2rem);
     padding: 0;
     margin: 0;
 }
@@ -21,6 +21,7 @@ form input, form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: clamp(12px, 1.2vw, 14px);
 
     resize: none;
 }
@@ -29,6 +30,7 @@ form button {
     color: white;
     border: none;
     padding: 10px;
+    font-size: clamp(13px, 1.2vw, 1rem);
     width: 100%;
     border-radius: var(--corner-radius);
     cursor: pointer;

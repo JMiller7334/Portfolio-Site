@@ -43,7 +43,7 @@ body {
     margin-bottom: 0.35rem;
 }
 #project-separator {
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
 }
 
 .margin-element {
@@ -70,7 +70,7 @@ body {
 
 section h2 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: clamp(20px, 5vw, 1.4rem);
 }
   
 
@@ -89,7 +89,8 @@ section h2 {
 /* -- FOOTER -- */
 footer {
     display: grid;
-    grid-template-areas: "f-header f-header f-farewell f-farwell"
+    grid-template-areas: 
+               "f-social f-social f-farewell f-farwell"
                "f-social f-social f-text f-text"
                "f-email f-email f-email f-email"
                "f-copyr f-copyr f-copyr f-logo";
@@ -97,16 +98,17 @@ footer {
     color: var(--text-color);
 
     width: clamp(300px, 95vw, 900px);
-
-    padding: 0.4rem;
-    padding-top: 0.7rem;
+    padding: 0.5rem;
+    padding-top: 1.2rem;
 }
 
 .footer-email {
     grid-area: f-email;
-    font-size: 14px;
-    margin-top: 0.25rem;
+    font-size: clamp(10px, 3vw, 13px);
+    margin-top: 2rem;
     padding-left: 5px;
+    margin-bottom: 0.5rem;
+    margin-left: -4.5px;
 }
 
 .footer-logo {
@@ -127,37 +129,26 @@ footer {
 }
 
 footer h3 {
+    display: none;
     color: var(--demo-color);
-    font-size: clamp(14px, 1.2vw, 2rem);
+    font-size: clamp(15px, 1.2vw, 2rem);
     grid-area: f-header;
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 footer h4 {
     color: var(--accent-color);
-    font-size: clamp(14px, 1.2vw, 2rem);
+    font-size: clamp(15px, 1.2vw, 2rem);
     grid-area: f-farewell;
-
- 
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 
 .footer-msg {
-    font-size: 0.9rem;
-    line-height: 1.2rem;
+    font-size: clamp(12px, 3.2vw, 14px);
     grid-area: f-text;
     margin-bottom: 0.2rem;
     padding-left: 0.5rem;
-
-    max-width: 330px;
-
-
+    max-width: clamp(100px, 50vw, 300px);
     /* border: 2px solid green; */
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .social-links {
@@ -169,14 +160,28 @@ footer h4 {
     justify-content: start;
     align-items: flex-end;
 
-    font-size: 0.8rem;
+    font-size: clamp(11px, 1.2vw, 0.8rem);
 
     width: 100%;
     margin-top: 1rem;
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-
     grid-area: f-copyr;
+}
+
+/*small Laptops and Larger Tablets */
+@media (min-width: 1024px) { /*768*/
+
+    .footer {
+        grid-template-areas: 
+        "f-social f-social f-farewell f-farwell"
+        "f-email f-email f-text f-text"
+        ". . f-text f-text"
+        "f-copyr f-copyr f-copyr f-logo";
+    }
+    
+
+    .footer-email {
+        margin-top: 0.25rem;
+    }
 }
 
 

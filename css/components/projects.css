@@ -3,7 +3,7 @@
 */
 
 :root {
-    --proj-header-font-size: 1.25rem; 
+    --proj-header-font-size: clamp(16px, 4.3vw, 1.15rem); 
 }
 
 
@@ -53,7 +53,7 @@
 
 /* ------ TYPE ------- */
 .project-type {
-    font-size: calc(var(--proj-header-font-size) - 10px);
+    font-size: calc(var(--proj-header-font-size) - 8px);
     font-weight: 700;
 
 
@@ -61,7 +61,7 @@
     padding: 2px;
     padding-left: 7px;
     padding-right: 7px;
-    margin-top: 3.5px;
+    margin-top: 0.5px;
 }
 #project-iOS {
     --iOS-color: #007AFF; /* iOS blue */
@@ -118,6 +118,7 @@
 .project-stack-title {
     grid-area: proj-stack-title;
     margin-bottom: -0.5rem;
+    font-size: clamp(15px, 3vw, 1rem);
 }
 
 .project-stack {

@@ -42,6 +42,13 @@ header {
     width: 100vw;
 }
 
+.hero-footer-space {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 10%
+}
+
 
 
 /* -- HERO TERMINAL -- */
@@ -224,11 +231,12 @@ header p {
 /* -- PROFILE PIC -- */
 .profile-picture {
     position: absolute;
-    left: 7vw;
+    left: 5vw;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    width: calc(4rem + 3vw);
-    height: calc(4rem + 3vw);
+    margin-right: 1rem;
+    width: clamp(40px, 15vw, 100px);
+    height: clamp(40px, 15vw, 100px);
     overflow: hidden;
     border-radius: 50%;
     border: 3px solid var(--profile-border-color);
