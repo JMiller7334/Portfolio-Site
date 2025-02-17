@@ -63,9 +63,10 @@ header {
 }
 
 #terminal-body {
+    font-size: clamp(10px, 3vw, 15px);
     overflow-y: auto;
     line-height:2.5vh;
-    height: calc(62vh - 3vw);
+    height: calc(55vh - 3vw);
     margin-bottom: 1vh;
     /* border: 2px solid red; */
 }

@@ -27,7 +27,7 @@ Tip: Type 'help' to return to the main menu.`
     this.attemptCallBody = `
 Attempting API call...
 
-Endpoint: http://jacobjmiller.com:8080/
+Endpoint: https://jacobjmiller.com/mysql-api?customers
 Status: In progress...`;
 
     this.customerReadBody = 'Please enter a customer ID (e.g., 1) to retrieve a specific record, or leave the field blank to fetch all customers.\n\n';
@@ -77,7 +77,7 @@ Feel free to explore my projects and see how I put these skills to work below!
   successCustomerWrite(data) {
     return `
 Method: POST
-Endpoint: http://jacobjmiller.com:8080/customers
+Endpoint: https://jacobjmiller.com/mysql-api?customers
 New Customer Data: ${this.formatDataForDisplay(data)}
 Status: 200 OK - Customer successfully created!
 
@@ -87,7 +87,7 @@ Tip: Type 'help' to return to the main menu.`;
   errorCustomerWrite(error) {
     return `
 Method: POST
-Endpoint: http://jacobjmiller.com:8080/customers
+Endpoint: https://jacobjmiller.com/mysql-api?customers
 Status: Error
 
 Error Message: ${error.message || error}
@@ -104,7 +104,7 @@ Tip: Type 'help' to return to the main menu.`;
 
     return `
 Method: GET
-Endpoint: http://jacobjmiller.com:8080/customers
+Endpoint: https://jacobjmiller.com/mysql-api?customers
 ID Parameter: ${parsedParameter}
 Status: 200 OK - Customer data retrieved successfully.
 
@@ -120,7 +120,7 @@ Tip: Type 'help' to return to the main menu.`;
     } 
     return `
 Method: GET
-Endpoint: http://jacobjmiller.com:8080/customers
+Endpoint: https://jacobjmiller.com/mysql-api?customers
 ID Parameter: ${parsedParameter}
 Status: Error
 
