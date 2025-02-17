@@ -32,7 +32,7 @@
     border: 2px solid var(--body-text-color);
     border-radius: var(--corner-radius);
     cursor: pointer;
-    font-size: clamp(14px, 1.2vw, 2rem);
+    font-size: clamp(14px, 1.2vw, 1rem);
     margin-top: 40px;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
