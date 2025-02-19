@@ -55,7 +55,7 @@ function updateImage() {
     newImage.onerror = () => {
         loadingIndicator.style.display = "none";
         galleryImage.style.display = "block";
-        galleryImage.src = galleryLocation + "fallback-image.png"; // Set a fallback image if loading fails
+        //TODO: handle missing img.
     };
 }
 
