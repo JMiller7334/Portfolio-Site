@@ -209,6 +209,9 @@
 #project-stack-firebase:hover span {
     padding-right: 3.5em;
 }
+#project-stack-swift:hover span {
+    padding-right: 2.2em;
+}
 
 .project-stack-item:hover span:after {
     opacity: 1;
