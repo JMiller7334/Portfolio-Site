@@ -32,6 +32,7 @@
 }
 
 .gallery-modal img {
+    z-index: 65;
     margin-top: var(--nav-standard-height);
     max-width: 80%;
     max-height: 80%;
