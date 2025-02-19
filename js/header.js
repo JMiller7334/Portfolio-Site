@@ -242,7 +242,7 @@ document.querySelector('.terminal-send-button').addEventListener('click', () => 
   sendButtonDebounce = true;
   terminalSendButton.style.opacity = '0.2';
 
-  const lowercaseInput = terminalTextbox.value = terminalTextbox.value.toLowerCase(); 
+  const lowercaseInput = terminalTextbox.value.toLowerCase().trim(); 
   if (lowercaseInput === 'write customer') {
     customerObj.resetProperties();
     apiStage = 1;
