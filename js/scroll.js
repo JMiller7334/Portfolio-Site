@@ -23,6 +23,19 @@ document.addEventListener("scroll", () => {
 });
 
 
+/*prevents scroll/fade from making the textbox invisible when the
+user is using it.*/
+const input = document.getElementById("terminal-input");
+var inputFocused = false;
+input.addEventListener("focus", function() {
+    inputFocused = true;
+});
+
+input.addEventListener("blur", function() {
+    inputFocused = false;
+});
+
+
 
 // Create a new Intersection Observer
 const observerHeroFade = new IntersectionObserver(function(entries, _) {
@@ -84,6 +97,9 @@ function fadeElement(element) {
 
 
 function handleElementsFade(){
+    if (inputFocused) {
+        return;
+    }
     /** primary function for handling elment fading on scroll
     */
     if (animateHero === false) {
