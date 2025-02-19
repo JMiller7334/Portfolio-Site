@@ -42,19 +42,25 @@ function updateImage() {
     // Show loading indicator
     loadingIndicator.style.display = "block";
     galleryImage.style.display = "none";
+    nextImage.style.display = "none";
+    prevImage.style.display = "none";
 
     const newImage = new Image();
     newImage.src = galleryLocation + images[currentIndex];
 
     newImage.onload = () => {
         galleryImage.src = newImage.src;
-        loadingIndicator.style.display = "none"; // Hide loading indicator
-        galleryImage.style.display = "block"; // Show image after it's fully loaded
+        //loadingIndicator.style.display = "none"; // Hide loading indicator
+        //galleryImage.style.display = "block"; // Show image after it's fully loaded
+        //nextImage.style.display = "block";
+        //prevImage.style.display = "block";
     };
 
     newImage.onerror = () => {
         loadingIndicator.style.display = "none";
         galleryImage.style.display = "block";
+        nextImage.style.display = "block";
+        prevImage.style.display = "block";
         //TODO: handle missing img.
     };
 }
