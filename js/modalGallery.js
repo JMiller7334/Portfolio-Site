@@ -50,10 +50,10 @@ function updateImage() {
 
     newImage.onload = () => {
         galleryImage.src = newImage.src;
-        //loadingIndicator.style.display = "none"; // Hide loading indicator
-        //galleryImage.style.display = "block"; // Show image after it's fully loaded
-        //nextImage.style.display = "block";
-        //prevImage.style.display = "block";
+        loadingIndicator.style.display = "none"; // Hide loading indicator
+        galleryImage.style.display = "block"; // Show image after it's fully loaded
+        nextImage.style.display = "block";
+        prevImage.style.display = "block";
     };
 
     newImage.onerror = () => {
