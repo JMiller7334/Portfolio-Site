@@ -8,8 +8,9 @@ const p = document.querySelector('header p');
 const nav = document.querySelector('nav');
 
 const terminals = document.querySelectorAll('.terminal-text');
-
 const heroTrigger = document.querySelector('.hero-trigger');
+
+const terminalBody = document.getElementById('terminal-body');
 
 
 var animateHero = true;
@@ -112,6 +113,14 @@ function handleElementsFade(){
         fadeElement(terminal);
       });
     }
+
+    //selectively hide scroll on terminal body if it isn't visible enough.
+    if (terminalBody && parseFloat(terminalBody.style.opacity) >= 0.7) {
+        terminalBody.style.overflowY = 'auto';
+    } else {
+        terminalBody.style.overflowY = 'hidden';
+    }
+    
 
     fadeElement(profilePicture);
     fadeElement(p);
