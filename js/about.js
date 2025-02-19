@@ -3,15 +3,22 @@
  * all javascript code related to front end operation for that section will
  * appear here.
  */
+const moreAboutSection = document.getElementById("more-about");
+const button = document.getElementById("toggle-more-about");
 
+var aboutDebounce = false;
+const TRANSITION_LENGTH = 500;
 
 // handles expanding and closing the more about expandable section
 document.getElementById("toggle-more-about").addEventListener("click", () => {
-    const moreAboutSection = document.getElementById("more-about");
-    const button = document.getElementById("toggle-more-about");
 
+    if (aboutDebounce) {
+        return;
+    }
+    aboutDebounce = true;
+
+    //collapse section:
     if (moreAboutSection.classList.contains("expanded")) {
-        // Collapse the section
         moreAboutSection.style.maxHeight = moreAboutSection.scrollHeight + "px"; // Set height before transition
         requestAnimationFrame(() => {
             moreAboutSection.style.maxHeight = "0";
@@ -21,6 +28,11 @@ document.getElementById("toggle-more-about").addEventListener("click", () => {
         button.textContent = "More About Me";
         moreAboutSection.classList.remove("expanded");
 
+        setTimeout(() => {
+            aboutDebounce = false;
+        }, TRANSITION_LENGTH);
+
+    //expand section:
     } else {
         // Expand the section
         moreAboutSection.style.maxHeight = moreAboutSection.scrollHeight + "px"; 
@@ -32,7 +44,8 @@ document.getElementById("toggle-more-about").addEventListener("click", () => {
         // Reset maxHeight after animation
         setTimeout(() => {
             moreAboutSection.style.maxHeight = "none";
-        }, 500); // Match CSS transition duration
+            aboutDebounce = false;
+        }, TRANSITION_LENGTH);
     }
 });
 
