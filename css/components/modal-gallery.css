@@ -63,6 +63,7 @@
 #loadingIndicator {
     display: block;
     position: absolute;
+    margin-top: -100px;
     width: 200px;
     height: auto;
 
