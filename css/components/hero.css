@@ -70,9 +70,9 @@ header {
 }
 
 #terminal-body {
-    font-size: clamp(10px, 3vw, 15px);
+    font-size: clamp(13px, 3.5vw, 15px);
     overflow-y: auto;
-    line-height:2.5vh;
+    line-height:2.7vh;
     height: calc(55vh - 3vw);
     margin-bottom: 1vh;
     /* border: 2px solid red; */
