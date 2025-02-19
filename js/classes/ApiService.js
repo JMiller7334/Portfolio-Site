@@ -1,14 +1,14 @@
 export default class MySqlApi {
   constructor() {
 
-    //test url: http://localhost:3000/php/mysql-api-proxy/
-    //production url: https://jacobjmiller.com/php/mysql-api-proxy/
-    this.baseUrl = "https://jacobjmiller.com/php/mysql-api-proxy/";
+    //test url: http://localhost:3000/api/
+    //production url: https://jacobjmiller.com/api/
+    this.baseUrl = "https://jacobjmiller.com/api/";
   }
 
   // General API Call Handler
   async writeTables(dataClass, requestMethod, apiTable) {
-    let apiUrl = `${this.baseUrl}${apiTable}.php`;
+    let apiUrl = `${this.baseUrl}${apiTable}`;
 
     // For PUT and DELETE, include the ID in the query string
     if (["PUT", "DELETE"].includes(requestMethod) && dataClass && dataClass.id) {
@@ -81,19 +81,19 @@ export default class MySqlApi {
 
 // Fetch a single customer by ID
   async fetchCustomerById(searchId) {
-    const apiUrl = `${this.baseUrl}customers.php`;
+    const apiUrl = `${this.baseUrl}customers`;
     return await this.performReadRequest(apiUrl, "GET", searchId);
   }
 
 // Fetch all customers
   async fetchCustomers() {
-    const apiUrl = `${this.baseUrl}customers.php`;
+    const apiUrl = `${this.baseUrl}customers`;
     return await this.performReadRequest(apiUrl, "GET");
   }
 
 // Fetch usage records by customer ID
   async fetchUsageRecords(searchId = "") {
-    const apiUrl = `${this.baseUrl}usage.php`;
+    const apiUrl = `${this.baseUrl}usage`;
     return await this.performReadRequest(apiUrl, "GET", searchId);
   }
 

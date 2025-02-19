@@ -11,6 +11,8 @@
 
     --corners: 4px; /*container corners*/
     --corner-radius: 2px; /*button corners*/
+
+    --nav-standard-height: 6.5vh;
 }
 
 *,

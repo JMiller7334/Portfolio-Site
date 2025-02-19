@@ -1,16 +1,16 @@
 const galleryModal = document.getElementById("galleryModal");
 const galleryImage = document.getElementById("galleryImage");
+const loadingIndicator = document.getElementById("loadingIndicator");
 const closeGallery = document.getElementById("closeGallery");
 const prevImage = document.getElementById("prevImage");
 const nextImage = document.getElementById("nextImage");
 
-//GALLERY OPEN BUTTONS;
+// GALLERY OPEN BUTTONS
 const buttonIosDashboard = document.getElementById('ios-dashboard-gallery');
 const buttonApiWeather = document.getElementById("api-weather-gallery");
 const buttonIjApp = document.getElementById("ij-gallery");
 
-
-//individual galleries
+// Individual galleries
 const iosDashboardApp = [
     "ida-stats-portrait.png",
     "ida-customer-read-portrait.png",
@@ -32,30 +32,42 @@ const ironJournalApp = [
     "ij-workout.png"
 ];
 
-//variable representing the current gallery, index being displayed
+// Variables for the current gallery and index
 const galleryLocation = "../img/gallery/";
 let images = iosDashboardApp;
 let currentIndex = 0;
 
-
-//HELPER FUNCS:
+// HELPERS
 function updateImage() {
-    galleryImage.src = galleryLocation+images[currentIndex];
+    // Show loading indicator
+    loadingIndicator.style.display = "block";
+    galleryImage.style.display = "none";
+
+    const newImage = new Image();
+    newImage.src = galleryLocation + images[currentIndex];
+
+    newImage.onload = () => {
+        galleryImage.src = newImage.src;
+        loadingIndicator.style.display = "none"; // Hide loading indicator
+        galleryImage.style.display = "block"; // Show image after it's fully loaded
+    };
+
+    newImage.onerror = () => {
+        loadingIndicator.style.display = "none";
+        galleryImage.style.display = "block";
+        galleryImage.src = galleryLocation + "fallback-image.png"; // Set a fallback image if loading fails
+    };
 }
 
 function openGallery() {
     galleryModal.style.display = "flex";
     galleryModal.classList.add("show");
     updateImage();
-};
+}
 
-
-//GALLERY UI:
+// GALLERY UI
 closeGallery.addEventListener("click", () => {
-    if (galleryModal.classList.contains("show")){
-        galleryModal.classList.remove("show");
-        console.log("closing gallery")
-    }
+    galleryModal.classList.remove("show");
 });
 
 nextImage.addEventListener("click", () => {
@@ -68,8 +80,7 @@ prevImage.addEventListener("click", () => {
     updateImage();
 });
 
-
-//INDIVIDUAL GALLERY CALLS -- buttons:
+// INDIVIDUAL GALLERY BUTTONS
 buttonIjApp.addEventListener("click", () => {
     currentIndex = 0;
     images = ironJournalApp;
