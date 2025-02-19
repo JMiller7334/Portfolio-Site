@@ -62,11 +62,14 @@
 }
 
 #loadingIndicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     display: block;
     position: absolute;
-    width: 150px;
+
+    width: 75px;
     height: auto;
-    opacity: 0.8;
 
     z-index: 60;
 }
