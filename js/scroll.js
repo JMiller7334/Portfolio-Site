@@ -28,10 +28,12 @@ user is using it.*/
 const input = document.getElementById("terminal-input");
 var inputFocused = false;
 input.addEventListener("focus", function() {
+    console.log("input selected");
     inputFocused = true;
 });
 
 input.addEventListener("blur", function() {
+    console.log("input focus lost");
     inputFocused = false;
 });
 

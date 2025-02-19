@@ -1,12 +1,16 @@
+<?php
+ob_start(); // Start output buffering
 
-<?php 
 //allow requests from any origin (restrict this in production)
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//header type
+header('Content-Type: application/json');
+
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+ini_set('display_errors', 0);
 
 
 //handle OPTIONS request (preflight)
@@ -127,6 +131,6 @@ file_put_contents("debug.log", print_r($apiResponse, true), FILE_APPEND);
 
 //set response headers and return JSON
 curl_close($curlSession);
-header('Content-Type: application/json');
+ob_end_clean(); // Clear previous output before sending JSON
 echo json_encode($response);
 ?>
