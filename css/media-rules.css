@@ -29,6 +29,14 @@
     display: none; /*hide on mobile */
 }
 
+
+/*mobile landscape rules*/
+@media screen and (max-height: 500px) {
+    .scroll-indicator {
+        font-display: none;
+    }
+}
+
 /*small Laptops and Larger Tablets */
 @media (min-width: 1024px) { /*768*/
     .site-structure {

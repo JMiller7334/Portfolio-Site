@@ -129,5 +129,17 @@ function handleElementsFade(){
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("terminal-body");
 
+    container.addEventListener("touchmove", function (event) {
+        const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight;
+        const atTop = container.scrollTop === 0;
+
+        if (atBottom && event.deltaY > 0){
+            event.preventDefault(); // Prevents scroll lock inside container
+            window.scrollBy(0, event.deltaY); // Scrolls the main page
+        }
+    }, { passive: false });
+});
 
