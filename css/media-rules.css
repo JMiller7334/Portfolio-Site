@@ -33,7 +33,7 @@
 /*mobile landscape rules*/
 @media screen and (max-height: 500px) {
     .scroll-indicator {
-        font-display: none;
+        display: none;
     }
 }
 

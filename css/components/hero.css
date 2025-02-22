@@ -70,6 +70,9 @@ header {
 #terminal-body {
     font-size: clamp(13px, 3.5vw, 15px);
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+    
     line-height:1.5;
     height: calc(55vh - 3vw);
     margin-bottom: 2vh;
