@@ -128,10 +128,11 @@ function handleElementsFade(){
     fadeElement(terminalFooter);
 }
 
-
+/**TERMINAL BODY SCROLLING */
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("terminal-body");
 
+    //mobile scrolling
     let startY = 0;
 
     container.addEventListener("touchstart", function (event) {
