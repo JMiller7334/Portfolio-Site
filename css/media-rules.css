@@ -35,6 +35,12 @@
     .scroll-indicator {
         display: none;
     }
+    #terminal-body {
+        width: 70%;
+    }
+    #nav-logo {
+        display: none;
+    }
 }
 
 /*small Laptops and Larger Tablets */

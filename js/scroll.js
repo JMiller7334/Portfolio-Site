@@ -128,26 +128,4 @@ function handleElementsFade(){
     fadeElement(terminalFooter);
 }
 
-/**TERMINAL BODY SCROLLING */
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("terminal-body");
 
-    //mobile scrolling
-    let startY = 0;
-
-    container.addEventListener("touchstart", function (event) {
-        startY = event.touches[0].clientY;
-    });
-
-    container.addEventListener("touchmove", function (event) {
-        const currentY = event.touches[0].clientY;
-        const deltaY = startY - currentY; //Positive = swipe up, Negative = swipe down
-
-        const atTop = container.scrollTop === 0;
-        const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight;
-
-        if (atBottom && deltaY > 0) {
-            window.scrollBy(0, deltaY); //Scrolls the main page instead
-        }
-    }, { passive: false });
-});
