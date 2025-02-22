@@ -132,14 +132,21 @@ function handleElementsFade(){
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("terminal-body");
 
-    container.addEventListener("touchmove", function (event) {
-        const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight;
-        const atTop = container.scrollTop === 0;
+    let startY = 0;
 
-        if (atBottom && event.deltaY > 0){
-            event.preventDefault(); // Prevents scroll lock inside container
-            window.scrollBy(0, event.deltaY); // Scrolls the main page
+    container.addEventListener("touchstart", function (event) {
+        startY = event.touches[0].clientY;
+    });
+
+    container.addEventListener("touchmove", function (event) {
+        const currentY = event.touches[0].clientY;
+        const deltaY = startY - currentY; //Positive = swipe up, Negative = swipe down
+
+        const atTop = container.scrollTop === 0;
+        const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight;
+
+        if (atBottom && deltaY > 0) {
+            window.scrollBy(0, deltaY); //Scrolls the main page instead
         }
     }, { passive: false });
 });
-
