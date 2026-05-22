@@ -3,7 +3,7 @@ export default class MySqlApi {
 
     //test url: http://localhost:3000/api/
     //production url: https://jacobjmiller.com/api/
-    this.baseUrl = "https://jacobjmiller.com/api/";
+    this.baseUrl = "https://www.jacobjmiller.com/api/";
   }
 
   // General API Call Handler

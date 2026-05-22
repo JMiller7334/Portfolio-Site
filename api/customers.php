@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $customerObject['email'],
         $customerObject['customer_type']
     )) {
-        $apiUrl = 'https://jacobjmiller.com/mysql-api/index.php?customers';
+        $apiUrl = 'https://www.jacobjmiller.com/mysql-api/index.php?customers';
         $jsonData = json_encode($customerObject);
 
         //init cURL
@@ -78,14 +78,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     //endpoint for fetch all
-    $apiUrl = 'https://jacobjmiller.com/mysql-api/index.php?customers';
+    $apiUrl = 'https://www.jacobjmiller.com/mysql-api/index.php?customers';
     if (isset($_GET['id']) && !empty($_GET['id'])) {
         $id = intval($_GET['id']); // Ensure it's an integer for security
 
         if ($id > 0) {
 
             //endpoint for fetch by id.
-            $apiUrl = 'https://jacobjmiller.com/mysql-api/index.php?customers&id=' . urlencode($id);
+            $apiUrl = 'https://www.jacobjmiller.com/mysql-api/index.php?customers&id=' . urlencode($id);
         } else {
             $response = ["error" => "Invalid ID"];
             http_response_code(400); // bad request

@@ -20,7 +20,7 @@ var initialLoadup = true;
 
 document.addEventListener("scroll", () => {
     /** events to occur when user scrolls happen here */
-   handleElementsFade();
+   //handleElementsFade();
 });
 
 
