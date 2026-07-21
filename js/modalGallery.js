@@ -87,12 +87,6 @@ prevImage.addEventListener("click", () => {
 });
 
 // INDIVIDUAL GALLERY BUTTONS
-buttonIjApp.addEventListener("click", () => {
-    currentIndex = 0;
-    images = ironJournalApp;
-    openGallery();
-});
-
 buttonIosDashboard.addEventListener("click", () => {
     currentIndex = 0;
     images = iosDashboardApp;
